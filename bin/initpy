@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sudo apt-get install python-pip python-dev build-essential
+
+# Dependencies of jupyter
+sudo apt-get install python-zmq libzmq3-dev
+
+for i in ipython jupyter
+do
+  sudo pip install $i
+done
