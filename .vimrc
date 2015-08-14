@@ -4,7 +4,7 @@
 
 
 """ Enable access to X clipboard
-" Ubuntu:
+" Installation (Ubuntu):
 " $ sudo apt-get install vim-gui-common
 "
 " Verify:
@@ -35,7 +35,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'bling/vim-airline'
 
 " Conque -- run interactive commands (https://github.com/vim-scripts/Conque-Shell)
-" Ubuntu:
+" Installation (Ubuntu):
 " $ sudo apt-get install vim-conque
 " $ vim-addons install conqueterm
 
@@ -92,6 +92,8 @@ let NERDTreeIgnore = ['\.pyc$']
 if exists('$DISPLAY') 
     " running under X11 
     set t_Co=256
+    " Install colorscheme:
+    " $ wget -O tomorrow-night-bright.vim https://github.com/chriskempson/vim-tomorrow-theme/tree/master/colors/Tomorrow-Night-Bright.vim
     colorscheme tomorrow-night-bright
 
     " more subtle popup colors
