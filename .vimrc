@@ -31,7 +31,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " - sudo pip install --user git+git://github.com/Lokaltog/powerline
 " - .vimrc: set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 "
-" Then, install Powerline fonts (see .fonts/README.md)
+" Then, install Powerline fonts (see doc/powerlinefonts.md)
 Plugin 'bling/vim-airline'
 
 " Conque -- run interactive commands (https://github.com/vim-scripts/Conque-Shell)
