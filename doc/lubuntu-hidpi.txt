@@ -1,0 +1,16 @@
+### System-wide
+# Set dpi to match the one in ~/.Xresources
+sudo vi /etc/lightdm/lightdm-gtk-greeter.conf
+
+# Install MS Core fonts
+sudo apt-get install ttf-mscorefonts-installer
+
+
+### Per user
+# Set dpi to 150
+~/.Xresources
+
+# Monospace: s/Courier New/Ubuntu Mono
+~/.config/fontconfig/fonts.conf
+
+gsettings set org.gnome.desktop.interface monospace-font-name 'Monospace 12'
