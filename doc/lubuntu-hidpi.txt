@@ -13,4 +13,8 @@ sudo apt-get install ttf-mscorefonts-installer
 # Monospace: s/Courier New/Ubuntu Mono
 ~/.config/fontconfig/fonts.conf
 
+# 17pt font for openbox (theme 'Lubuntu default'): window title, menu, etc.
+~/.config/openbox/lubuntu-rc.xml
+
+# Monospace setting for gtk applications
 gsettings set org.gnome.desktop.interface monospace-font-name 'Monospace 12'
