@@ -9,3 +9,6 @@ for i in ipython jupyter ipdb
 do
   sudo pip install $i
 done
+
+# Prefer pre-built, because installing from pip requires too many dependencies
+sudo apt-get install python-matplotlib
