@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Chromium
+sudo sed -i 's/^CHROMIUM_FLAGS.*$/CHROMIUM_FLAGS="--incognito --force-device-scale-factor=1.75 --disable-gpu-compositing"/g' /etc/chromium-browser/default
+
+#Firefox
+#Increase scaling of GUI icons & fonts
