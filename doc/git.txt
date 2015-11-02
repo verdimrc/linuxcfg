@@ -1,0 +1,53 @@
+################################################################################
+
+# github access token: ~~~~....~~~~....~~~~....~~~~....~~~~....
+
+# Then, use git's credential helper
+# https://help.github.com/articles/caching-your-github-password-in-git/#platform-linux
+git config --global credential.helper 'cache --timeout=3600'
+
+################################################################################
+
+# Descriptive branch
+git branch lr
+git branch --edit-description 
+git config branch.lr.description
+
+################################################################################
+
+# Sync local, forked repo, and upstream.
+# Based on http://stackoverflow.com/a/19506355
+# - Alternative approaches: http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository
+
+# List the current remotes
+$ git remote -v
+origin  https://github.com/user/repo.git (fetch)
+origin  https://github.com/user/repo.git (push)
+
+# Set a new remote
+$ git remote add upstream https://github.com/otheruser/repo.git
+
+# Verify new remote
+$ git remote -v
+origin    https://github.com/user/repo.git (fetch)
+origin    https://github.com/user/repo.git (push)
+upstream  https://github.com/otheruser/repo.git (fetch)
+upstream  https://github.com/otheruser/repo.git (push)
+
+$ git fetch upstream
+
+# List all local and remote-tracking branches
+$ git branch -va
+* master                  a422352 My local commit
+  remotes/origin/HEAD     -> origin/master
+  remotes/origin/master   a422352 My local commit
+  remotes/upstream/master 5fdff0f Some upstream commit
+
+# Sync local's master from upstream's master
+$ git checkout master
+$ git merge upstream/master
+
+# Sync local's master to forked repo's master
+$ git push origin master
+
+################################################################################
