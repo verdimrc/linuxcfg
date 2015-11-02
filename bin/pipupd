@@ -1,4 +1,17 @@
 #!/bin/bash
 
+# Numpy dependencies: libatlas-base-dev, libatlas-dev, libatlas3-base
+export LAPACK=/usr/lib/liblapack.so
+export ATLAS=/usr/lib/libatlas.so
+export BLAS=/usr/lib/libblas.so
+
+
 #http://mikegrouchy.com/blog/2014/06/pro-tip-pip-upgrade-all-python-packages.html
 pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | sudo xargs pip install -U
+
+echo "Check numpy is built with ATLAS:"
+ldd /usr/local/lib/python2.7/dist-packages/numpy/core/multiarray.so | grep atlas
+#python -c "import numpy; print numpy.__config__.show()"
+#python -c "import numpy.distutils.system_info as si; print si.get_info('atlas')"
+#python -c "from numpy import *; import time; A = random.random((1000,1000)); B = random.random((1000,1000)); t = time.time(); dot(A,B); print time.time()-t"
+#with numpy/atlas, should be subseconds (e.g., 0.2s depending on the machine)
