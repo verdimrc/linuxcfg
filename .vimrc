@@ -1,22 +1,14 @@
-"See also:
 "http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/
 "http://www.sontek.net/blog/2011/05/07/turning_vim_into_a_modern_python_ide.html
 
-
-""" Enable access to X clipboard
-" Installation (Ubuntu):
+""" Access clipboard
 " $ sudo apt-get install vim-gui-common
 "
-" Verify:
 " $ vim --version|grep .xterm_clipboard -o
 " +xterm_clipboard
 
 
-""" Vundle (https://github.com/VundleVim/Vundle.vim) and plugins
-" Installation:
-" $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" $ vim +PluginInstall +qall
-
+""" Vundle and plugins
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -30,18 +22,17 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " To switch to powerline:
 " - sudo pip install --user git+git://github.com/Lokaltog/powerline
 " - .vimrc: set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-"
-" Then, install Powerline fonts (see doc/powerlinefonts.md)
 Plugin 'bling/vim-airline'
 
-" Conque -- run interactive commands (https://github.com/vim-scripts/Conque-Shell)
-" Installation (Ubuntu):
-" $ sudo apt-get install vim-conque
-" $ vim-addons install conqueterm
+" System-wide bundles:
+" - conque: sudo apt-get install vim-conque
 
 " Programming languages
 Plugin 'davidhalter/jedi-vim'
 Plugin 'JuliaLang/julia-vim'
+
+" Color
+Plugin 'nanotech/jellybeans.vim'
 call vundle#end()
 filetype plugin indent on
 syntax enable
@@ -64,11 +55,6 @@ autocmd BufNewFile,BufRead *.pmml set filetype=xml
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-" highlight characters past column 80. 
-highlight Excess ctermbg=DarkGrey guibg=Black
-match Excess /\%80v.*/
-
 set nowrap
 set number
 set foldmethod=indent
@@ -92,9 +78,19 @@ let NERDTreeIgnore = ['\.pyc$']
 if exists('$DISPLAY') 
     " running under X11 
     set t_Co=256
-    " Install colorscheme:
-    " $ wget -O tomorrow-night-bright.vim https://github.com/chriskempson/vim-tomorrow-theme/tree/master/colors/Tomorrow-Night-Bright.vim
-    colorscheme tomorrow-night-bright
+    set background=dark
+    let g:jellybeans_overrides = {
+\       "Search": { "guibg": "ffff87", "guifg": "303030"},
+\       "VertSplit": { "guibg": "767676", "guifg": "767676"}
+\   }
+    colorscheme jellybeans
+
+    " Color of vertical rule at 80 char
+    highlight ColorColumn ctermbg=237
+
+    " highlight characters past column 80. 
+    highlight Excess ctermbg=237 guibg=Black
+    match Excess /\%80v.*/
 
     " more subtle popup colors
     if has ('gui_running')
