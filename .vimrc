@@ -45,6 +45,7 @@ set hlsearch
 set colorcolumn=80
 set splitbelow
 set splitright
+set cursorline
 autocmd BufNewFile,BufRead *.jl set filetype=julia
 autocmd BufNewFile,BufRead *.hql set filetype=sql
 autocmd BufNewFile,BufRead *.pmml set filetype=xml
@@ -80,6 +81,7 @@ if exists('$DISPLAY')
     set t_Co=256
     set background=dark
     let g:jellybeans_overrides = {
+\       "CursorLine": { "guibg": "343434"},
 \       "Search": { "guibg": "ffff87", "guifg": "303030"},
 \       "VertSplit": { "guibg": "767676", "guifg": "767676"}
 \   }
