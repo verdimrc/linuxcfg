@@ -49,6 +49,8 @@ set cursorline
 autocmd BufNewFile,BufRead *.jl set filetype=julia
 autocmd BufNewFile,BufRead *.hql set filetype=sql
 autocmd BufNewFile,BufRead *.pmml set filetype=xml
+autocmd BufNewFile,BufRead *.cu set filetype=cuda
+autocmd BufNewFile,BufRead *.cuh set filetype=cuda
 
 
 """ Coding style
