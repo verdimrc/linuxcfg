@@ -93,8 +93,8 @@ if exists('$DISPLAY')
     highlight ColorColumn ctermbg=237
 
     " highlight characters past column 80. 
-    highlight Excess ctermbg=237 guibg=Black
-    match Excess /\%80v.*/
+    "highlight Excess ctermbg=237 guibg=Black
+    "match Excess /\%80v.*/
 
     " more subtle popup colors
     if has ('gui_running')
