@@ -1,0 +1,53 @@
+###############################################################################
+# Resolution
+###############################################################################
+For kernel KMS & DRM, add kernel param video=1280x1024@60.
+
+Do NOT use vga=... since it will be overriden when vboxvideo performs modeset.
+
+List supported tty resolution:
+$ sudo hwinfo --framebuffer
+
+$ sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX="video=1280x1024@60"
+
+$ sudo update-grub
+$ sudo reboot
+
+Check current fb resolution:
+$ sudo fbset
+
+
+###############################################################################
+# Font
+###############################################################################
+$ vi /etc/default/console-setup
+FONTFACE="Terminus"
+FONTSIZE="10x20"
+
+Preview change:
+$ setupcon
+
+Apply on boot time:
+$ vi /etc/rc.local
+setupcon
+exit 0
+
+
+###############################################################################
+# Color
+###############################################################################
+Per-session:
+$ source ~/Desktop/linuxcfg/bin/tty/tty-colors.sh
+
+Global, manual:
+$ setvtrgb ~/Desktop/linuxcfg/bin/tty/vtrgb.tty
+
+Global, boot time:
+$ cd /etc/console-setup
+$ sudo mkdir ubuntu
+$ sudo mv vtrgb vtrgb.vga ubuntu/
+$ sudo cp ~/Desktop/linuxcfg/bin/tty/vtrgb.tty vtrgb
+$ sudo ln -s vtrgb vtrgb.vga
+$ cd -
+$ reset
