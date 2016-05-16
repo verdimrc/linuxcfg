@@ -45,7 +45,6 @@ set hlsearch
 set colorcolumn=80
 set splitbelow
 set splitright
-set cursorline
 autocmd BufNewFile,BufRead *.jl set filetype=julia
 autocmd BufNewFile,BufRead *.hql set filetype=sql
 autocmd BufNewFile,BufRead *.pmml set filetype=xml
@@ -81,6 +80,7 @@ let NERDTreeIgnore = ['\.pyc$']
 if exists('$DISPLAY') 
     " running under X11 
     set t_Co=256
+    set cursorline
     set background=dark
     let g:jellybeans_overrides = {
 \       "CursorLine": { "guibg": "343434"},
@@ -106,4 +106,7 @@ if exists('$DISPLAY')
     let g:airline#extensions#tabline#tab_nr_type = 1
 else 
     " running on console 
+    colorscheme peachpuff
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#tab_nr_type = 1
 endif 
