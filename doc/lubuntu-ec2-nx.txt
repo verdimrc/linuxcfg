@@ -1,0 +1,17 @@
+##############################################################################
+# Remote Lubuntu desktop @ EC2 via NoMachine
+##############################################################################
+
+sudo apt install lubuntu-desktop lxde-common
+
+# Download nomachine .deb to ~/Downloads
+sudo dpkg -i ~/Downloads/nomachine_5.1.42_1_amd64.deb
+
+sudo vi /usr/NX/etc/node.cfg
+DefaultDesktopCommand "/usr/bin/startlxde"
+
+mkdir -p ~/.nx/config && cp -p ~/.ssh/authorized_keys ~/.nx/config/authorized.crt
+
+# On EC2 instance, open ports: TCP/4000, UDP/4577
+
+# Once login, disable screensaver & light locker (b/c by default, user password is disabled).
