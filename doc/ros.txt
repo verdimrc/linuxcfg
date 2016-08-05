@@ -1,0 +1,5 @@
+roslaunch displays parameter values that are trimmed to 20 characters.
+
+To change this behavior, open <PATH_OF_PYTHON_PACKAGES>/roslaunch/config.py and
+increase the value of max_length from 20 to something larger. This variable is
+defined in method summary of class ROSLaunchConfig.
