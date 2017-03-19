@@ -30,6 +30,7 @@ Plugin 'bling/vim-airline'
 " Programming languages
 Plugin 'davidhalter/jedi-vim'
 Plugin 'JuliaLang/julia-vim'
+Plugin 'derekwyatt/vim-scala'
 
 " Color
 Plugin 'nanotech/jellybeans.vim'
