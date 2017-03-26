@@ -4,8 +4,9 @@
 .*.swp
 *.swp
 *.pyc
+__pycache__/
 MANIFEST
-/*.egg-info
-/*.egg
-/dist/
-/build/
+*.egg-info
+*.egg
+dist/
+build/
