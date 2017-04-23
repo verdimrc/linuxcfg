@@ -54,3 +54,10 @@ $ git push origin master
 
 # Show change history of a specific file
 git log --follow -p -- filename
+
+################################################################################
+
+# Compact repo
+git filter-branch --tag-name-filter cat --index-filter 'git rm -r --cached --ignore-unmatch filename' --prune-empty -f -- --all
+git gc --prune=now
+git gc --aggressive --prune=now
