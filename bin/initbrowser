@@ -6,3 +6,4 @@ sudo sed -i 's/^CHROMIUM_FLAGS.*$/CHROMIUM_FLAGS="--incognito --force-device-sca
 
 #Firefox
 #Increase scaling of GUI icons & fonts
+#See: https://fedoramagazine.org/how-to-get-firefox-looking-right-on-a-high-dpi-display-and-fedora/
