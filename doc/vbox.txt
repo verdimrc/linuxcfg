@@ -1,0 +1,25 @@
+Mount .vdi
+==========
+
+# VDI -> RAW
+VBoxManage clonehd Lubuntu.vdi Lubuntu.img --format RA
+
+# Determine start and sector_size
+fdisk -l Lubuntu.img
+
+# Sample output of the fdisk command, showing start=2048; sector_size=512
+...
+Units: sectors of 1 * 512 = 512 bytes
+...
+Device       Boot    Start      End  Sectors  Size Id Type
+Lubuntu.img1 *        2048 32555007 32552960 15.5G 83 Linux
+...
+
+# Mount RAW
+# Offset = start * sector_size = 2048 * 512 = 1048576
+sudo mount -o loop,offset=1048576 -t ext4 Lubuntu.img /media
+
+
+Convert VDI to RAW
+==================
+VBoxManage convertdd Lubuntu.img Lubuntu.vdi --format VDI
