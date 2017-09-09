@@ -8,35 +8,23 @@
 " +xterm_clipboard
 
 
-""" Vundle and plugins
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-
-" Use airline instead of powerline.
-" Reason: Powerline tabs show the full abs. path which eats too much estate.
-" To switch to powerline:
-" - sudo pip install --user git+git://github.com/Lokaltog/powerline
-" - .vimrc: set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-Plugin 'bling/vim-airline'
+""" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', {'on': ['NERDTreeTabsToggle', 'NERDTreeToggle']}
+Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeTabsToggle'}
+Plug 'bling/vim-airline'
 
 " System-wide bundles:
 " - conque: sudo apt-get install vim-conque
 
 " Programming languages
-Plugin 'davidhalter/jedi-vim'
-Plugin 'JuliaLang/julia-vim'
-Plugin 'derekwyatt/vim-scala'
+"Plug 'davidhalter/jedi-vim', {'for': 'python'}
+"Plug 'JuliaLang/julia-vim', {'for': 'julia'}
+Plug 'derekwyatt/vim-scala', {'for': 'scala'}
 
 " Color
-Plugin 'nanotech/jellybeans.vim'
-call vundle#end()
-filetype plugin indent on
-syntax enable
+Plug 'nanotech/jellybeans.vim'
+call plug#end()
 
 
 """ VIM settings
@@ -46,6 +34,7 @@ set hlsearch
 set colorcolumn=80
 set splitbelow
 set splitright
+set lazyredraw
 autocmd BufNewFile,BufRead *.jl set filetype=julia
 autocmd BufNewFile,BufRead *.hql set filetype=sql
 autocmd BufNewFile,BufRead *.pmml set filetype=xml
@@ -68,7 +57,7 @@ set foldlevel=99
 map <F3> :set paste!<CR>
 
 " Use <leader>l to toggle display of whitespace
-nmap <leader>l :set list!<CR> 
+nmap <leader>l :set list!<CR>
 
 
 """ Plugins configuration
@@ -78,8 +67,8 @@ map <F2> :NERDTreeTabsToggle<CR>
 
 let NERDTreeIgnore = ['\.pyc$']
 
-if exists('$DISPLAY') 
-    " running under X11 
+if exists('$DISPLAY')
+    " running under X11
     set t_Co=256
     set cursorline
     set background=dark
@@ -93,7 +82,7 @@ if exists('$DISPLAY')
     " Color of vertical rule at 80 char
     highlight ColorColumn ctermbg=237
 
-    " highlight characters past column 80. 
+    " highlight characters past column 80.
     "highlight Excess ctermbg=237 guibg=Black
     "match Excess /\%80v.*/
 
@@ -103,11 +92,11 @@ if exists('$DISPLAY')
     endif
 
     let g:airline_powerline_fonts=1
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#tab_nr_type = 1
-else 
-    " running on console 
+else
+    " running on console
     colorscheme peachpuff
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#tab_nr_type = 1
-endif 
+endif
+
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_nr_type = 1
