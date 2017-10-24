@@ -12,7 +12,12 @@ build() {
     conda build --python 2.7 /tmp/{botocore,awscli}
 }
 
+
+sudo yum update
+sudo yum clean all
+
 source ~ec2-user/miniconda3/bin/activate
+conda update --all -y
 rm -fr /tmp/{awscli,botocore}
 rm -fr ~ec2-user/miniconda3/conda-bld/linux-64/*.tar.bz2
 conda index ~ec2-user/miniconda3/conda-bld/linux-64/
