@@ -12,3 +12,4 @@ MANIFEST
 *.egg
 dist/
 build/
+.c9/
