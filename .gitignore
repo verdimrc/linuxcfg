@@ -1,6 +1,8 @@
 # Jupyter notebook's checkpoints
 .ipynb_checkpoints
 
+~$*
+.DS_Store
 .*.swp
 *.swp
 *.pyc
