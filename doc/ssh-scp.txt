@@ -1,0 +1,9 @@
+# scp to internal node (aa.bb.cc.dd) through bastion ww.xx.yy.zz.
+# NOTE: requires jumpbox /etc/ssh/sshd_config to "AllowTcpForwarding yes" (which is the default case when line is missing)
+scp -oForwardAgent=yes -oProxyJump=jumpusr@ww.xx.yy.zz testfile user@aa.bb.cc.dd
+
+# Skip host check
+-o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"
+
+# Keep alive
+-o "ServerAliveInterval=45" -o "ServerAliveCountMax=10"
