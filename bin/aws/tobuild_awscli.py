@@ -4,8 +4,7 @@
 # Changelog:
 # - patch to python 3.6
 
-import xmlrpc
-import pip
+import xmlrpc.client
 
 pypi = xmlrpc.client.ServerProxy('https://pypi.python.org/pypi')
 include_hidden_releases = True
