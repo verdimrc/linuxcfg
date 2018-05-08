@@ -5,11 +5,19 @@
 # - patch to python 3.6
 # - include hidden releases
 
-import xmlrpc
-import pip
+import xmlrpc.client
+
+try:
+    # pip 9
+    from pip import get_installed_distributions
+except ImportError:
+    # pip 10
+    import pkg_resources
+    def get_installed_distributions():
+        return pkg_resources.workingset
 
 pypi = xmlrpc.client.ServerProxy('https://pypi.python.org/pypi')
-for dist in pip.get_installed_distributions():
+for dist in get_installed_distributions():
     available = pypi.package_releases(dist.project_name, True)
     if not available:
         # Try to capitalize pkg name
