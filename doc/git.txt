@@ -57,6 +57,14 @@ git log --follow -p -- filename
 
 ################################################################################
 
+# Squash commits and retain the latest timestamp
+git show -s --pretty=tformat:%ai 41998a6
+2019-05-17 14:14:53 +0800
+
+git commit --amend --date="2019-05-17 14:14:53 +0800"
+
+################################################################################
+
 # Compact repo
 git filter-branch --tag-name-filter cat --index-filter 'git rm -r --cached --ignore-unmatch filename' --prune-empty -f -- --all
 git gc --prune=now
