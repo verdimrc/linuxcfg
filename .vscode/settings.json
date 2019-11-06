@@ -1,0 +1,11 @@
+{
+    "python.pythonPath": "/Users/marcverd/miniconda3/envs/py37/bin/python",
+    "python.envFile": "${workspaceFolder}/.env",
+    "terminal.integrated.env.osx": {
+        "PYTHONPATH": "${workspaceFolder}/01-lambdas/prep:${env:PYTHONPATH}"
+    },
+    "files.exclude": {
+        "**/._*": true,
+        "**/__pycache__": true
+    }
+}
