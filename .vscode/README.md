@@ -29,9 +29,13 @@ workspaceFolder
 # `.vscode/settings.json`
 
 - set `python.envFile` to add custom module `my_module` to the code intellisense (to enable code completion, etc.)
-- set `terminal.integrated.env.osx` to add the `my_module` location to the integrated terminal's `PYTHONPATH`.
+- set `terminal.integrated.env.osx` to add load `.env` when starting the integrated terminal
+
+- Use `terminal.integrated.env.linux` or `terminal.integrated.env.windows` for Linux or Windows, respectively. See [here for further details](https://vscode.readthedocs.io/en/latest/getstarted/settings/).
 
 # `.env`
+
+This file contains the additional `PYTHONPATH` when starting the integrated terminal.
 
 - It's important to end the `PYTHONPATH` line with a `:` even it specifies only one path.
 - Must use absolute path names
