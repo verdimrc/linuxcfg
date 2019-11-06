@@ -33,4 +33,5 @@ workspaceFolder
 
 # `.env`
 
-It's important to end the `PYTHONPATH` line with a `:` even it specifies only one path.
+- It's important to end the `PYTHONPATH` line with a `:` even it specifies only one path.
+- Must use absolute path names
