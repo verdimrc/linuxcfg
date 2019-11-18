@@ -48,4 +48,4 @@ This file contains the additional `PYTHONPATH` when starting the integrated term
 
 # Miscellaneous settings (examples)
 
-The rest settings are for starting examples.
+The remaining entries in `settings.json` are for other sample configurations. Extensions example are contained in `extensions.list` and `install-ext.sh` files.
