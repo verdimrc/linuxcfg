@@ -30,5 +30,17 @@
 
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
+    "remote.SSH.defaultExtensions": [
+        "amazonwebservices.aws-toolkit-vscode",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "njpwerner.autodocstring",
+        "shardulm94.trailing-spaces",
+        "VisualStudioExptTeam.vscodeintellicode"
+    ],
+    "theme-by-language.themes": {
+        "jupyter": "Visual Studio Light",
+        "*": "Default Dark+"
+    },
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

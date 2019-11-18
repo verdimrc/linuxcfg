@@ -48,4 +48,6 @@ This file contains the additional `PYTHONPATH` when starting the integrated term
 
 # Miscellaneous settings (examples)
 
-The remaining entries in `settings.json` are for other sample configurations. Extensions example are contained in `extensions.list` and `install-ext.sh` files.
+The remaining entries in `settings.json` are for other sample configurations. A particular call-out is to switch to the light color scheme only on Jupyter notebooks.
+
+Sample extensions are contained in `extensions.list` and `install-ext.sh` files.
