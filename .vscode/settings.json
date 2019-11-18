@@ -33,7 +33,6 @@
     "aws.profile": "default",
     "remote.SSH.defaultExtensions": [
         "amazonwebservices.aws-toolkit-vscode",
-        "jsaulou.theme-by-language",
         "ms-azuretools.vscode-docker",
         "ms-python.python",
         "njpwerner.autodocstring",
