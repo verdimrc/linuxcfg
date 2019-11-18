@@ -4,8 +4,31 @@
     "terminal.integrated.env.osx": {
         "PYTHONPATH": "${workspaceFolder}/01-lambdas/prep:${env:PYTHONPATH}"
     },
+
     "files.exclude": {
         "**/._*": true,
         "**/__pycache__": true
-    }
+    },
+
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["--line-length", "120"],
+    "python.dataScience.askForKernelRestart": false,
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "python.jediEnabled": false,
+
+    "breadcrumbs.enabled": true,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.suggestSelection": "first",
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": -1,
+
+    "aws.samcli.location": "/usr/local/bin/sam",
+    "aws.profile": "default",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
