@@ -11,10 +11,11 @@
     },
 
     "python.dataScience.ignoreVscodeTheme": true,
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": ["--line-length", "120"],
+    "python.dataScience.searchForJupyter": false,
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": ["--line-length", "120"],
     "python.jediEnabled": false,
 
     "breadcrumbs.enabled": true,
