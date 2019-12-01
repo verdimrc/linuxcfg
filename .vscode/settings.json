@@ -27,11 +27,17 @@
         120
     ],
     "editor.suggestSelection": "first",
+    "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "window.zoomLevel": -1,
 
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,                                                                                                                                                                           
+    "terminal.integrated.lineHeight": 1.2,
+
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
+    "aws.telemetry": false,
     "remote.SSH.defaultExtensions": [
         "amazonwebservices.aws-toolkit-vscode",
         "ms-azuretools.vscode-docker",
