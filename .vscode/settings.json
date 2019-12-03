@@ -7,7 +7,15 @@
 
     "files.exclude": {
         "**/._*": true,
-        "**/__pycache__": true
+        "**/__pycache__": true,
+        "**/.ipynb_checkpoint": true,
+        "**/.pytest_cache": true
+    },
+    "files.watcherExclude": {
+        "**/._*": true,
+        "**/__pycache__": true,
+        "**/.ipynb_checkpoint": true,
+        "**/.pytest_cache": true
     },
 
     "python.dataScience.ignoreVscodeTheme": true,
