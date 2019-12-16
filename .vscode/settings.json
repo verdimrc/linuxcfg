@@ -2,7 +2,7 @@
     "python.pythonPath": "/Users/marcverd/miniconda3/envs/py37/bin/python",
     "python.envFile": "${workspaceFolder}/.env",
     "terminal.integrated.env.osx": {
-        "PYTHONPATH": "${workspaceFolder}/01-lambdas/prep:${env:PYTHONPATH}"
+        "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
 
     "files.exclude": {
@@ -39,13 +39,16 @@
     "explorer.confirmDragAndDrop": false,
     "window.zoomLevel": -1,
 
+    "terminal.integrated.rendererType": "experimentalWebgl",
     "editor.fontSize": 12,
     "terminal.integrated.fontSize": 12,                                                                                                                                                                           
     "terminal.integrated.lineHeight": 1.2,
 
+    "autoDocstring.docstringFormat": "google",
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
     "aws.telemetry": false,
+    "gitlens.hovers.currentLine.over": "line",
     "remote.SSH.defaultExtensions": [
         "amazonwebservices.aws-toolkit-vscode",
         "christian-kohler.path-intellisense",

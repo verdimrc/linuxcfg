@@ -18,7 +18,7 @@ workspaceFolder
 │   ├── settings.json
 │   └── launch.json
 ├── .env
-├── 01-lambdas
+├── src
 │   ├── README.md
 │   ├── prep
 │   │   ├── __init__.py
