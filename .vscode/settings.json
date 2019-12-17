@@ -25,6 +25,11 @@
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": ["--line-length", "120"],
     "python.jediEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "[python]": {
+        "editor.formatOnSave": true
+    },
 
     "breadcrumbs.enabled": true,
     "editor.minimap.enabled": false,
