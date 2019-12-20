@@ -1,18 +1,24 @@
 # code --list-extensions
+aaron-bond.better-comments
 amazonwebservices.aws-toolkit-vscode
 christian-kohler.path-intellisense
 DavidAnson.vscode-markdownlint
 donjayamanne.githistory
 eamodio.gitlens
+emilast.LogFileHighlighter
 GrapeCity.gc-excelviewer
+Gruntfuggly.todo-tree
+hbenl.vscode-test-explorer
+littlefoxteam.vscode-python-test-adapter
 ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode-remote.remote-containers
 ms-vscode-remote.remote-ssh
 ms-vscode-remote.remote-ssh-edit
 njpwerner.autodocstring
+phplasma.csv-to-table
 redhat.vscode-yaml
 shardulm94.trailing-spaces
+slevesque.vscode-hexdump
 VisualStudioExptTeam.vscodeintellicode
-wayou.vscode-todo-highlight
 yzhang.markdown-all-in-one
