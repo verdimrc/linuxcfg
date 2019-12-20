@@ -9,13 +9,13 @@
         "**/._*": true,
         "**/__pycache__": true,
         "**/.ipynb_checkpoint": true,
-        "**/.pytest_cache": true
+        "**/.*_cache": true
     },
     "files.watcherExclude": {
         "**/._*": true,
         "**/__pycache__": true,
         "**/.ipynb_checkpoint": true,
-        "**/.pytest_cache": true
+        "**/.*_cache": true
     },
 
     "python.dataScience.ignoreVscodeTheme": true,
@@ -32,11 +32,9 @@
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "python.testing.nosetestsEnabled": false,
-    "[python]": {
-        "editor.formatOnSave": true
-    },
 
     "breadcrumbs.enabled": true,
+    "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.renderControlCharacters": false,
@@ -47,6 +45,8 @@
     "editor.suggestSelection": "first",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
     "window.zoomLevel": -1,
 
     "terminal.integrated.rendererType": "experimentalWebgl",
