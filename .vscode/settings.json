@@ -58,6 +58,7 @@
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
     "aws.telemetry": false,
+    "gitlens.advanced.telemetry.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "remote.SSH.defaultExtensions": [
         "aaron-bond.better-comments",
