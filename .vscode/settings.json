@@ -1,17 +1,28 @@
 {
-    "python.pythonPath": "/Users/marcverd/miniconda3/envs/py37/bin/python",
+    "python.pythonPath": "/home/verdi/miniconda3/envs/py/bin/python",
     "python.envFile": "${workspaceFolder}/.env",
     "terminal.integrated.env.osx": {
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
+    },
 
     "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
         "**/._*": true,
         "**/__pycache__": true,
         "**/.ipynb_checkpoint": true,
         "**/.*_cache": true
     },
     "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
         "**/._*": true,
         "**/__pycache__": true,
         "**/.ipynb_checkpoint": true,
@@ -24,6 +35,7 @@
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": ["--line-length", "120"],
+    "python.insidersChannel": "daily",
     "python.jediEnabled": false,
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
@@ -34,6 +46,7 @@
     "python.testing.nosetestsEnabled": false,
 
     "breadcrumbs.enabled": true,
+    "editor.fontSize": 12,
     "editor.formatOnSave": true,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
@@ -45,12 +58,19 @@
     "editor.suggestSelection": "first",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "files.eol": "\n",
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "window.zoomLevel": -1,
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 16,
 
+    "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
+    "terminal.integrated.commandsToSkipShell": [
+        // Linux: send ctrl+e to integrated terminal
+        "-workbench.action.quickOpen"
+    ],
     "terminal.integrated.rendererType": "experimentalWebgl",
-    "editor.fontSize": 12,
     "terminal.integrated.fontSize": 12,                                                                                                                                                                           
     "terminal.integrated.lineHeight": 1.2,
 
