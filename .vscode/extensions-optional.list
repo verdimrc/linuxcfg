@@ -6,3 +6,6 @@ lacroixdavid1.vscode-format-context-menu
 
 # Warning: change backspace or ctrl+backspace behavior too much
 jasonlhy.hungry-delete
+
+# Broken on 14.2: extra closing bracket %}}
+wholroyd.jinja

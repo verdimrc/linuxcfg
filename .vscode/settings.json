@@ -123,6 +123,8 @@
         "ms-azuretools.vscode-docker",
         "ms-python.python",
         "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-ssh-edit",
         "nhoizey.gremlins",
         "njpwerner.autodocstring",
         "phplasma.csv-to-table",
@@ -132,10 +134,16 @@
         "stkb.rewrap",
         "tomoki1207/vscode-pdfviewer",
         "VisualStudioExptTeam.vscodeintellicode",
-        "wholroyd.jinja",
         "yzhang.markdown-all-in-one",
         "zeithaste.cursorCharCode"
     ],
+    // EXPERIMENTAL: force enable remote extensions.
+    "remote.extensionKind": {
+        "aaron-bond.better-comments": [ "workspace" ],
+        "CoenraadS.bracket-pair-colorizer-2": [ "workspace" ],  // Still doesn't work
+        "mikestead.dotenv": [ "workspace" ],
+        "IBM.output-colorizer": [ "workspace" ]
+    },
     "todo-tree.highlights.defaultHighlight": {
         "opacity": 0,
         "fontStyle": "italic",
