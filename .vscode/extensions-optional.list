@@ -1,0 +1,8 @@
+# Will download shfmt 1st time, but may experience very slow download
+foxundermoon.shell-format
+
+# Already enabled autosave, so may not be that urgent
+lacroixdavid1.vscode-format-context-menu
+
+# Warning: change backspace or ctrl+backspace behavior too much
+jasonlhy.hungry-delete

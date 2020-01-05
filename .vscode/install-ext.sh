@@ -2,6 +2,7 @@
 
 EXT_LIST=extensions.list
 EVAL_CMD=1
+CODE_BIN=code
 
 # Parse args
 while [[ $# -gt 0 ]]; do
@@ -13,6 +14,10 @@ while [[ $# -gt 0 ]]; do
         ;;
     -v|--verbose)
         VERBOSE=1
+        shift
+        ;;
+    -n|--insiders)
+        CODE_BIN=code-insiders
         shift
         ;;
     -h|--help)
@@ -33,8 +38,9 @@ done
 
 while read line
 do
-    [[ ${line} =~ ^# ]] && continue
-    cmd="code --install-extension ${line}"
+    [[ ${line} =~ ^# ]] && continue    # Skip comment line
+    [[ -z ${line} ]] && continue       # Skip empty line
+    cmd="${CODE_BIN} --install-extension ${line}"
     [[ ${VERBOSE} == 1 ]] && echo ${cmd}
-    [[ ${EVAL_CMD} == 1 ]] && eval ${cmd}
+    #[[ ${EVAL_CMD} == 1 ]] && eval ${cmd}
 done < ${EXT_LIST}

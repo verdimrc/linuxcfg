@@ -1,4 +1,6 @@
 {
+    // Hyper-personalized stanza.
+    "python.insidersChannel": "daily",
     "python.pythonPath": "/home/verdi/miniconda3/envs/py/bin/python",
     "python.envFile": "${workspaceFolder}/.env",
     "terminal.integrated.env.osx": {
@@ -7,7 +9,18 @@
     "terminal.integrated.env.linux": {
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
+    "window.zoomLevel": -1,  // osx retina scaled: -1; lxqt 4k monitor: 1
+    "dimmer.enabled": false, //imagio.vscode-dimmer-block
 
+    // Off global telemetries (lifted to near top for visibility)
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+
+    // Off extensions telemetry (lifted to near top for visibility)
+    "aws.telemetry": false,
+    "gitlens.advanced.telemetry.enabled": false,
+
+    // File exclusions
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -29,13 +42,13 @@
         "**/.*_cache": true
     },
 
+    // Python settings
     "python.dataScience.ignoreVscodeTheme": true,
     "python.dataScience.searchForJupyter": false,
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": ["--line-length", "120"],
-    "python.insidersChannel": "daily",
     "python.sortImports.args": ["-rc", "--atomic", "--line-width", "120", "--multi-line", "6"],
     "python.jediEnabled": false,
     "python.linting.enabled": true,
@@ -46,9 +59,14 @@
     "python.testing.pytestEnabled": true,
     "python.testing.nosetestsEnabled": false,
 
+    // Workbench & editor
     "breadcrumbs.enabled": true,
     "editor.fontSize": 12,
     "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 5000,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": true, //davidanson.vscode-markdownlint
+    },
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
     "editor.renderControlCharacters": false,
@@ -57,52 +75,66 @@
         120
     ],
     "editor.suggestSelection": "first",
+    "editor.wordWrapColumn": 120,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "files.eol": "\n",
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "window.zoomLevel": 1,
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 16,
 
+    // Integrated terminal
     "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
     "terminal.integrated.commandsToSkipShell": [
         // Linux: send ctrl+e to integrated terminal
         "-workbench.action.quickOpen"
     ],
+    "terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
     "terminal.integrated.rendererType": "experimentalWebgl",
     "terminal.integrated.fontSize": 12,                                                                                                                                                                           
     "terminal.integrated.lineHeight": 1.2,
 
+    // Extensions
     "autoDocstring.docstringFormat": "google",
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
-    "aws.telemetry": false,
-    "gitlens.advanced.telemetry.enabled": false,
+    "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
+    "bracket-pair-colorizer-2.forceIterationColorCycle": true,
+    "bracket-pair-colorizer-2.showBracketsInGutter": false,
     "gitlens.hovers.currentLine.over": "line",
+    "markdown.extension.toc.orderedList": true,
+    "markdown.extension.preview.autoShowPreviewToSide": true,
     "remote.SSH.defaultExtensions": [
         "aaron-bond.better-comments",
         "amazonwebservices.aws-toolkit-vscode",
         "christian-kohler.path-intellisense",
+        "codezombiech.gitignore",
+        "CoenraadS.bracket-pair-colorizer-2",
         "DavidAnson.vscode-markdownlint",
         "donjayamanne.githistory",
         "eamodio.gitlens",
-        "emilast.LogFileHighlighter",
+        "EditorConfig.EditorConfig",
         "GrapeCity.gc-excelviewer",
         "Gruntfuggly.todo-tree",
         "hbenl.vscode-test-explorer",
+        "IBM.output-colorizer",
+        "imagio.vscode-dimmer-block",
         "littlefoxteam.vscode-python-test-adapter",
+        "mikestead.dotenv",
         "ms-azuretools.vscode-docker",
         "ms-python.python",
         "ms-vscode-remote.remote-containers",
+        "nhoizey.gremlins",
         "njpwerner.autodocstring",
         "phplasma.csv-to-table",
         "redhat.vscode-yaml",
         "shardulm94.trailing-spaces",
         "slevesque.vscode-hexdump",
+        "stkb.rewrap",
+        "tomoki1207/vscode-pdfviewer",
         "VisualStudioExptTeam.vscodeintellicode",
-        "yzhang.markdown-all-in-one"
+        "wholroyd.jinja",
+        "yzhang.markdown-all-in-one",
+        "zeithaste.cursorCharCode"
     ],
     "todo-tree.highlights.defaultHighlight": {
         "opacity": 0,
@@ -118,4 +150,5 @@
         }
     },
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+
 }
