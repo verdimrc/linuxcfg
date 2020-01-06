@@ -42,5 +42,5 @@ do
     [[ -z ${line} ]] && continue       # Skip empty line
     cmd="${CODE_BIN} --install-extension ${line}"
     [[ ${VERBOSE} == 1 ]] && echo ${cmd}
-    #[[ ${EVAL_CMD} == 1 ]] && eval ${cmd}
+    [[ ${EVAL_CMD} == 1 ]] && eval ${cmd}
 done < ${EXT_LIST}
