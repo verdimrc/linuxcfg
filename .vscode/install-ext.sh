@@ -21,7 +21,7 @@ while [[ $# -gt 0 ]]; do
         shift
         ;;
     -h|--help)
-        echo "Usage: ${BASH_SOURCE[0]} [-i|--input EXT_LIST] [-d|--dry-run] [-v|--verbose] [-h| --help]"
+        echo "Usage: ${BASH_SOURCE[0]} [-i|--input EXT_LIST] [-n|--insiders] [-d|--dry-run] [-v|--verbose] [-h| --help]"
         exit 0
         ;;
     -d|--dry-run)
