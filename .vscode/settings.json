@@ -15,6 +15,7 @@
     // Off global telemetries (lifted to near top for visibility)
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "python.experiments.enabled": false,
 
     // Off extensions telemetry (lifted to near top for visibility)
     "aws.telemetry": false,
