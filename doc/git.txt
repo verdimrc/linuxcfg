@@ -15,6 +15,35 @@ git config branch.lr.description
 
 ################################################################################
 
+# Squash commits and retain the latest timestamp
+
+# Get latest timestamp
+git show -s --pretty=tformat:%ai 41998a6
+2019-05-17 14:14:53 +0800
+
+# Squash
+git rebase HEAD~3
+#pick ...
+#squash ...
+#squash ...
+
+# Update the new commit (which default the oldest timestamp) to the latest one
+git commit --amend --date="2019-05-17 14:14:53 +0800"
+
+################################################################################
+
+# Show change history of a specific file
+git log --follow -p -- filename
+
+################################################################################
+
+# Compact repo
+git filter-branch --tag-name-filter cat --index-filter 'git rm -r --cached --ignore-unmatch filename' --prune-empty -f -- --all
+git gc --prune=now
+git gc --aggressive --prune=now
+
+################################################################################
+
 # Sync local, forked repo, and upstream.
 # Based on http://stackoverflow.com/a/19506355
 # - Alternative approaches: http://stackoverflow.com/questions/7244321/how-to-update-github-forked-repository
@@ -52,20 +81,26 @@ $ git push origin master
 
 ################################################################################
 
-# Show change history of a specific file
-git log --follow -p -- filename
+# How to make a parent repo's branch to track a submodule's branch
 
-################################################################################
+git clone PARENT_REPO
+cd REPO_DIR
+git branch marcverd
+git checkout marcverd
 
-# Squash commits and retain the latest timestamp
-git show -s --pretty=tformat:%ai 41998a6
-2019-05-17 14:14:53 +0800
+# Have submodule to track a particular branch
+git config -f .gitmodules submodule.SUBREPO_NAME.branch BRANCH_NAME
+# Will add to .gitmodules "branch = BRANCH_NAME" under section [submodule "SUBREPO_NAME"]
 
-git commit --amend --date="2019-05-17 14:14:53 +0800"
+# Really pull-down latest states from remote SUBREPO_NAME:BRANCH_NAME.
+git submodule update --init --remote
 
-################################################################################
+# Commit the changes: both the submodule config and the head pointers
+git add .gitmodules Mlmax/
+git commit
 
-# Compact repo
-git filter-branch --tag-name-filter cat --index-filter 'git rm -r --cached --ignore-unmatch filename' --prune-empty -f -- --all
-git gc --prune=now
-git gc --aggressive --prune=now
+# Push local branch to remote branch, and track.
+git push -u origin marcverd
+
+# Switch branch and update local copy of submodule
+git checkout --recurse-submodules <NEW_BRANCH>
