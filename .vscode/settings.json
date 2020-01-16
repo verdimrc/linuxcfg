@@ -10,13 +10,16 @@
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
     "window.zoomLevel": -1,  // osx retina scaled: -1; lxqt 4k monitor: 1
-    "dimmer.enabled": false, //imagio.vscode-dimmer-block
+    "dimmer.enabled": false, // Extension imagio.vscode-dimmer-block
+    // To disable, comment these lines or override in workspace's settings as [].
+    // Then, configure per project (workspace) via their config file
+    "python.formatting.blackArgs": ["--line-length", "120"],  // pyproject.toml: [tool.black]
+    "python.sortImports.args": ["--atomic", "--line-width", "120", "--multi-line", "6"], // tox.ini: [isort]
 
     // Off global telemetries (lifted to near top for visibility)
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "python.experiments.enabled": false,
-
     // Off extensions telemetry (lifted to near top for visibility)
     "aws.telemetry": false,
     "gitlens.advanced.telemetry.enabled": false,
@@ -49,8 +52,6 @@
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "black",
-    "python.formatting.blackArgs": ["--line-length", "120"],
-    "python.sortImports.args": ["-rc", "--atomic", "--line-width", "120", "--multi-line", "6"],
     "python.jediEnabled": false,
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
