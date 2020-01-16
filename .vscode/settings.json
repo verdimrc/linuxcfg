@@ -89,7 +89,10 @@
     "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
     "terminal.integrated.commandsToSkipShell": [
         // Linux: send ctrl+e to integrated terminal
-        "-workbench.action.quickOpen"
+        "-workbench.action.quickOpen",
+
+        // alt-backspace to behave like in Bash
+        "-workbench.action.terminal.deleteWordLeft"
     ],
     "terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
     "terminal.integrated.rendererType": "experimentalWebgl",
