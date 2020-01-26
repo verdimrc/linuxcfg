@@ -124,7 +124,6 @@
         "littlefoxteam.vscode-python-test-adapter",
         "ms-azuretools.vscode-docker",
         "ms-python.python",
-        "ms-vscode-remote.remote-containers",
         "nhoizey.gremlins",
         "njpwerner.autodocstring",
         "phplasma.csv-to-table",
@@ -132,7 +131,7 @@
         "shardulm94.trailing-spaces",
         "slevesque.vscode-hexdump",
         "stkb.rewrap",
-        "tomoki1207/vscode-pdfviewer",
+        "tomoki1207.pdf",
         "VisualStudioExptTeam.vscodeintellicode",
         "yzhang.markdown-all-in-one",
         "zeithaste.cursorCharCode"
