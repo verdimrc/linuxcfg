@@ -110,11 +110,9 @@
     "markdown.extension.toc.orderedList": true,
     "markdown.extension.preview.autoShowPreviewToSide": true,
     "remote.SSH.defaultExtensions": [
-        "aaron-bond.better-comments",
         "amazonwebservices.aws-toolkit-vscode",
         "christian-kohler.path-intellisense",
         "codezombiech.gitignore",
-        "CoenraadS.bracket-pair-colorizer-2",
         "DavidAnson.vscode-markdownlint",
         "donjayamanne.githistory",
         "eamodio.gitlens",
@@ -122,15 +120,11 @@
         "GrapeCity.gc-excelviewer",
         "Gruntfuggly.todo-tree",
         "hbenl.vscode-test-explorer",
-        "IBM.output-colorizer",
         "imagio.vscode-dimmer-block",
         "littlefoxteam.vscode-python-test-adapter",
-        "mikestead.dotenv",
         "ms-azuretools.vscode-docker",
         "ms-python.python",
         "ms-vscode-remote.remote-containers",
-        "ms-vscode-remote.remote-ssh",
-        "ms-vscode-remote.remote-ssh-edit",
         "nhoizey.gremlins",
         "njpwerner.autodocstring",
         "phplasma.csv-to-table",
@@ -143,13 +137,6 @@
         "yzhang.markdown-all-in-one",
         "zeithaste.cursorCharCode"
     ],
-    // EXPERIMENTAL: force enable remote extensions.
-    "remote.extensionKind": {
-        "aaron-bond.better-comments": [ "workspace" ],
-        "CoenraadS.bracket-pair-colorizer-2": [ "workspace" ],  // Still doesn't work
-        "mikestead.dotenv": [ "workspace" ],
-        "IBM.output-colorizer": [ "workspace" ]
-    },
     "todo-tree.highlights.defaultHighlight": {
         "opacity": 0,
         "fontStyle": "italic",
