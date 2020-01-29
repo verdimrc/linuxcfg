@@ -2,7 +2,8 @@
 
 # brew
 echo Updating brew packages...
-brew upgrade
+brew upgrade --greedy
+brew cask upgrade --greedy
 brew cleanup
 
 # miniconda
