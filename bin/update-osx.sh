@@ -2,7 +2,7 @@
 
 # brew
 echo Updating brew packages...
-brew upgrade --greedy
+brew upgrade
 brew cask upgrade --greedy
 brew cleanup
 
