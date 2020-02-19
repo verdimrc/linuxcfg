@@ -113,7 +113,6 @@ venv.bak/
 
 # IDE
 .c9/
-.vscode/
 .idea/
 .spyproject
 .spyderproject
