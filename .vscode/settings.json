@@ -13,8 +13,8 @@
     "dimmer.enabled": false, // Extension imagio.vscode-dimmer-block
     // To disable, comment these lines or override in workspace's settings as [].
     // Then, configure per project (workspace) via their config file
-    "python.formatting.blackArgs": ["--line-length", "120"],  // pyproject.toml: [tool.black]
-    "python.sortImports.args": ["--atomic", "--line-width", "120", "--multi-line", "6"], // tox.ini: [isort]
+    //"python.formatting.blackArgs": ["--line-length", "120"],  // pyproject.toml: [tool.black]
+    //"python.sortImports.args": ["--atomic", "--line-width", "120", "--multi-line", "6"], // tox.ini: [isort]
 
     // Off global telemetries (lifted to near top for visibility)
     "telemetry.enableCrashReporter": false,
@@ -46,13 +46,19 @@
         "**/.*_cache": true
     },
 
+    "files.associations": {
+        "Dockerfile.cpu": "dockerfile",
+        "Dockerfile.gpu": "dockerfile"
+    },
+
     // Python settings
     "python.dataScience.ignoreVscodeTheme": true,
     "python.dataScience.searchForJupyter": false,
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "black",
-    "python.jediEnabled": false,
+    "python.jediEnabled": false,  //TODO: to be deprecated. https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
+    "python.languageServer": "microsoft", //https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
