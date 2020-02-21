@@ -1,16 +1,31 @@
 #!/bin/bash
 
 echo On your SageMaker notebook, store this file under ~/Sagemaker and set as executable.
-echo Remember to change the name and email.
+echo Usage: ${BASH_SCRIPT[0]} '"<user_name>"' email@address.com
+echo
 
-USER_NAME='Firstname Lastname'
-USER_EMAIL='first.last@email.com'
+set_git_user() {
+    local USER_NAME="$1"
+    local USER_EMAIL=$2
 
-echo Adjusting contact to $USER_NAME / $USER_EMAIL
-git config --global user.name "$USER_NAME"
-git config --global user.email $USER_EMAIL
-echo You may need to run:
-echo '    ' git commit --amend --reset-author
+    if [[ "$USER_NAME" != "" ]]
+    then
+        git config --global user.name "$USER_NAME"
+    fi
+
+    if [[ "$USER_EMAIL" != "" ]]
+    then
+        git config --global user.email $USER_EMAIL
+    fi
+
+    if [[ "$USER_NAME""$USER_EMAIL" != "" ]]
+    then
+        echo Global Git\'s name / email = $(git config --global user.name) / $(git config --global user.email)
+        echo You may need to run: git commit --amend --reset-author
+    fi
+}
+
+set_git_user "$@"
 
 echo 'Set editor to /usr/bin/vim (for DL AMI)'
 git config --global core.editor /usr/bin/vim
