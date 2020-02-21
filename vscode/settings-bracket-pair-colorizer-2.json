@@ -1,0 +1,7 @@
+{
+    // Settings for bracket-pair-colorizer-2. When the plugin is installed,
+    // include these lines into settings.json.
+    "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
+    "bracket-pair-colorizer-2.forceIterationColorCycle": true,
+    "bracket-pair-colorizer-2.showBracketsInGutter": false
+}

@@ -1,3 +1,6 @@
+# Suspect performance, slowness
+CoenraadS.bracket-pair-colorizer-2
+
 # Will download shfmt 1st time, but may experience very slow download
 foxundermoon.shell-format
 

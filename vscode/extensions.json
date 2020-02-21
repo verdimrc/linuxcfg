@@ -1,10 +1,10 @@
 {
     "recommendations": [
+        "2gua.rainbow-brackets",
         "aaron-bond.better-comments",
         "amazonwebservices.aws-toolkit-vscode",
         "christian-kohler.path-intellisense",
         "codezombiech.gitignore",
-        "CoenraadS.bracket-pair-colorizer-2",
         "DavidAnson.vscode-markdownlint",
         "donjayamanne.githistory",
         "eamodio.gitlens",

@@ -117,3 +117,4 @@ venv.bak/
 .spyproject
 .spyderproject
 .ropeproject
+.vscode
