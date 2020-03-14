@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo On your SageMaker notebook, store this file under ~/Sagemaker and set as executable.
-echo Usage: ${BASH_SCRIPT[0]} '"<user_name>"' email@address.com
+echo Usage: ${BASH_SOURCE[0]} '"<user_name>"' email@address.com
 echo
 
 set_git_user() {
