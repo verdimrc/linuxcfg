@@ -52,7 +52,7 @@
     },
 
     // Python settings
-    "python.dataScience.ignoreVscodeTheme": true,
+    "python.dataScience.ignoreVscodeTheme": false,
     "python.dataScience.searchForJupyter": false,
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
@@ -109,9 +109,6 @@
     "autoDocstring.docstringFormat": "google",
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
-    "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
-    "bracket-pair-colorizer-2.forceIterationColorCycle": true,
-    "bracket-pair-colorizer-2.showBracketsInGutter": false,
     "gitlens.hovers.currentLine.over": "line",
     "markdown.extension.toc.orderedList": true,
     "markdown.extension.preview.autoShowPreviewToSide": true,
