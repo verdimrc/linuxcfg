@@ -1,3 +1,4 @@
+# See: https://stackoverflow.com/a/48455387
 from pygments.token import Token, Keyword, Name, Comment, String, Error, Number, Operator, Generic, Whitespace
 
 # Change default dark blue for "object.__file__" to a more readable color.
