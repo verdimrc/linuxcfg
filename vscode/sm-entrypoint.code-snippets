@@ -1,4 +1,6 @@
 {
+    // To install as global settings, drop this file to: <global_vscode_dir>/User/snippets/
+    // To install as a per-project, drop this file to: <project_dir>/.vscode/
 	"sm-entrypoint/train": {
 		"scope": "python",
 		"prefix": "sm-entrypoint/train",
