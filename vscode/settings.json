@@ -16,6 +16,7 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "python.experiments.enabled": false,
+    "workbench.enableExperiments": false,
     // Off extensions telemetry (lifted to near top for visibility)
     "aws.telemetry": false,
     "gitlens.advanced.telemetry.enabled": false,
