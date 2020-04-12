@@ -1,8 +1,9 @@
 {
     // Hyper-personalized stanza.
+    "extensions.showRecommendationsOnlyOnDemand": true,  // Default to true; set false if you prefer.
     "python.insidersChannel": "daily",
     "python.pythonPath": "/home/verdi/miniconda3/envs/py/bin/python",
-    "python.envFile": "${workspaceFolder}/.env",
+    "python.envFile": "${workspaceFolder}/.vscenv",
     "terminal.integrated.env.osx": {
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
