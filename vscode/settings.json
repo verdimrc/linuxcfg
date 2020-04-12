@@ -3,7 +3,6 @@
     "python.insidersChannel": "daily",
     "python.pythonPath": "/home/verdi/miniconda3/envs/py/bin/python",
     "python.envFile": "${workspaceFolder}/.env",
-    "python.dataScience.ignoreVscodeTheme": false,
     "terminal.integrated.env.osx": {
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
@@ -59,7 +58,6 @@
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
     "python.linting.pydocstyleEnabled": true,
-    "python.terminal.activateEnvironment": false,
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "python.testing.nosetestsEnabled": false,
