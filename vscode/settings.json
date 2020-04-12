@@ -49,6 +49,7 @@
     },
 
     // Python settings
+    "python.dataScience.gatherToScript": true,
     "python.dataScience.searchForJupyter": false,
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
