@@ -71,6 +71,7 @@
     "editor.formatOnSaveTimeout": 5000,
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true, //davidanson.vscode-markdownlint
+        "source.organizeImports": true
     },
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "none",
