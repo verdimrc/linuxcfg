@@ -1,0 +1,12 @@
+ipdb
+s3fs
+jupyter
+autoflake
+black
+flake8
+pydocstyle
+pytest
+mypy
+isort
+rope
+tox
