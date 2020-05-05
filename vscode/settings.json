@@ -12,8 +12,8 @@
     },
     "window.zoomLevel": -1,  // osx retina scaled: -1; lxqt 4k monitor: 1
     "dimmer.enabled": false, // Extension imagio.vscode-dimmer-block
-    "editor.occurrencesHighlight": false,
-    "editor.semanticHighlighting.enabled": false,
+    //"editor.occurrencesHighlight": false,
+    //"editor.semanticHighlighting.enabled": false,
 
     // Off global telemetries (lifted to near top for visibility)
     "telemetry.enableCrashReporter": false,
