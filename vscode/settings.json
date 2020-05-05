@@ -32,16 +32,18 @@
         "**/._*": true,
         "**/__pycache__": true,
         "**/.ipynb_checkpoints": true,
-        "**/.*_cache": true
+        "**/.*_cache": true,
+        "**/.tox": true
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true,
-        "**/._*": true,
-        "**/__pycache__": true,
-        "**/.ipynb_checkpoints": true,
-        "**/.*_cache": true
+        "**/._*/**": true,
+        "**/__pycache__/**": true,
+        "**/.ipynb_checkpoints/**": true,
+        "**/.*_cache/**": true,
+        "**/.tox/**": true
     },
 
     "files.associations": {
