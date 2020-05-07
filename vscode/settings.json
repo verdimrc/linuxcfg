@@ -98,6 +98,7 @@
 
     // Debugger
     "debug.allowBreakpointsEverywhere": true,
+    "debug.console.fontSize": 12,
 
     // Integrated terminal
     "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
@@ -120,6 +121,7 @@
     "gitlens.hovers.currentLine.over": "line",
     "markdown.extension.toc.orderedList": true,
     "markdown.extension.preview.autoShowPreviewToSide": true,
+    "markdown.preview.fontSize": 16,
     "remote.SSH.defaultExtensions": [
         "amazonwebservices.aws-toolkit-vscode",
         "christian-kohler.path-intellisense",
