@@ -12,6 +12,8 @@
     },
     "window.zoomLevel": -1,  // osx retina scaled: -1; lxqt 4k monitor: 1
     "dimmer.enabled": false, // Extension imagio.vscode-dimmer-block
+    //"editor.occurrencesHighlight": false,
+    //"editor.semanticHighlighting.enabled": false,
 
     // Off global telemetries (lifted to near top for visibility)
     "telemetry.enableCrashReporter": false,
@@ -32,16 +34,18 @@
         "**/._*": true,
         "**/__pycache__": true,
         "**/.ipynb_checkpoints": true,
-        "**/.*_cache": true
+        "**/.*_cache": true,
+        "**/.tox": true
     },
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true,
-        "**/._*": true,
-        "**/__pycache__": true,
-        "**/.ipynb_checkpoints": true,
-        "**/.*_cache": true
+        "**/._*/**": true,
+        "**/__pycache__/**": true,
+        "**/.ipynb_checkpoints/**": true,
+        "**/.*_cache/**": true,
+        "**/.tox/**": true
     },
 
     "files.associations": {
@@ -50,19 +54,20 @@
     },
 
     // Python settings
+    "python.dataScience.askForKernelRestart": false,
+    "python.dataScience.debugJustMyCode": false,
     "python.dataScience.gatherToScript": true,
     "python.dataScience.searchForJupyter": false,
-    "python.dataScience.askForKernelRestart": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
     "python.formatting.provider": "black",
     "python.jediEnabled": false,  //TODO: to be deprecated. https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
-    "python.languageServer": "microsoft", //https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
+    "python.languageServer": "Microsoft", //https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
     "python.linting.pydocstyleEnabled": true,
-    "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
 
     // Workbench & editor
@@ -75,6 +80,8 @@
         "source.organizeImports": true
     },
     "editor.minimap.enabled": false,
+    "editor.parameterHints.cycle": true,
+    "editor.renderLineHighlight": "all",
     "editor.renderWhitespace": "none",
     "editor.renderControlCharacters": false,
     "editor.rulers": [
@@ -89,6 +96,9 @@
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 16,
 
+    // Debugger
+    "debug.allowBreakpointsEverywhere": true,
+
     // Integrated terminal
     "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
     "terminal.integrated.commandsToSkipShell": [
@@ -100,7 +110,7 @@
     ],
     "terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
     "terminal.integrated.rendererType": "experimentalWebgl",
-    "terminal.integrated.fontSize": 12,                                                                                                                                                                           
+    "terminal.integrated.fontSize": 12,
     "terminal.integrated.lineHeight": 1.2,
 
     // Extensions

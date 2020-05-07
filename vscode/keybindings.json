@@ -1,0 +1,10 @@
+// Place your key bindings in this file to override the defaults
+[
+    // Since vscode-1.44, OSX + iTerm2 needs this new setting to pass
+    // alt-backspace correctly to bash.
+    {
+        "key": "alt+backspace",
+        "command": "deleteWordPartLeft",
+        "when": "terminalFocus && isMac"
+    }
+]

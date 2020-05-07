@@ -1,7 +1,6 @@
 {
     "recommendations": [
         "2gua.rainbow-brackets",
-        "aaron-bond.better-comments",
         "amazonwebservices.aws-toolkit-vscode",
         "christian-kohler.path-intellisense",
         "codezombiech.gitignore",
@@ -25,6 +24,7 @@
         "nhoizey.gremlins",
         "njpwerner.autodocstring",
         "phplasma.csv-to-table",
+        "randomfractalsinc.vscode-data-preview",
         "redhat.vscode-yaml",
         "shardulm94.trailing-spaces",
         "slevesque.vscode-hexdump",
