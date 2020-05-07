@@ -1,0 +1,34 @@
+# Put this to your .bashrc, only if your PS1 spans two lines.
+#
+# By default, pagers (e.g., more, less) uses one less line than the terminal
+# height. However, when PS1 spans two lines, once you quit the pager, the first
+# line will be 'scrolled-up', and it takes some action to scroll-up just to
+# re-read that first line (e.g., with git lol, this refers to the more recent
+# commit). 
+#
+# This setting makes pagers to use two less line than the terminal height, by
+# "faking" terminal height to -1 line.
+
+
+# http://www.noah.org/wiki/Bash_notes#dynamic_COLUMNS_and_LINES_with_SIGWINCH_in_Bash
+function winch_handler() {
+    # This adds post-processing after the terminal handles SIGWINCH.
+    # First, pass the SIGWINCH back to the terminal because
+    # we can't get the new size until the terminal sees SIGWINCH.
+    trap - SIGWINCH
+    kill -SIGWINCH $$
+
+    # Now tput can query the terminal for the new size.
+    COLUMNS=$(tput cols)
+    LINES=$(expr `tput lines` - 1)
+
+    # verdi's addition
+    stty rows $(expr `tput lines` - 1) cols $(tput cols)
+
+    # Restore this winch handler so it will respond to future WINCH signals.
+    trap "winch_handler" SIGWINCH
+}
+
+# Call the winch_handler to both initialize COLUMNS and LINES, and
+# install the winch_handler trap.
+winch_handler
