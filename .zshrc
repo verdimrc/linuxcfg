@@ -127,7 +127,9 @@ fi
 ################################################################################
 # Bash-like keystrokes
 ################################################################################
-# Alt-backspace -- https://unix.stackexchange.com/a/319854
+# https://unix.stackexchange.com/a/319854#
+
+# Alt-backspace
 backward-kill-dir () {
     local WORDCHARS=${WORDCHARS/\/}
     zle backward-kill-word
@@ -135,9 +137,21 @@ backward-kill-dir () {
 zle -N backward-kill-dir
 bindkey '^[^?' backward-kill-dir
 
-# https://stackoverflow.com/a/52714907
-bindkey "\e\e[D" backward-word  # Alt-left
-bindkey "\e\e[C" forward-word   # Alt-right
+# Alt+Left
+backward-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-word
+}
+zle -N backward-word-dir
+bindkey "\e\e[D" backward-word-dir  # "\e\e..." is from https://stackoverflow.com/a/52714907
+
+# Alt+Right
+forward-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle forward-word
+}
+zle -N forward-word-dir
+bindkey "\e\e[C" backward-word-dir
 
 
 ################################################################################
