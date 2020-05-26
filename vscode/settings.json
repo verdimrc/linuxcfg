@@ -1,6 +1,9 @@
 {
-    // Hyper-personalized stanza.
-    "extensions.showRecommendationsOnlyOnDemand": true,  // Default to true; set false if you prefer.
+    ///////////////////////////////////////////////////////////////////////////
+    // HYPER-PERSONALIZED STANZA
+    ///////////////////////////////////////////////////////////////////////////
+
+    // Python stuffs
     "python.insidersChannel": "daily",
     "python.pythonPath": "/home/verdi/miniconda3/envs/py/bin/python",
     "python.envFile": "${workspaceFolder}/.vscenv",
@@ -10,19 +13,35 @@
     "terminal.integrated.env.linux": {
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
-    "window.zoomLevel": -1,  // osx retina scaled: -1; lxqt 4k monitor: 1
-    "dimmer.enabled": false, // Extension imagio.vscode-dimmer-block
-    //"editor.occurrencesHighlight": false,
-    //"editor.semanticHighlighting.enabled": false,
 
-    // Off global telemetries (lifted to near top for visibility)
+    // GUI: vscode
+    "window.zoomLevel": 0,  // osx retina scaled: -1; lxqt 4k monitor: 1
+    "debug.console.fontSize": 12,
+    "editor.fontSize": 12,
+    "terminal.integrated.fontSize": 12,
+    "extensions.showRecommendationsOnlyOnDemand": true,  // Default to true; set false if you prefer.
+    // GUI: extensions
+    "markdown.preview.fontSize": 16,  // yzhang.markdown-all-in-one
+    "dimmer.enabled": false, // imagio.vscode-dimmer-block
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    // OFF TELEMETRIES (LIFTED TO NEAR TOP FOR VISIBILITY
+    ///////////////////////////////////////////////////////////////////////////
+
+    // Global telemetries
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "python.experiments.enabled": false,
     "workbench.enableExperiments": false,
-    // Off extensions telemetry (lifted to near top for visibility)
+    // Extensions telemetries
     "aws.telemetry": false,
     "gitlens.advanced.telemetry.enabled": false,
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    // OTHER CONFIGS
+    ///////////////////////////////////////////////////////////////////////////
 
     // File exclusions
     "files.exclude": {
@@ -53,6 +72,9 @@
         "Dockerfile.gpu": "dockerfile"
     },
 
+    // Debugger
+    "debug.allowBreakpointsEverywhere": true,
+
     // Python settings
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.debugJustMyCode": false,
@@ -72,11 +94,10 @@
 
     // Workbench & editor
     "breadcrumbs.enabled": true,
-    "editor.fontSize": 12,
     "editor.formatOnSave": true,
     "editor.formatOnSaveTimeout": 5000,
     "editor.codeActionsOnSave": {
-        "source.fixAll.markdownlint": true, //davidanson.vscode-markdownlint
+        "source.fixAll.markdownlint": true, // Extension davidanson.vscode-markdownlint
         "source.organizeImports": true
     },
     "editor.minimap.enabled": false,
@@ -92,15 +113,13 @@
     "editor.wordWrapColumn": 120,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
     "files.eol": "\n",
+    "terminal.integrated.lineHeight": 1.2,
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 20,
 
-    // Debugger
-    "debug.allowBreakpointsEverywhere": true,
-    "debug.console.fontSize": 12,
-
-    // Integrated terminal
+    // Shortcuts in integrated terminal
     "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
     "terminal.integrated.commandsToSkipShell": [
         // Linux: send ctrl+e to integrated terminal
@@ -111,8 +130,6 @@
     ],
     "terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
     "terminal.integrated.rendererType": "experimentalWebgl",
-    "terminal.integrated.fontSize": 12,
-    "terminal.integrated.lineHeight": 1.2,
 
     // Extensions
     "autoDocstring.docstringFormat": "google",
@@ -120,7 +137,6 @@
     "aws.profile": "default",
     "gitlens.hovers.currentLine.over": "line",
     "markdown.extension.preview.autoShowPreviewToSide": true,
-    "markdown.preview.fontSize": 16,
     "remote.SSH.defaultExtensions": [
         "amazonwebservices.aws-toolkit-vscode",
         "christian-kohler.path-intellisense",

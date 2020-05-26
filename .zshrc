@@ -151,7 +151,7 @@ forward-word-dir () {
     zle forward-word
 }
 zle -N forward-word-dir
-bindkey "\e\e[C" backward-word-dir
+bindkey "\e\e[C" forward-word-dir
 
 
 ################################################################################
