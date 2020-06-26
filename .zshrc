@@ -198,5 +198,5 @@ function winch_handler() {
     stty rows $LINES cols $COLUMNS
 }
 winch_handler 1
-#trap 'winch_handler 1' WINCH
-functions[TRAPWINCH]="${functions[TRAPWINCH]//winch_handler}"
+trap 'winch_handler 1' WINCH
+#functions[TRAPWINCH]="${functions[TRAPWINCH]//winch_handler}"
