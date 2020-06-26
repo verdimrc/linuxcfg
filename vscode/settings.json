@@ -78,6 +78,7 @@
     // Python settings
     "python.dataScience.askForKernelRestart": false,
     "python.dataScience.debugJustMyCode": false,
+    "python.dataScience.disableJupyterAutoStart": true,
     "python.dataScience.gatherToScript": true,
     "python.dataScience.searchForJupyter": false,
     "python.dataScience.sendSelectionToInteractiveWindow": true,
