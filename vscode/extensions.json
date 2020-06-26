@@ -1,38 +1,29 @@
+// Drop this file to project/.vscode
+// This file contains my frequently-used extensions.
+// See also: extensions-extras.json or extensions-all.json
 {
     "recommendations": [
         "2gua.rainbow-brackets",
-        "amazonwebservices.aws-toolkit-vscode",
         "bungcip.better-toml",
         "christian-kohler.path-intellisense",
-        "codezombiech.gitignore",
         "DavidAnson.vscode-markdownlint",
         "donjayamanne.githistory",
-        "eamodio.gitlens",
         "EditorConfig.EditorConfig",
         "emilast.LogFileHighlighter",
-        "GrapeCity.gc-excelviewer",
         "Gruntfuggly.todo-tree",
-        "hbenl.vscode-test-explorer",
         "IBM.output-colorizer",
-        "imagio.vscode-dimmer-block",
-        "littlefoxteam.vscode-python-test-adapter",
+        "mhutchie.git-graph",
         "mikestead.dotenv",
-        "ms-azuretools.vscode-docker",
         "ms-python.python",
-        "ms-vscode-remote.remote-containers",
         "ms-vscode-remote.remote-ssh-nightly",
         "ms-vscode-remote.remote-ssh-edit-nightly",
-        "nhoizey.gremlins",
         "njpwerner.autodocstring",
-        "phplasma.csv-to-table",
-        "randomfractalsinc.vscode-data-preview",  // Installation takes time (minutes)
         "redhat.vscode-yaml",
         "shardulm94.trailing-spaces",
-        "slevesque.vscode-hexdump",
         "stkb.rewrap",
-        "tomoki1207.pdf",
+        "TabNine.tabnine-vscode",
+        "usernamehw.errorlens",
         "VisualStudioExptTeam.vscodeintellicode",
-        "yzhang.markdown-all-in-one",
-        "zeithaste.cursorCharCode"
+        "yzhang.markdown-all-in-one"
     ]
 }
