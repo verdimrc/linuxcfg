@@ -1,0 +1,11 @@
+# ds
+bokeh
+numpy
+pandas
+pandas-profiling
+scikit-learn
+
+# aws
+awscli
+boto3
+s3fs

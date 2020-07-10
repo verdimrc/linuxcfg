@@ -1,0 +1,16 @@
+autoflake
+black
+flake8
+ipdb
+ipykernel
+ipython
+isort>=5
+mypy
+pre-commit
+pip-autoremove
+pip-upgrader
+pydocstyle
+pytest
+rope
+setupext-janitor
+tox
