@@ -6,5 +6,17 @@
         "key": "alt+backspace",
         "command": "deleteWordPartLeft",
         "when": "terminalFocus && isMac"
+    },
+
+    // Re-assign ctrl-f in terminal, to remove conflict with vim (Linux)
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused || terminalFocus"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused || terminalFocus"
     }
 ]
