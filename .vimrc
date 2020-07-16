@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeTabsToggle', 'NERDTreeToggle']}
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeTabsToggle'}
 Plug 'bling/vim-airline'
+Plug 'vim-scripts/RltvNmbr.vim'
 
 " System-wide bundles:
 " - conque: sudo apt-get install vim-conque
@@ -20,7 +21,8 @@ Plug 'bling/vim-airline'
 " Programming languages
 "Plug 'davidhalter/jedi-vim', {'for': 'python'}
 "Plug 'JuliaLang/julia-vim', {'for': 'julia'}
-Plug 'derekwyatt/vim-scala', {'for': 'scala'}
+"Plug 'derekwyatt/vim-scala', {'for': 'scala'}
+"Plug 'tmhedberg/SimpylFold', {'for': 'python'}
 
 " Color
 Plug 'nanotech/jellybeans.vim'
@@ -41,6 +43,14 @@ autocmd BufNewFile,BufRead *.pmml set filetype=xml
 autocmd BufNewFile,BufRead *.cu set filetype=cuda
 autocmd BufNewFile,BufRead *.cuh set filetype=cuda
 
+" Hybrid line numbers (disabled; prefer RltvNmbr to always show relative and
+" fix line number side-by-side.
+":set relativenumber
+":augroup numbertoggle
+":  autocmd!
+":  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+":  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+":augroup END
 
 """ Coding style
 " prefer spaces to tabs
@@ -65,6 +75,7 @@ nmap <leader>l :set list!<CR>
 "map <F2> :NERDTreeToggle<CR>
 map <F2> :NERDTreeTabsToggle<CR>
 
+let g:NERDTreeDirArrows=0
 let NERDTreeIgnore = ['\.pyc$']
 
 if exists('$DISPLAY')
