@@ -43,14 +43,8 @@ autocmd BufNewFile,BufRead *.pmml set filetype=xml
 autocmd BufNewFile,BufRead *.cu set filetype=cuda
 autocmd BufNewFile,BufRead *.cuh set filetype=cuda
 
-" Hybrid line numbers (disabled; prefer RltvNmbr to always show relative and
-" fix line number side-by-side.
-":set relativenumber
-":augroup numbertoggle
-":  autocmd!
-":  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-":  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-":augroup END
+" Relative & static numbers, side-by-side
+autocmd BufEnter * :RltvNmbr
 
 """ Coding style
 " prefer spaces to tabs
