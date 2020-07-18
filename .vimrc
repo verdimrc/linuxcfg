@@ -73,6 +73,7 @@ map <F2> :NERDTreeTabsToggle<CR>
 
 let g:NERDTreeDirArrows=0
 let NERDTreeIgnore = ['\.pyc$']
+autocmd FileType nerdtree set number norelativenumber
 
 " Try to enable relative & static numbers, side-by-side.
 " Silence the error message if RltvNmbr plugin not loaded.
@@ -84,7 +85,7 @@ let g:strip_whitespace_on_save = 1
 let g:strip_whitespace_confirm = 0
 let g:strip_only_modified_lines = 0
 
-if exists('$DISPLAY')
+if exists('$DISPLAY') || exists('$JUPYTER_SERVER_URL')
     " running under X11
     set t_Co=256
     set cursorline
@@ -94,7 +95,7 @@ if exists('$DISPLAY')
 \       "Search": { "guibg": "ffff87", "guifg": "303030"},
 \       "VertSplit": { "guibg": "767676", "guifg": "767676"}
 \   }
-    colorscheme jellybeans
+    :silent! colorscheme jellybeans
 
     " Color of vertical rule at 80 char
     highlight ColorColumn ctermbg=237
