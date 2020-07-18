@@ -43,8 +43,9 @@ autocmd BufNewFile,BufRead *.pmml set filetype=xml
 autocmd BufNewFile,BufRead *.cu set filetype=cuda
 autocmd BufNewFile,BufRead *.cuh set filetype=cuda
 
-" Relative & static numbers, side-by-side
-autocmd BufEnter * :RltvNmbr
+" Try to enable relative & static numbers, side-by-side.
+" Silence the error message if RltvNmbr plugin not loaded.
+autocmd BufEnter * :silent! RltvNmbr
 
 """ Coding style
 " prefer spaces to tabs
