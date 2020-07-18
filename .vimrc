@@ -16,7 +16,8 @@ Plug 'bling/vim-airline'
 Plug 'vim-scripts/RltvNmbr.vim'
 
 " System-wide bundles:
-" - conque: sudo apt-get install vim-conque
+" - [deprecated] conque: sudo apt-get install vim-conque
+"   * Deprecation reason: vim-8 has built-in :terminal and :termdebug commands
 
 " Programming languages
 "Plug 'davidhalter/jedi-vim', {'for': 'python'}
