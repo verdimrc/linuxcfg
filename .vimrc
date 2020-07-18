@@ -15,6 +15,7 @@ Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeTabsToggle'}
 Plug 'bling/vim-airline'
 Plug 'vim-scripts/RltvNmbr.vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'tmsvg/pear-tree'
 
 " System-wide bundles:
 " - [deprecated] conque: sudo apt-get install vim-conque
@@ -25,6 +26,7 @@ Plug 'ntpeters/vim-better-whitespace'
 "Plug 'JuliaLang/julia-vim', {'for': 'julia'}
 "Plug 'derekwyatt/vim-scala', {'for': 'scala'}
 "Plug 'tmhedberg/SimpylFold', {'for': 'python'}
+"Plug 'luochen1990/rainbow'
 
 " Color
 Plug 'nanotech/jellybeans.vim'
