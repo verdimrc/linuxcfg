@@ -58,6 +58,8 @@ set number
 set foldmethod=indent
 set foldlevel=99
 
+" Help page display line number
+autocmd FileType help setlocal number
 
 """ Shortcuts
 map <F3> :set paste!<CR>
