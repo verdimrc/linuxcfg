@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree', {'on': ['NERDTreeTabsToggle', 'NERDTreeToggle']}
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeTabsToggle'}
 Plug 'bling/vim-airline'
 Plug 'vim-scripts/RltvNmbr.vim'
+Plug 'ntpeters/vim-better-whitespace'
 
 " System-wide bundles:
 " - [deprecated] conque: sudo apt-get install vim-conque
@@ -38,15 +39,12 @@ set colorcolumn=80
 set splitbelow
 set splitright
 set lazyredraw
+autocmd FileType help setlocal number
 autocmd BufNewFile,BufRead *.jl set filetype=julia
 autocmd BufNewFile,BufRead *.hql set filetype=sql
 autocmd BufNewFile,BufRead *.pmml set filetype=xml
 autocmd BufNewFile,BufRead *.cu set filetype=cuda
 autocmd BufNewFile,BufRead *.cuh set filetype=cuda
-
-" Try to enable relative & static numbers, side-by-side.
-" Silence the error message if RltvNmbr plugin not loaded.
-autocmd BufEnter * :silent! RltvNmbr
 
 """ Coding style
 " prefer spaces to tabs
@@ -58,8 +56,6 @@ set number
 set foldmethod=indent
 set foldlevel=99
 
-" Help page display line number
-autocmd FileType help setlocal number
 
 """ Shortcuts
 map <F3> :set paste!<CR>
@@ -75,6 +71,16 @@ map <F2> :NERDTreeTabsToggle<CR>
 
 let g:NERDTreeDirArrows=0
 let NERDTreeIgnore = ['\.pyc$']
+
+" Try to enable relative & static numbers, side-by-side.
+" Silence the error message if RltvNmbr plugin not loaded.
+autocmd BufEnter * :silent! RltvNmbr
+
+" Highlight unwanted whitespace, and strip on save
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
+let g:strip_only_modified_lines = 0
 
 if exists('$DISPLAY')
     " running under X11
