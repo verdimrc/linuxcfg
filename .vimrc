@@ -109,7 +109,7 @@ if exists('$DISPLAY') || exists('$JUPYTER_SERVER_URL')
         highlight Pmenu guibg=#cccccc gui=bold
     endif
 
-    let g:airline_powerline_fonts=1
+    "let g:airline_powerline_fonts=1
 else
     " running on console
     colorscheme peachpuff
