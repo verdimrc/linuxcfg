@@ -7,6 +7,7 @@
 " $ vim --version|grep .xterm_clipboard -o
 " +xterm_clipboard
 
+set nocompatible
 
 """ Plugins
 call plug#begin('~/.vim/plugged')
