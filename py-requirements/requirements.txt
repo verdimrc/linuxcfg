@@ -5,6 +5,14 @@ pandas
 pandas-profiling
 scikit-learn
 
+# pandas to access to excel
+xlrd
+XlsxWriter
+xlwt
+
+# additional package to handle excel
+openpyxl
+
 # aws
 awscli
 boto3
