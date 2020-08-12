@@ -17,3 +17,6 @@ openpyxl
 awscli
 boto3
 s3fs
+
+# misc
+psutil
