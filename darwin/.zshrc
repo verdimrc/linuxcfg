@@ -127,8 +127,14 @@ aws_profile() {
         echo -n " %F{white}[$profile_name%F{white}]"
     fi
 }
+
+shlvl() {
+    # Be aware when some CLI toolkits (e.g., assume role) spawns a new shell.
+    [[ ${SHLVL} -gt 1 ]] && echo  "%B%F{yellow}[${SHLVL}]%f%b " || echo ""
+}
+
 # Must use single quote for vsc_info_msg_0_ to work correctly
-export PROMPT='%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+export PROMPT='$(shlvl)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 %# '
 
 # This causes a minor annoyance on OSX + iTerm2 + tmux: after vim, must `reset`.
