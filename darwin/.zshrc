@@ -4,6 +4,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias ll='ls -al'
 alias vi='vim'
+alias reset_title='echo -e "\033];\007"'
 
 export LANG=en_US.utf-8
 export LC_ALL=${LANG}
@@ -128,13 +129,20 @@ aws_profile() {
     fi
 }
 
-shlvl() {
+prompt_prefix() {
+    local retval=""
+
     # Be aware when some CLI toolkits (e.g., assume role) spawns a new shell.
-    [[ ${SHLVL} -gt 1 ]] && echo  "%B%F{yellow}[${SHLVL}]%f%b " || echo ""
+    [[ ${SHLVL} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${SHLVL}]%f%b "
+
+    # Be aware when running under midnight commander.
+    [[ -v MC_SID ]] && retval=${retval}"%B%F{red}[mc]%f%b "
+
+    echo -n "${retval}"
 }
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
-export PROMPT='$(shlvl)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+export PROMPT='$(prompt_prefix)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 %# '
 
 # This causes a minor annoyance on OSX + iTerm2 + tmux: after vim, must `reset`.
