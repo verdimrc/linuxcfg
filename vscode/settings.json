@@ -88,7 +88,8 @@
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
-    "python.linting.pydocstyleEnabled": true,
+    "python.linting.pydocstyleEnabled": false,
+    "python.showStartPage": false,
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
     "python.testing.nosetestsEnabled": false,
@@ -99,7 +100,7 @@
     "editor.formatOnSaveTimeout": 5000,
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true, // Extension davidanson.vscode-markdownlint
-        "source.organizeImports": true
+        "source.organizeImports": false //true
     },
     "editor.minimap.enabled": false,
     "editor.parameterHints.cycle": true,
@@ -129,7 +130,7 @@
         // alt-backspace to behave like in Bash
         "-workbench.action.terminal.deleteWordLeft"
     ],
-    "terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
+    //"terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
     "terminal.integrated.rendererType": "experimentalWebgl",
 
     // Extensions
@@ -165,6 +166,7 @@
         "yzhang.markdown-all-in-one",
         "zeithaste.cursorCharCode"
     ],
+    "tabnine.experimentalAutoImports": false,
     "todo-tree.highlights.defaultHighlight": {
         "opacity": 0,
         "fontStyle": "italic",
