@@ -97,6 +97,7 @@
     // Workbench & editor
     "breadcrumbs.enabled": true,
     "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
     "editor.formatOnSaveTimeout": 5000,
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true, // Extension davidanson.vscode-markdownlint
