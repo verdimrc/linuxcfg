@@ -56,28 +56,32 @@ zle -N forward-word-dir
 
 
 ################################################################################
-# Keybindings on iterm2 (WITH option mac meta)
+# Keybindings on iterm2 (WITH 'option mac meta').
 ################################################################################
-bindkey '^[^?' backward-kill-word-bash   # alt-backspace
-bindkey '^?' backward-kill-dir           # ctrl-backspace
-bindkey "^[^[B" backward-word            # alt-b
-bindkey "^[^[[D" backward-word-bash      # alt-left
-bindkey "^B" backward-word-dir           # ctrl-b
-bindkey "^[^[F" forward-word             # alt-f
-bindkey "^[^[[C" forward-word-bash       # alt-right
-bindkey "^F" forward-word-dir            # ctrl-f
+bindkey "^[^?"   backward-kill-word-bash   # alt-backspace
+bindkey "^[w"    backward-kill-dir         # alt-w
+bindkey "^[^[B"  backward-word             # alt-b
+bindkey "^[^[[D" backward-word-bash        # alt-left
+bindkey "^B"     backward-word-dir         # ctrl-b
+bindkey "^[^[F"  forward-word              # alt-f
+bindkey "^[^[[C" forward-word-bash         # alt-right
+bindkey "^F"     forward-word-dir          # ctrl-f
 
 
 ################################################################################
-# Keybindings on vscode (WITHOUT 'option meta mac')
+# Synchronize keybindings to vscode (WITHOUT 'option meta mac').
 ################################################################################
-bindkey "∫" backward-word         # alt+b
 if [[ ${TERM_PROGRAM} == "vscode" ]]; then
-    # vscode's alt-{left,right} clash with iterm2's alt-{b,f}, so run this
-    # stanza only under vscode.
+    bindkey "∑" backward-kill-dir     # alt-w
+    bindkey "∫" backward-word         # alt-b
+    bindkey "ƒ" forward-word          # alt-f
+    bindkey "≥" insert-last-word      # alt-.
+    bindkey "∂" kill-word             # alt-d
+
+    ###########################################################################
+    # These must never run on iterm2, as they conflict with iterm2's alt-{b,f}
+    ###########################################################################
     bindkey "^[b" backward-word-bash  # alt-left
     bindkey "^[f" forward-word-bash   # alt-right
+    ###########################################################################
 fi
-bindkey "ƒ" forward-word          # alt-f
-bindkey "≥" insert-last-word      # alt+.
-bindkey "∂" kill-word             # alt-d
