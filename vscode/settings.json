@@ -97,7 +97,7 @@
     // Workbench & editor
     "breadcrumbs.enabled": true,
     "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "modifications",
+    //"editor.formatOnSaveMode": "modifications",  //Not supported with Black
     "editor.formatOnSaveTimeout": 5000,
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true, // Extension davidanson.vscode-markdownlint
@@ -106,7 +106,6 @@
     "editor.minimap.enabled": false,
     "editor.parameterHints.cycle": true,
     "editor.renderLineHighlight": "all",
-    "editor.renderWhitespace": "none",
     "editor.renderControlCharacters": false,
     "editor.rulers": [
         80,
