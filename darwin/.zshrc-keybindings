@@ -1,4 +1,10 @@
 ################################################################################
+# NOTE: ctrl-{left,right} won't be used, because they're permanently claimed
+#       by OSX for for switching workspace.
+################################################################################
+
+
+################################################################################
 # Keystrokes (bash-like)
 ################################################################################
 backward-kill-word-bash () {
@@ -38,7 +44,7 @@ backward-word-dir () {
 zle -N backward-word-dir
 
 forward-word-bash () {
-    local WORDCHARS=${WORDCHARS/\/}
+    local WORDCHARS=''
     zle forward-word
 }
 zle -N forward-word-bash
@@ -49,32 +55,26 @@ forward-word-dir () {
 }
 zle -N forward-word-dir
 
-# ------------------------------------------------------------------------------
+
+################################################################################
 # Keybindings on iterm2 (WITH option mac meta)
-# ------------------------------------------------------------------------------
-# Alt-backspace
-bindkey '^[^?' backward-kill-word-bash
+################################################################################
+bindkey '^[^?' backward-kill-word-bash   # alt-backspace
+bindkey '^?' backward-kill-dir           # ctrl-backspace
+bindkey "^[^[B" backward-word            # alt-b
+bindkey "^[^[[D" backward-word-bash      # alt-left
+bindkey "^B" backward-word-dir           # ctrl-b
+bindkey "^[^[F" forward-word             # alt-f
+bindkey "^[^[[C" forward-word-bash       # alt-right
+bindkey "^F" forward-word-dir            # ctrl-f
 
-# TODO: ctrl-alt-backspace
-#bindkey '^[^?' backward-kill-dir
 
-# Alt+Left
-# TODO: switch from dir to bash
-bindkey "\e\e[D" backward-word-dir  # "\e\e..." is from https://stackoverflow.com/a/52714907
-bindkey "^[^[[D" backward-word-dir  # iterm2
-
-# Alt+Right
-# TODO: switch from dir to bash
-bindkey "\e\e[C" forward-word-dir  # iterm2
-bindkey "^[^[[C" forward-word-dir  # iterm2
-
-# ------------------------------------------------------------------------------
+################################################################################
 # Keybindings on vscode (WITHOUT 'option meta mac')
-# ------------------------------------------------------------------------------
-# TODO: sync with iterm2 behaviors
-bindkey "^[b" backward-word-dir   # alt-left
+################################################################################
 bindkey "∫" backward-word         # alt+b
-bindkey "^[f" forward-word-dir    # alt-right
+bindkey "^[b" backward-word-bash  # alt-left
 bindkey "ƒ" forward-word          # alt-f
+bindkey "^[f" forward-word-bash   # alt-right
 bindkey "≥" insert-last-word      # alt+.
-bindkey "∂" kill-word-dir         # alt-d
+bindkey "∂" kill-word             # alt-d
