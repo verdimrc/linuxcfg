@@ -1,3 +1,5 @@
+# TODO: https://wiki.archlinux.org/index.php/Color_output_in_console
+
 [[ -s '/etc/zsh_command_not_found' ]] && source '/etc/zsh_command_not_found'
 
 export CLICOLOR=1
