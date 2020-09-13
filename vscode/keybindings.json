@@ -7,7 +7,6 @@
         "command": "deleteWordPartLeft",
         "when": "terminalFocus && isMac"
     },
-
     // Re-assign ctrl-f in terminal, to remove conflict with vim (Linux)
     {
         "key": "ctrl+shift+f",
@@ -18,5 +17,12 @@
         "key": "ctrl+f",
         "command": "-workbench.action.terminal.focusFind",
         "when": "terminalFindFocused || terminalFocus"
+    },
+
+    // Remove alt-w (Linux), since my zsh remaps alt-w to backward-kill-dir
+    // TODO: figure out the correct "when", rather then disable at all.
+    {
+        "key": "alt+w",
+        "command": "-workbench.action.terminal.toggleFindWholeWord"
     }
 ]
