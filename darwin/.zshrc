@@ -5,6 +5,7 @@ alias egrep='egrep --color=auto'
 alias ll='ls -al'
 alias vi='vim'
 alias reset_title='echo -e "\033];\007"'
+alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
 
 export LANG=en_US.utf-8
 export LC_ALL=${LANG}
@@ -142,7 +143,8 @@ prompt_prefix() {
 }
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
-export PROMPT='$(prompt_prefix)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+#export PROMPT='$(prompt_prefix)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 %# '
 
 # This causes a minor annoyance on OSX + iTerm2 + tmux: after vim, must `reset`.

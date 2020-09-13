@@ -1,0 +1,80 @@
+################################################################################
+# Keystrokes (bash-like)
+################################################################################
+backward-kill-word-bash () {
+    local WORDCHARS=''
+    zle backward-kill-word
+}
+zle -N backward-kill-word-bash
+
+backward-kill-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-kill-word
+}
+zle -N backward-kill-dir
+
+kill-word-bash () {
+    local WORDCHARS=''
+    zle kill-word
+}
+zle -N kill-word-bash
+
+kill-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle kill-word
+}
+zle -N kill-word-dir
+
+backward-word-bash () {
+    local WORDCHARS=''
+    zle backward-word
+}
+zle -N backward-word-bash
+
+backward-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-word
+}
+zle -N backward-word-dir
+
+forward-word-bash () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle forward-word
+}
+zle -N forward-word-bash
+
+forward-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle forward-word
+}
+zle -N forward-word-dir
+
+# ------------------------------------------------------------------------------
+# Keybindings on iterm2 (WITH option mac meta)
+# ------------------------------------------------------------------------------
+# Alt-backspace
+bindkey '^[^?' backward-kill-word-bash
+
+# TODO: ctrl-alt-backspace
+#bindkey '^[^?' backward-kill-dir
+
+# Alt+Left
+# TODO: switch from dir to bash
+bindkey "\e\e[D" backward-word-dir  # "\e\e..." is from https://stackoverflow.com/a/52714907
+bindkey "^[^[[D" backward-word-dir  # iterm2
+
+# Alt+Right
+# TODO: switch from dir to bash
+bindkey "\e\e[C" forward-word-dir  # iterm2
+bindkey "^[^[[C" forward-word-dir  # iterm2
+
+# ------------------------------------------------------------------------------
+# Keybindings on vscode (WITHOUT 'option meta mac')
+# ------------------------------------------------------------------------------
+# TODO: sync with iterm2 behaviors
+bindkey "^[b" backward-word-dir   # alt-left
+bindkey "∫" backward-word         # alt+b
+bindkey "^[f" forward-word-dir    # alt-right
+bindkey "ƒ" forward-word          # alt-f
+bindkey "≥" insert-last-word      # alt+.
+bindkey "∂" kill-word-dir         # alt-d
