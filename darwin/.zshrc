@@ -23,7 +23,6 @@ man() {
 		man "$@"
 }
 
-
 ################################################################################
 # Somewhat bash-like history
 ################################################################################
@@ -39,67 +38,25 @@ setopt hist_find_no_dups
 setopt hist_reduce_blanks
 #setopt histignorealldups
 
-
-################################################################################
-# Keystrokes (bash-like)
-################################################################################
-# https://unix.stackexchange.com/a/319854#
-
-# Alt-backspace
-backward-kill-dir () {
-    local WORDCHARS=${WORDCHARS/\/}
-    zle backward-kill-word
-}
-zle -N backward-kill-dir
-bindkey '^[^?' backward-kill-dir
-
-# Alt+Left
-backward-word-dir () {
-    local WORDCHARS=${WORDCHARS/\/}
-    zle backward-word
-}
-zle -N backward-word-dir
-bindkey "\e\e[D" backward-word-dir  # "\e\e..." is from https://stackoverflow.com/a/52714907
-bindkey "^[^[[D" backward-word-dir  # iterm2
-bindkey "^[b" backward-word-dir     # vscode: also used for alt+b (with option meta on)
-
-# Alt+Right
-forward-word-dir () {
-    local WORDCHARS=${WORDCHARS/\/}
-    zle forward-word
-}
-zle -N forward-word-dir
-bindkey "\e\e[C" forward-word-dir  # iterm2
-bindkey "^[^[[C" forward-word-dir  # iterm2
-bindkey "^[f" forward-word-dir     # vscode: also used for alt-f (with option meta on)
-
-# Additional for vscode (without option meta on)
-bindkey "∫" backward-word     # alt+b
-bindkey "ƒ" forward-word     # Alt-f
-bindkey "≥" insert-last-word   # Alt+.
-kill-word-dir () {
-    local WORDCHARS=${WORDCHARS/\/}
-    zle kill-word
-}
-zle -N kill-word-dir
-bindkey "∂" kill-word-dir       # Alt-D
-
 ################################################################################
 # Completion
 ################################################################################
 FPATH=/usr/local/share/zsh-completions:$FPATH
 autoload -Uz compinit
-for dump in ~/.zcompdump(N.mh+24); do
-    # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
-    # Section "What else is slow then?"
-    compinit
-done
+#for dump in ~/.zcompdump(N.mh+24); do
+#    # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
+#    # Section "What else is slow then?"
+#    compinit
+#done
 compinit -C
+
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html#cli-command-completion-configure
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 
+################################################################################
 # Enriched prompt
+################################################################################
 autoload -Uz vcs_info && vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats ' (%b)'
@@ -158,6 +115,9 @@ winch_handler 1
 trap 'winch_handler 1' WINCH
 #functions[TRAPWINCH]="${functions[TRAPWINCH]//winch_handler}"
 
+################################################################################
+# PyEnv
+################################################################################
 if command -v pyenv 1>/dev/null 2>&1; then
     export PYENV_ROOT=$HOME/.pyenv
     export PATH=$PYENV_ROOT/bin:$PATH
@@ -173,3 +133,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
     [[ -z "$TMUX" ]] || pyenv deactivate
     [[ -z "$JUPYTER_SERVER_ROOT" ]] || pyenv deactivate
 fi
+
+################################################################################
+# Keybindings
+################################################################################
+source ~/.zshrc-keybindings.darwin

@@ -3,7 +3,6 @@
 #       by OSX for for switching workspace.
 ################################################################################
 
-
 ################################################################################
 # Keystrokes (bash-like)
 ################################################################################
@@ -73,8 +72,12 @@ bindkey "^F" forward-word-dir            # ctrl-f
 # Keybindings on vscode (WITHOUT 'option meta mac')
 ################################################################################
 bindkey "∫" backward-word         # alt+b
-bindkey "^[b" backward-word-bash  # alt-left
+if [[ ${TERM_PROGRAM} == "vscode" ]]; then
+    # vscode's alt-{left,right} clash with iterm2's alt-{b,f}, so run this
+    # stanza only under vscode.
+    bindkey "^[b" backward-word-bash  # alt-left
+    bindkey "^[f" forward-word-bash   # alt-right
+fi
 bindkey "ƒ" forward-word          # alt-f
-bindkey "^[f" forward-word-bash   # alt-right
 bindkey "≥" insert-last-word      # alt+.
 bindkey "∂" kill-word             # alt-d
