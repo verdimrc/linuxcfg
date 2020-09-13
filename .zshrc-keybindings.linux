@@ -1,0 +1,68 @@
+################################################################################
+# Keystrokes (bash-like)
+################################################################################
+backward-kill-word-bash () {
+    local WORDCHARS=''
+    zle backward-kill-word
+}
+zle -N backward-kill-word-bash
+
+backward-kill-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-kill-word
+}
+zle -N backward-kill-dir
+
+kill-word-bash () {
+    local WORDCHARS=''
+    zle kill-word
+}
+zle -N kill-word-bash
+
+kill-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle kill-word
+}
+zle -N kill-word-dir
+
+backward-word-bash () {
+    local WORDCHARS=''
+    zle backward-word
+}
+zle -N backward-word-bash
+
+backward-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle backward-word
+}
+zle -N backward-word-dir
+
+forward-word-bash () {
+    local WORDCHARS=''
+    zle forward-word
+}
+zle -N forward-word-bash
+
+forward-word-dir () {
+    local WORDCHARS=${WORDCHARS/\/}
+    zle forward-word
+}
+zle -N forward-word-dir
+
+
+################################################################################
+# Keybindings on lxqt qterminal (TERM=xterm-256color)
+################################################################################
+bindkey "^[^H"    backward-kill-word-bash   # alt-backspace
+bindkey "^[^?"    backward-kill-word-bash   # alt-backspace (TERM=linux)
+bindkey "^[w"     backward-kill-dir         # alt-w
+bindkey "^[b"     backward-word             # alt-b
+bindkey "^[[1;3D" backward-word-bash        # alt-left
+bindkey "^[[1;5D" backward-word-bash        # ctrl-left
+bindkey "^[[D"    backward-word-bash        # ctrl-left (TERM=linux)
+bindkey "^B"      backward-word-dir         # ctrl-b
+bindkey "^[f"     forward-word              # alt-f
+bindkey "^[[1;3C" forward-word-bash         # alt-right
+bindkey "^[[1;5C" forward-word-bash         # ctrl-right
+bindkey "^[[C"    forward-word-bash         # ctrl-right (TERM=linux)
+bindkey "^F"      forward-word-dir          # ctrl-f
