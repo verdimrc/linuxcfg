@@ -127,31 +127,35 @@ fi
 ################################################################################
 # Bash-like keystrokes
 ################################################################################
-# https://unix.stackexchange.com/a/319854#
-
-# Alt-backspace
+# TODO: sort-out the mess Linux/PC vs MBP
+# Alt-backspace -- https://unix.stackexchange.com/a/319854
 backward-kill-dir () {
     local WORDCHARS=${WORDCHARS/\/}
     zle backward-kill-word
 }
 zle -N backward-kill-dir
-bindkey '^[^?' backward-kill-dir
+bindkey '^[^?' backward-kill-dir   # MBP
 
-# Alt+Left
-backward-word-dir () {
+# https://stackoverflow.com/a/52714907
+# MBP
+#bindkey "\e\e[D" backward-word    # Alt-left
+#bindkey "\e\e[C" forward-word     # Alt-right
+# Linux
+bindkey "^[[1;5D" backward-word    # ctrl-left
+bindkey "^[[1;5C" forward-word     # ctrl-right
+
+backward-dir () {
     local WORDCHARS=${WORDCHARS/\/}
     zle backward-word
 }
-zle -N backward-word-dir
-bindkey "\e\e[D" backward-word-dir  # "\e\e..." is from https://stackoverflow.com/a/52714907
-
-# Alt+Right
-forward-word-dir () {
+forward-dir () {
     local WORDCHARS=${WORDCHARS/\/}
     zle forward-word
 }
-zle -N forward-word-dir
-bindkey "\e\e[C" forward-word-dir
+zle -N backward-dir
+zle -N forward-dir
+bindkey "^[b" backward-dir # alt-b
+bindkey "^[f" forward-dir  # alt-f
 
 
 ################################################################################
