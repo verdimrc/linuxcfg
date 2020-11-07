@@ -54,6 +54,11 @@ compinit -C
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 
+setopt autoparamslash
+
+# https://superuser.com/a/1020116
+zstyle ':completion:*:*:*:*:*' menu select # https://superuser.com/a/1020116
+
 ################################################################################
 # Enriched prompt
 ################################################################################

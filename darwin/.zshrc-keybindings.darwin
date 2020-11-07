@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 ################################################################################
 # NOTE: ctrl-{left,right} won't be used, because they're permanently claimed
 #       by OSX for for switching workspace.

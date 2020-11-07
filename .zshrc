@@ -1,3 +1,5 @@
+# TODO: https://wiki.archlinux.org/index.php/Color_output_in_console
+
 [[ -s '/etc/zsh_command_not_found' ]] && source '/etc/zsh_command_not_found'
 
 export CLICOLOR=1
@@ -164,4 +166,25 @@ if [[ -z "$SSH_TTY" ]]; then
     }
     winch_handler 1
     trap 'winch_handler 1' WINCH
+fi
+
+
+################################################################################
+# PyEnv
+################################################################################
+export PATH="$HOME/.pyenv/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+    export PYENV_ROOT=$HOME/.pyenv
+    export PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
+
+    # Prefer manual activation even if per-project virtualenv is defined.
+    # Apart from full control, want to be able to 'reset' on tmux or jupyter
+    #if which pyenv-virtualenv-init > /dev/null; then
+    #    eval "$(pyenv virtualenv-init -)"
+    #fi
+
+    # Note that these will have no effect if pyenv-virtualenv-init is enabled.
+    [[ -z "$TMUX" ]] || pyenv deactivate
+    [[ -z "$JUPYTER_SERVER_ROOT" ]] || pyenv deactivate
 fi
