@@ -10,7 +10,7 @@ alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
 
 export LANG=en_US.utf-8
 export LC_ALL=${LANG}
-export LESS='--window -2 -FMRX'
+export LESS='-FMRX'
 
 man() {
 	env \

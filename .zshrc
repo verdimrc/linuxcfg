@@ -4,7 +4,7 @@ export PATH=$HOME/bin:$PATH
 [[ -s '/etc/zsh_command_not_found' ]] && source '/etc/zsh_command_not_found'
 
 export CLICOLOR=1
-export LESS='--window -2 -FMRX'
+export LESS='-FMRX'
 
 alias l='ls -CF'
 alias la='ls -A'
