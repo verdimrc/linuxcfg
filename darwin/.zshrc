@@ -110,16 +110,19 @@ prompt_prefix() {
 export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 %# '
 
-# This causes a minor annoyance on OSX + iTerm2 + tmux: after vim, must `reset`.
-function winch_handler() {
-    setopt localoptions nolocaltraps
-    COLUMNS=$(tput cols)
-    LINES=$(expr `tput lines` - $1)
-    stty rows $LINES cols $COLUMNS
-}
-winch_handler 1
-trap 'winch_handler 1' WINCH
-#functions[TRAPWINCH]="${functions[TRAPWINCH]//winch_handler}"
+# Trick `less` to believe screen size has one-less line.
+if [[ -z "$SSH_TTY" ]]; then
+    # This causes a minor annoyance: after vim, must `reset`.
+    function winch_handler() {
+        setopt localoptions nolocaltraps
+        COLUMNS=$(tput cols)
+        LINES=$(expr `tput lines` - $1)
+        stty rows $LINES cols $COLUMNS
+    }
+    winch_handler 1
+    trap 'winch_handler 1' WINCH
+fi
+
 
 ################################################################################
 # PyEnv

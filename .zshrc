@@ -53,12 +53,12 @@ fi
 
 
 ################################################################################
-# Somewhat bash-like History
+# Somewhat bash-like history
 ################################################################################
 HISTFILE=~/.zsh_history
-HISTSIZE=9999
-SAVEHIST=9999
-HISTFILESIZE=9999
+HISTSIZE=99999
+SAVEHIST=99999
+HISTFILESIZE=99999
 unsetopt hist_beep
 unsetopt inc_append_history
 unsetopt share_history
@@ -69,7 +69,7 @@ setopt hist_reduce_blanks
 
 
 ################################################################################
-# Misc. zsh settings
+# Completion
 ################################################################################
 autoload -Uz compinit
 #for dump in ~/.zcompdump(N.mh+24); do
@@ -99,11 +99,10 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 #-------------------------------------------------------------------------------
 
+setopt autoparamslash
 
-################################################################################
-# Bash-like keystrokes
-################################################################################
-source ~/.zshrc-keybindings.linux
+# https://superuser.com/a/1020116
+#zstyle ':completion:*:*:*:*:*' menu select # https://superuser.com/a/1020116
 
 
 ################################################################################
@@ -189,3 +188,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
     [[ -z "$TMUX" ]] || pyenv deactivate
     [[ -z "$JUPYTER_SERVER_ROOT" ]] || pyenv deactivate
 fi
+
+################################################################################
+# Keybindings
+################################################################################
+source ~/.zshrc-keybindings.linux
