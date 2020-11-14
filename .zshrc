@@ -1,5 +1,6 @@
 # TODO: https://wiki.archlinux.org/index.php/Color_output_in_console
-
+#
+export PATH=$HOME/bin:$PATH
 [[ -s '/etc/zsh_command_not_found' ]] && source '/etc/zsh_command_not_found'
 
 export CLICOLOR=1

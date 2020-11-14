@@ -1,3 +1,4 @@
+export PATH=$HOME/bin:$PATH
 export CLICOLOR=1
 
 alias grep='grep --color=auto'
