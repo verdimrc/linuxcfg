@@ -111,7 +111,7 @@ export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg
 %# '
 
 # Trick `less` to believe screen size has one-less line.
-if [[ -z "$SSH_TTY" ]]; then
+if [[ -z "$SSH_TTY" && -z "$WINCH_HANDLER" ]]; then
     # This causes a minor annoyance: after vim, must `reset`.
     function winch_handler() {
         setopt localoptions nolocaltraps
@@ -121,6 +121,7 @@ if [[ -z "$SSH_TTY" ]]; then
     }
     winch_handler 1
     trap 'winch_handler 1' WINCH
+    export WINCH_HANDLER=1  # Prevent child processes from "reducing" term size.
 fi
 
 
