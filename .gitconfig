@@ -7,11 +7,34 @@
 [merge]
    renormalize = true
 [alias]
-   lol = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-   lola = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-   lol2 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)- %an%C(reset)' --abbrev-commit
-   lol2a = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)- %an%C(reset)' --abbrev-commit
-   llol = log  --graph --pretty=oneline --abbrev-commit --decorate
-   llola = log  --graph --pretty=oneline --abbrev-commit --decorate --all
+    lol = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    lolc = "! clear; git lol -$(expr `tput lines` '*' 2 / 3)"
+    lola = lol --all
+    lolac = lolc --all
+    # Historical
+    dag = log --graph --format='format:%C(yellow)%h%C(reset) %C(blue)\"%an\" <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s' --date-order
+    lol2 = log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(bold white)— %an%C(reset)' --abbrev-commit
+    lol2a = lol2 --all
+    llol = log  --graph --pretty=oneline --abbrev-commit --decorate
+    llola = llol --all
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
+
+############################
+# Sample credential helpers
+############################
+#[credential "https://github.com"]
+#    # Recommend to `git config --system --unset credential.helper`
+#    helper = osxkeychain
+#
+# [Deprecated] bypass osxkeychain for CodeCommit http.
+# NOTE: to prefer git-remote-codecommit whenever possible
+#[credential "https://git-codecommit.us-east-1.amazonaws.com"]
+#	helper = !aws codecommit credential-helper $@
+#    UseHttpPath = true
+#[credential "https://git-codecommit.ap-southeast-1.amazonaws.com"]
+#	helper = !aws codecommit credential-helper $@
+#    UseHttpPath = true
+##[credential "https://git-codecommit.ap-southeast-2.amazonaws.com"]
+##	helper = !aws codecommit credential-helper $@
+##    UseHttpPath = true
