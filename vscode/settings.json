@@ -105,7 +105,7 @@
     "editor.formatOnSaveTimeout": 5000,
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true, // Extension davidanson.vscode-markdownlint
-        "source.organizeImports": false //true
+        "source.organizeImports": true
     },
     "editor.minimap.enabled": false,
     "editor.parameterHints.cycle": true,
