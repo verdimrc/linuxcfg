@@ -82,6 +82,7 @@
     "jupyter.debugJustMyCode": false,
     "jupyter.disableJupyterAutoStart": true,
     "jupyter.gatherToScript": true,
+    "jupyter.magicCommandsAsComments": true,
     "jupyter.searchForJupyter": false,
     "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.showKernelSelectionOnInteractiveWindow": true,
