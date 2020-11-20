@@ -1,3 +1,4 @@
+export PATH=$HOME/bin:$PATH
 export CLICOLOR=1
 
 alias grep='grep --color=auto'
@@ -9,7 +10,7 @@ alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
 
 export LANG=en_US.utf-8
 export LC_ALL=${LANG}
-export LESS='--window -2 -FMRX'
+export LESS='-FMRX'
 
 man() {
 	env \
@@ -109,16 +110,6 @@ prompt_prefix() {
 export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 %# '
 
-# This causes a minor annoyance on OSX + iTerm2 + tmux: after vim, must `reset`.
-function winch_handler() {
-    setopt localoptions nolocaltraps
-    COLUMNS=$(tput cols)
-    LINES=$(expr `tput lines` - $1)
-    stty rows $LINES cols $COLUMNS
-}
-winch_handler 1
-trap 'winch_handler 1' WINCH
-#functions[TRAPWINCH]="${functions[TRAPWINCH]//winch_handler}"
 
 ################################################################################
 # PyEnv
