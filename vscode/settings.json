@@ -133,7 +133,6 @@
         }
     ],
 
-
     // Shortcuts in integrated terminal
     "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
     "terminal.integrated.commandsToSkipShell": [
@@ -145,12 +144,15 @@
     ],
     //"terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
     "terminal.integrated.rendererType": "experimentalWebgl",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "terminal.integrated.showExitAlert": false,
 
     // Extensions
     "autoDocstring.docstringFormat": "google",
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
     "gitlens.hovers.currentLine.over": "line",
+    "jupyter.experiments.enabled": false,
     "markdown.extension.preview.autoShowPreviewToSide": true,
     "remote.SSH.defaultExtensions": [
         "bungcip.better-toml",
@@ -172,7 +174,6 @@
         "shardulm94.trailing-spaces",
         "visualstudioexptteam.vscodeintellicode",
         "redhat.vscode-yaml"
-
     ],
     "tabnine.experimentalAutoImports": false,
     "todo-tree.highlights.defaultHighlight": {
