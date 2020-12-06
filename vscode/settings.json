@@ -152,7 +152,7 @@
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
     "gitlens.hovers.currentLine.over": "line",
-    "jupyter.experiments.enabled": false,
+    "jupyter.experiments.enabled": true,
     "markdown.extension.preview.autoShowPreviewToSide": true,
     "remote.SSH.defaultExtensions": [
         "bungcip.better-toml",
