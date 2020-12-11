@@ -116,6 +116,7 @@
         80,
         120
     ],
+    "editor.stickyTabStops": true,
     "editor.suggestSelection": "first",
     "editor.wordWrapColumn": 120,
     "explorer.confirmDelete": false,
