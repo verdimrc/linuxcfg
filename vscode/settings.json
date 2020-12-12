@@ -125,6 +125,12 @@
     "files.eol": "\n",
     "terminal.integrated.localEchoLatencyThreshold": -1,
     "terminal.integrated.lineHeight": 1.2,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 20,
 
