@@ -127,12 +127,6 @@
     "terminal.integrated.lineHeight": 1.2,
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 20,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
 
     // Shortcuts in integrated terminal
     "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
@@ -153,7 +147,6 @@
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
     "gitlens.hovers.currentLine.over": "line",
-    "jupyter.experiments.enabled": true,
     "markdown.extension.preview.autoShowPreviewToSide": true,
     "remote.SSH.defaultExtensions": [
         "bungcip.better-toml",
