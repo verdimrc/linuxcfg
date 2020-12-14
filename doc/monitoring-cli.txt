@@ -1,0 +1,5 @@
+- htop, s-tui, mpstat -P ALL <interval>, dstat -c -C 0,1,2,3,4, duf
+- ttysys, ttyload
+- zenith
+- bpytop
+- bottom, gotop
