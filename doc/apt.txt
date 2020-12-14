@@ -1,0 +1,26 @@
+sudo apt list --upgradable
+sudo apt install bat --simulate -V
+sudo apt install --only-upgrade ./bat_0.17.1_amd64.deb
+
+
+####
+#https://unix.stackexchange.com/questions/149805/how-to-find-the-packages-that-depend-on-a-certain-package-in-apt
+
+apt-cache rdepends libgit2-28
+
+---
+sudo apt install apt-rdepends
+apt-rdepends -r libplrpc-perl  # -r for recursive
+
+---
+sudo apt install aptitude
+
+# Why is it installed:
+aptitude why libgit2-28
+aptitude -v --show-summary=all-packages why <package>
+
+# What depends on this package:
+aptitude search '~i~Dlibgit2-28'
+
+# What would happen, if package is removed:
+aptitude -s purge libplrpc-perl
