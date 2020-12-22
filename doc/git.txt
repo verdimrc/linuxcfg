@@ -8,9 +8,22 @@ git config --global credential.helper 'cache --timeout=3600'
 
 ################################################################################
 
+# Check latest release
+
+# Bash function
+get_latest_release() {
+    curl --silent \
+        "https://api.github.com/repos/$1/releases/latest" \
+        | jq -r '.tag_name'
+}
+
+# Usage: get_latest_release ClementTsang/bottom
+
+################################################################################
+
 # Descriptive branch
 git branch lr
-git branch --edit-description 
+git branch --edit-description
 git config branch.lr.description
 
 ################################################################################
