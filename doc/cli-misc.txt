@@ -1,0 +1,5 @@
+bat: debian repo
+bpytop, duf, rclone: azlux.list
+zenith: zenith.list
+
+bottom, delta-diff (git-delta), gotop: linuxbrew
