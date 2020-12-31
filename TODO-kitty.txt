@@ -1,0 +1,5 @@
+https://github.com/dexpota/kitty-themes
+.vimrc
+.zshrc (leave TERM alone)
+kitty.conf
+theme.conf
