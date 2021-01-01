@@ -52,6 +52,10 @@ compinit
 #    compinit -C
 #fi
 
+if [[ ${TERM} == "xterm-kitty" ]]; then
+    kitty + complete setup zsh | source /dev/stdin
+fi
+
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html#cli-command-completion-configure
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
