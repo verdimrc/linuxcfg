@@ -159,7 +159,10 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
     export PYENV_ROOT=$HOME/.pyenv
     export PATH=$PYENV_ROOT/bin:$PATH
-    eval "$(pyenv init -)"
+
+    # Speed-up pyenv init -- https://github.com/pyenv/pyenv/issues/784#issuecomment-404850327
+    # NOTE: run 'pyenv rehash' after installing executables.
+    eval "$(pyenv init - --no-rehash zsh)"
 
     # Prefer manual activation even if per-project virtualenv is defined.
     # Apart from full control, want to be able to 'reset' on tmux or jupyter

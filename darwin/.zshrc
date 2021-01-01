@@ -44,12 +44,13 @@ setopt hist_reduce_blanks
 ################################################################################
 FPATH=/usr/local/share/zsh-completions:$FPATH
 autoload -Uz compinit
-#for dump in ~/.zcompdump(N.mh+24); do
-#    # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
-#    # Section "What else is slow then?"
+compinit
+## https://htr3n.github.io/2018/07/faster-zsh/
+#if [[ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]]; then
 #    compinit
-#done
-compinit -C
+#else
+#    compinit -C
+#fi
 
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html#cli-command-completion-configure
 autoload bashcompinit && bashcompinit
@@ -117,12 +118,15 @@ export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg
 if command -v pyenv 1>/dev/null 2>&1; then
     export PYENV_ROOT=$HOME/.pyenv
     export PATH=$PYENV_ROOT/bin:$PATH
-    eval "$(pyenv init -)"
+
+    # Speed-up pyenv init -- https://github.com/pyenv/pyenv/issues/784#issuecomment-404850327
+    # NOTE: run 'pyenv rehash' after installing executables.
+    eval "$(pyenv init - --no-rehash zsh)"
 
     # Prefer manual activation even if per-project virtualenv is defined.
     # Apart from full control, want to be able to 'reset' on tmux or jupyter
     #if which pyenv-virtualenv-init > /dev/null; then
-    #    eval "$(pyenv virtualenv-init -)"
+    #    eval "$(pyenv virtualenv-init - zsh)"
     #fi
 
     # Note that these will have no effect if pyenv-virtualenv-init is enabled.
