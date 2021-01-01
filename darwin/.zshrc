@@ -52,9 +52,7 @@ compinit
 #    compinit -C
 #fi
 
-if [[ ${TERM} == "xterm-kitty" ]]; then
-    kitty + complete setup zsh | source /dev/stdin
-fi
+command -v kitty &> /dev/null && kitty + complete setup zsh | source /dev/stdin
 
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html#cli-command-completion-configure
 autoload bashcompinit && bashcompinit
