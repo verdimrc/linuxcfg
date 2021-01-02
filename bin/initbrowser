@@ -1,9 +1,63 @@
 #!/bin/bash
 
-#Chromium
-sudo apt-get install chromium-browser chromium-codecs-ffmpeg-extra
-sudo sed -i 's/^CHROMIUM_FLAGS.*$/CHROMIUM_FLAGS="--incognito --force-device-scale-factor=1.75 --disable-gpu-compositing"/g' /etc/chromium-browser/default
-
-#Firefox
+################################################################################
+# Firefox
 #Increase scaling of GUI icons & fonts
 #See: https://fedoramagazine.org/how-to-get-firefox-looking-right-on-a-high-dpi-display-and-fedora/
+
+
+################################################################################
+# Chromium: GPU accelerated (incl. video playback)
+# https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html
+
+# Setup repo
+sudo add-apt-repository ppa:saiarcot895/chromium-beta
+sudo apt-get update
+sudo cat << EOF > /etc/apt/preferences.d/saiarcot895-chromium-beta-pin-1001
+Package: *
+Pin: release o=LP-PPA-saiarcot895-chromium-beta
+Pin-Priority: 1001
+EOF
+
+# Install
+declare -a CHROMIUM_PACKAGES=( chromium-browser chromium-codecs-ffmpeg-extra )
+sudo apt-get "${CHROMIUM_PACKAGES[@]}"
+
+# Default flags
+declare -a CHROMIUM_FLAGS=(
+    --incognito
+    --force-device-scale-factor=1.4
+    --disk-cache-size=1
+    --enable-gpu-rasterization
+    --enable-zero-copy
+    --enable-oop-rasterization
+    --ignore-gpu-blacklist
+    --enable-accelerated-video-decode
+)
+
+regex="s/^CHROMIUM_FLAGS=.*$/CHROMIUM_FLAGS='${CHROMIUM_FLAGS[@]}'/g"
+sudo sed "$regex" /etc/chromium-browser/default
+# Next line gives syntax error, because it becomes
+# sed "s/.../CHROMIUM_FLAGS=--incognito" --force-device-scale-factor=1.4 ... /etc/chromium-browser-default
+# and the --force-device... are unknown flags to sed.
+#sudo sed "s/^CHROMIUM_FLAGS=.*$/CHROMIUM_FLAGS='${CHROMIUM_FLAGS[@]}'/g" /etc/chromium-browser/default
+
+# Silence missing-feature complains on start.
+cat << EOF >> ~/.profile
+
+# See also: https://stackoverflow.com/a/55485991
+export GOOGLE_API_KEY=""
+export GOOGLE_DEFAULT_CLIENT_ID=""
+export GOOGLE_DEFAULT_CLIENT_SECRET=""
+EOF
+
+# Install va & vdpau packages
+declare -a VA_VDPAU_PACKAGES=(
+    vainfo vdpauinfo
+    i965-va-driver intel-media-va-driver va-driver-all
+    libvdpau-va-gl1 vdpau-va-driver mesa-vdpau-drivers xserver-xorg-video-intel
+)
+sudo apt install "${VA_VDPAU_PACKAGES[@]}"
+
+# Next steps must be done manually.
+echo 'Next steps: configure chromium according to https://www.linuxuprising.com/2018/08/how-to-enable-hardware-accelerated.html'

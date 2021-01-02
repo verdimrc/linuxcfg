@@ -2,4 +2,4 @@
 # /usr/bin/chromium-browser
 
 # Options to pass to chromium-browser
-CHROMIUM_FLAGS="--incognito --ignore-gpu-blacklist --force-device-scale-factor=1.5 --disk-cache-size=1"
+CHROMIUM_FLAGS="--incognito --force-device-scale-factor=1.4 --disk-cache-size=1 --enable-gpu-rasterization --enable-zero-copy --enable-oop-rasterization --ignore-gpu-blacklist --enable-accelerated-video-decode"
