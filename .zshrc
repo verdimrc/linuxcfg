@@ -36,7 +36,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 if [[ -n "$DISPLAY" ]]; then
-   export TERM=xterm-256color
+   [[ ! -n "$KITTY_WINDOW_ID" ]] && export TERM=xterm-256color
 
    man() {
        env \
@@ -167,13 +167,21 @@ if command -v pyenv 1>/dev/null 2>&1; then
     # Prefer manual activation even if per-project virtualenv is defined.
     # Apart from full control, want to be able to 'reset' on tmux or jupyter
     #if which pyenv-virtualenv-init > /dev/null; then
-    #    eval "$(pyenv virtualenv-init -)"
+    #    eval "$(pyenv virtualenv-init - zsh)"
     #fi
 
     # Note that these will have no effect if pyenv-virtualenv-init is enabled.
     [[ -z "$TMUX" ]] || pyenv deactivate
     [[ -z "$JUPYTER_SERVER_ROOT" ]] || pyenv deactivate
 fi
+
+
+################################################################################
+# linuxbrew
+################################################################################
+command -v /home/linuxbrew/.linuxbrew/bin/brew &> /dev/null \
+    && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 
 ################################################################################
 # Keybindings
