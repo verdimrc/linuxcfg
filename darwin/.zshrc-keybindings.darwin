@@ -73,7 +73,7 @@ bindkey "^F"     forward-word-dir          # ctrl-f
 ################################################################################
 # Synchronize keybindings to vscode (WITHOUT 'option meta mac').
 ################################################################################
-if [[ ${TERM_PROGRAM} == "vscode" ]]; then
+if [[ ${TERM_PROGRAM} == "vscode" || ${TERM} == "xterm-kitty" ]]; then
     bindkey "∑" backward-kill-dir     # alt-w
     bindkey "∫" backward-word         # alt-b
     bindkey "ƒ" forward-word          # alt-f

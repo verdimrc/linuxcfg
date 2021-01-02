@@ -52,6 +52,8 @@ compinit
 #    compinit -C
 #fi
 
+command -v kitty &> /dev/null && kitty + complete setup zsh | source /dev/stdin
+
 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-completion.html#cli-command-completion-configure
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
