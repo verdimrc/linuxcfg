@@ -27,4 +27,4 @@ Additional setups:
 
 2. When [ssh to a remote host](https://sw.kovidgoyal.net/kitty/faq.html#i-get-errors-about-the-terminal-being-unknown-or-opening-the-terminal-failing-when-sshing-into-a-different-computer):
    - make sure the remote has the `xterm-kitty` termcap installed, or
-   - connect as `kitty +kitten ssh myserver`, or
+   - connect as `kitty +kitten ssh myserver`
