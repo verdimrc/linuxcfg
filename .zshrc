@@ -37,8 +37,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 if [[ -n "$DISPLAY" ]]; then
-   [[ ! -n "$KITTY_WINDOW_ID" ]] && export TERM=xterm-256color
-
    man() {
        env \
            LESS_TERMCAP_mb=$(printf "\e[1;31m") \
