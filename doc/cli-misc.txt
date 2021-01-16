@@ -1,5 +1,6 @@
-bat: debian repo
-bpytop, duf, rclone: azlux.list
-zenith: zenith.list
+bat: ubuntu repo
+bpytop, duf, rclone: azlux.list -- https://packages.azlux.fr/
+zenith: zenith.list -- https://github.com/bvaisvil/zenith#debianubuntu-based-linux-distributions-64-bit
+onefetch: sudo add-apt-repositoyr ppa:o2sh/onefetch
 
 bottom, delta-diff (git-delta), gotop: linuxbrew
