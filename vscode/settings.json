@@ -5,6 +5,7 @@
 
     // Insider frequency: daily or weekly.
     "jupyter.insidersChannel": "daily",
+    "pylance.insidersChannel": "daily",
     "python.insidersChannel": "daily",
 
     // Python stuffs
