@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # brew
-echo Updating brew packages...
+brew update
 brew upgrade
-brew cask upgrade --greedy
-brew cleanup
+brew cleanup -s
+
+# No longer use miniconda
+exit
 
 # miniconda
 declare -a conda_env=( $(for i in ~/miniconda3/envs/*; do [[ -d $i && ! $i =~ '^.' ]] && echo $(basename $i);done) )

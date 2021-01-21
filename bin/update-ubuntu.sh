@@ -2,6 +2,12 @@
 
 sudo apt update && sudo apt dist-upgrade -V -y
 sudo apt clean
+brew update
+brew upgrade
+brew cleanup -s
+
+# No longer use miniconda.
+exit
 
 # miniconda
 declare -a conda_env=( $(for i in ~/miniconda3/envs/*; do [[ -d $i && ! $i =~ '^.' ]] && echo $(basename $i);done) )
