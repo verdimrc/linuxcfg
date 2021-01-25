@@ -1,5 +1,6 @@
 # ds
 bokeh
+ndpretty
 numpy
 pandas
 pandas-profiling

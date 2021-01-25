@@ -1,0 +1,4 @@
+ipdb
+ipykernel
+ipython
+setupext-janitor

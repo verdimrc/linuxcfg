@@ -1,0 +1,5 @@
+autoflake
+pip-autoremove
+pip-upgrader
+pydocstyle
+pytest

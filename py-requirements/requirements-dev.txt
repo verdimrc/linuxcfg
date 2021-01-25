@@ -11,6 +11,5 @@ pip-autoremove
 pip-upgrader
 pydocstyle
 pytest
-rope
 setupext-janitor
 tox
