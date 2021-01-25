@@ -20,8 +20,9 @@
     // To use binaries outside of environment, e.g., those installed by pipx
     "python.formatting.blackPath": "/usr/local/bin/black",
     "python.linting.flake8Path": "/usr/local/bin/flake8",
-    "python.sortImports.path": "/usr/local/bin/isort",
     "python.linting.mypyPath": "/usr/local/bin/mypy",
+    "python.linting.pydocstylePath": "/home/verdi/.local/bin/pydocstyle",
+    "python.sortImports.path": "/usr/local/bin/isort",
     "python.testing.pytestPath": "/home/verdi/.local/bin/pytest",
 
     // GUI: vscode
