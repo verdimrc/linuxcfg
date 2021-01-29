@@ -1,5 +1,6 @@
 ipdb
 ipykernel
 ipython
+pipdeptree
 pytest
 setupext-janitor

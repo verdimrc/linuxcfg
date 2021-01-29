@@ -1,5 +1,5 @@
 autoflake
 pip-autoremove
 pip-upgrader
+pipupgrade
 pydocstyle
-pytest
