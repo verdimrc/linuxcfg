@@ -138,6 +138,8 @@
             "filenamePattern": "*.ipynb"
         }
     ],
+    "workbench.editor.decorations.colors": true,
+    "workbench.editor.decorations.badges": true,
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 20,
 
