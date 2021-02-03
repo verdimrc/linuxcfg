@@ -23,7 +23,6 @@
     "python.linting.mypyPath": "/usr/local/bin/mypy",
     "python.linting.pydocstylePath": "/home/verdi/.local/bin/pydocstyle",
     "python.sortImports.path": "/usr/local/bin/isort",
-    "python.testing.pytestPath": "/home/verdi/.local/bin/pytest",
 
     // GUI: vscode
     "window.zoomLevel": 0,  // osx retina scaled: -1; lxqt 4k monitor: 1
