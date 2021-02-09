@@ -140,6 +140,7 @@
     ],
     "workbench.editor.decorations.colors": true,
     "workbench.editor.decorations.badges": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 20,
 
