@@ -5,9 +5,10 @@
 
     // Insider frequency: daily or weekly.
     "jupyter.insidersChannel": "daily",
+    "pylance.insidersChannel": "daily",
     "python.insidersChannel": "daily",
 
-    // Python stuffs
+    // Python paths
     "python.pythonPath": "/home/verdi/miniconda3/envs/py/bin/python",
     "python.envFile": "${workspaceFolder}/.vscenv",
     "terminal.integrated.env.osx": {
@@ -16,6 +17,12 @@
     "terminal.integrated.env.linux": {
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
+    // To use binaries outside of environment, e.g., those installed by pipx
+    "python.formatting.blackPath": "/usr/local/bin/black",
+    "python.linting.flake8Path": "/usr/local/bin/flake8",
+    "python.linting.mypyPath": "/usr/local/bin/mypy",
+    "python.linting.pydocstylePath": "/home/verdi/.local/bin/pydocstyle",
+    "python.sortImports.path": "/usr/local/bin/isort",
 
     // GUI: vscode
     "window.zoomLevel": 0,  // osx retina scaled: -1; lxqt 4k monitor: 1
@@ -114,25 +121,28 @@
     "editor.renderControlCharacters": false,
     "editor.rulers": [
         80,
-        120
+        100
     ],
+    "editor.stickyTabStops": true,
     "editor.suggestSelection": "first",
-    "editor.wordWrapColumn": 120,
+    "editor.wordWrapColumn": 100,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
     "files.eol": "\n",
     "terminal.integrated.localEchoLatencyThreshold": -1,
     "terminal.integrated.lineHeight": 1.2,
-    "workbench.startupEditor": "none",
-    "workbench.tree.indent": 20,
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter-notebook",
             "filenamePattern": "*.ipynb"
         }
     ],
-
+    "workbench.editor.decorations.colors": true,
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 20,
 
     // Shortcuts in integrated terminal
     "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
@@ -145,6 +155,8 @@
     ],
     //"terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
     "terminal.integrated.rendererType": "experimentalWebgl",
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "terminal.integrated.showExitAlert": false,
 
     // Extensions
     "autoDocstring.docstringFormat": "google",
@@ -172,7 +184,6 @@
         "shardulm94.trailing-spaces",
         "visualstudioexptteam.vscodeintellicode",
         "redhat.vscode-yaml"
-
     ],
     "tabnine.experimentalAutoImports": false,
     "todo-tree.highlights.defaultHighlight": {

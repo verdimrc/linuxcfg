@@ -9,12 +9,14 @@
         "imagio.vscode-dimmer-block",
         "jeff-hykin.polacode-2019",
         "littlefoxteam.vscode-python-test-adapter",
+        "mechatroner.rainbow-csv",
         "ms-azuretools.vscode-docker",
         "ms-vscode-remote.remote-containers",
         "nhoizey.gremlins",
         "phplasma.csv-to-table",
         "randomfractalsinc.vscode-data-preview",  // Installation takes time (minutes)
         "slevesque.vscode-hexdump",
+        "TabNine.tabnine-vscode",
         "tomoki1207.pdf",
         "zeithaste.cursorCharCode"
     ]

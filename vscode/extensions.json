@@ -12,6 +12,7 @@
         "emilast.LogFileHighlighter",
         "Gruntfuggly.todo-tree",
         "IBM.output-colorizer",
+        "mechatroner.rainbow-csv",
         "mhutchie.git-graph",
         "mikestead.dotenv",
         "ms-python.python",
@@ -21,7 +22,6 @@
         "redhat.vscode-yaml",
         "shardulm94.trailing-spaces",
         "stkb.rewrap",
-        "TabNine.tabnine-vscode",
         "usernamehw.errorlens",
         "VisualStudioExptTeam.vscodeintellicode",
         "yzhang.markdown-all-in-one"
