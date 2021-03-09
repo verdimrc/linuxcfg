@@ -2,6 +2,8 @@
     # Change me
     name = Firstname Lastname
     email = first.last@email.com
+[init]
+	defaultBranch = main
 [core]
     editor = vim
     pager = less -FMRiX
