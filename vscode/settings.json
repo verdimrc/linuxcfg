@@ -130,8 +130,8 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
     "files.eol": "\n",
-    "terminal.integrated.localEchoLatencyThreshold": -1,
     "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.localEchoLatencyThreshold": -1,
     "workbench.editorAssociations": [
         {
             "viewType": "jupyter-notebook",
@@ -179,7 +179,6 @@
         "njpwerner.autodocstring",
         "2gua.rainbow-brackets",
         "stkb.rewrap",
-        //"TabNine.tabnine-vscode",
         "gruntfuggly.todo-tree",
         "shardulm94.trailing-spaces",
         "visualstudioexptteam.vscodeintellicode",
