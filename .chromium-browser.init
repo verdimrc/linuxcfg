@@ -1,5 +1,0 @@
-# Default settings for chromium-browser. This file is sourced by /bin/sh from
-# /usr/bin/chromium-browser
-
-# Options to pass to chromium-browser
-CHROMIUM_FLAGS="--incognito --force-device-scale-factor=1.4 --disk-cache-size=1 --enable-gpu-rasterization --enable-zero-copy --enable-oop-rasterization --ignore-gpu-blacklist --enable-accelerated-video-decode"
