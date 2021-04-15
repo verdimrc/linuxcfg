@@ -118,3 +118,8 @@ venv.bak/
 .spyderproject
 .ropeproject
 .vscode
+
+# pyspark
+derby.log
+metastore_db
+spark-warehouse
