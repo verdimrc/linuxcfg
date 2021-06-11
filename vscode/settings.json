@@ -184,6 +184,7 @@
         "visualstudioexptteam.vscodeintellicode",
         "redhat.vscode-yaml"
     ],
+    "sql-formatter.uppercase": true,
     "tabnine.experimentalAutoImports": false,
     "todo-tree.highlights.defaultHighlight": {
         "opacity": 0,
