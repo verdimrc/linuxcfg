@@ -4,6 +4,7 @@
 {
     "recommendations": [
         "2gua.rainbow-brackets",
+        "adpyke.vscode-sql-formatter",
         "bungcip.better-toml",
         "christian-kohler.path-intellisense",
         "DavidAnson.vscode-markdownlint",

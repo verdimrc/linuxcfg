@@ -3,6 +3,7 @@
 {
     "recommendations": [
         "2gua.rainbow-brackets",
+        "adpyke.vscode-sql-formatter",
         "amazonwebservices.aws-toolkit-vscode",
         "bungcip.better-toml",
         "christian-kohler.path-intellisense",
