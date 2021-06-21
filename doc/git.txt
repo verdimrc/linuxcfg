@@ -118,3 +118,8 @@ git push -u origin marcverd
 
 # Switch branch and update local copy of submodule
 git checkout --recurse-submodules <NEW_BRANCH>
+
+################################################################################
+
+# https://www.opentechguides.com/how-to/article/git/177/git-sync-repos.html
+# How to mirror between one repo to another
