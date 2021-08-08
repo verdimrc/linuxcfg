@@ -9,6 +9,7 @@
     "python.insidersChannel": "daily",
 
     // Python paths
+    "python.defaultInterpreterPath": "/home/verdi/miniconda3/envs/py/bin/python",
     "python.pythonPath": "/home/verdi/miniconda3/envs/py/bin/python",
     "python.envFile": "${workspaceFolder}/.vscenv",
     "terminal.integrated.env.osx": {
@@ -17,7 +18,7 @@
     "terminal.integrated.env.linux": {
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
-    // To use binaries outside of environment, e.g., those installed by pipx
+    // To use binaries outside of selected python interpreter, e.g., those installed by pipx
     "python.formatting.blackPath": "/usr/local/bin/black",
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.linting.mypyPath": "/usr/local/bin/mypy",
@@ -47,6 +48,7 @@
     // Extensions telemetries
     "aws.telemetry": false,
     "gitlens.advanced.telemetry.enabled": false,
+    "redhat.telemetry.enabled": false,
 
 
     ///////////////////////////////////////////////////////////////////////////
@@ -82,7 +84,7 @@
         "Dockerfile.gpu": "dockerfile"
     },
 
-    // Debugger
+    // Python
     "debug.allowBreakpointsEverywhere": true,
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
@@ -93,6 +95,7 @@
     "jupyter.searchForJupyter": false,
     "jupyter.sendSelectionToInteractiveWindow": true,
     "jupyter.showKernelSelectionOnInteractiveWindow": true,
+    "notebook.lineNumbers": "on",
     "python.formatting.provider": "black",
     "python.jediEnabled": false,  //TODO: to be deprecated. https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
     "python.languageServer": "Pylance", //https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
@@ -132,12 +135,6 @@
     "files.eol": "\n",
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.localEchoLatencyThreshold": -1,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
     "workbench.editor.decorations.colors": true,
     "workbench.editor.decorations.badges": true,
     "workbench.editor.enablePreviewFromCodeNavigation": true,
@@ -186,11 +183,15 @@
     ],
     "sql-formatter.uppercase": true,
     "tabnine.experimentalAutoImports": false,
-    "todo-tree.highlights.defaultHighlight": {
-        "opacity": 0,
-        "fontStyle": "italic",
-        "fontWeight": "bold"
-    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
     "todo-tree.highlights.customHighlight": {
         "TODO": {
             "foreground": "yellow"
@@ -199,6 +200,12 @@
             "foreground": "red"
         }
     },
+    "todo-tree.highlights.defaultHighlight": {
+        "opacity": 0,
+        "fontStyle": "italic",
+        "fontWeight": "bold"
+    },
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
     "todo-tree.tree.showScanModeButton": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
