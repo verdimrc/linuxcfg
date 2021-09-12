@@ -3,7 +3,6 @@
 // See also: extensions-extras.json or extensions-all.json
 {
     "recommendations": [
-        "2gua.rainbow-brackets",
         "adpyke.vscode-sql-formatter",
         "bungcip.better-toml",
         "christian-kohler.path-intellisense",

@@ -27,13 +27,14 @@
 
     // GUI: vscode
     "window.zoomLevel": 0,  // osx retina scaled: -1; lxqt 4k monitor: 1
+    //"editor.fontFamily": "Monego",
     "debug.console.fontSize": 12,
     "editor.fontSize": 12,
+    //"editor.lineHeight": 18,
     "terminal.integrated.fontSize": 12,
-    "extensions.showRecommendationsOnlyOnDemand": true,  // Default to true; set false if you prefer.
+    "extensions.ignoreRecommendations": true,  // Default to true; set false if you prefer.
     // GUI: extensions
     "markdown.preview.fontSize": 16,  // yzhang.markdown-all-in-one
-    "dimmer.enabled": false, // imagio.vscode-dimmer-block
 
 
     ///////////////////////////////////////////////////////////////////////////
@@ -86,19 +87,14 @@
 
     // Python
     "debug.allowBreakpointsEverywhere": true,
-    "jupyter.alwaysTrustNotebooks": true,
     "jupyter.askForKernelRestart": false,
     "jupyter.debugJustMyCode": false,
     "jupyter.disableJupyterAutoStart": true,
-    "jupyter.gatherToScript": true,
     "jupyter.magicCommandsAsComments": true,
-    "jupyter.searchForJupyter": false,
     "jupyter.sendSelectionToInteractiveWindow": true,
-    "jupyter.showKernelSelectionOnInteractiveWindow": true,
     "notebook.lineNumbers": "on",
     "python.formatting.provider": "black",
-    "python.jediEnabled": false,  //TODO: to be deprecated. https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
-    "python.languageServer": "Pylance", //https://github.com/erictraut/vscode-python/commit/616f129b356deb5dd79ec4c438c392f7f5366eaf
+    "python.languageServer": "Pylance",
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
@@ -106,13 +102,12 @@
     "python.showStartPage": false,
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
-    "python.testing.nosetestsEnabled": false,
 
     // Workbench & editor
     "breadcrumbs.enabled": true,
+    "editor.bracketPairColorization.enabled": true,
     "editor.formatOnSave": true,
     //"editor.formatOnSaveMode": "modifications",  //Not supported with Black
-    "editor.formatOnSaveTimeout": 5000,
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true, // Extension davidanson.vscode-markdownlint
         "source.organizeImports": true
@@ -142,7 +137,7 @@
     "workbench.tree.indent": 20,
 
     // Shortcuts in integrated terminal
-    "terminal.integrated.allowChords": false,  // send ctrl+k to integrated terminal
+    "terminal.integrated.allowChords": false, // send ctrl+k to integrated terminal
     "terminal.integrated.commandsToSkipShell": [
         // Linux: send ctrl+e to integrated terminal
         "-workbench.action.quickOpen",
@@ -151,7 +146,6 @@
         "-workbench.action.terminal.deleteWordLeft"
     ],
     //"terminal.integrated.macOptionIsMeta": true, // Allow alt-{f,b,.} in integrated terminal. See https://github.com/Microsoft/vscode/issues/11314
-    "terminal.integrated.rendererType": "experimentalWebgl",
     "terminal.integrated.sendKeybindingsToShell": true,
     "terminal.integrated.showExitAlert": false,
 
@@ -174,7 +168,6 @@
         "ms-python.vscode-pylance",
         "ms-python.python",
         "njpwerner.autodocstring",
-        "2gua.rainbow-brackets",
         "stkb.rewrap",
         "gruntfuggly.todo-tree",
         "shardulm94.trailing-spaces",
@@ -182,7 +175,6 @@
         "redhat.vscode-yaml"
     ],
     "sql-formatter.uppercase": true,
-    "tabnine.experimentalAutoImports": false,
     "todo-tree.general.tags": [
         "BUG",
         "HACK",

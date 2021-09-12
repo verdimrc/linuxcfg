@@ -2,7 +2,6 @@
 // This file = "extensions.json" + "extensions-extras.json"
 {
     "recommendations": [
-        "2gua.rainbow-brackets",
         "adpyke.vscode-sql-formatter",
         "amazonwebservices.aws-toolkit-vscode",
         "bungcip.better-toml",
