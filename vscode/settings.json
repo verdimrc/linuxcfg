@@ -44,6 +44,7 @@
     // Global telemetries
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",  // Since v1.61 Oct'21
     "python.experiments.enabled": false,
     "workbench.enableExperiments": false,
     // Extensions telemetries
