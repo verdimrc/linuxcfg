@@ -161,6 +161,7 @@
         "editorconfig.editorconfig",
         "mhutchie.git-graph",
         "donjayamanne.githistory",
+        "donjayamanne.python-environment-manager",
         //"eamodio.gitlens",
         "ms-toolsai.jupyter",
         "yzhang.markdown-all-in-one",
