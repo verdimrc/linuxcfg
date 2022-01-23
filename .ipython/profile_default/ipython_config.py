@@ -36,4 +36,4 @@ Unfortunately, `IPython.core.ultratb.VerboseTB.get_records() hardcoded the
 what Input provides. Hence, let's directly override pygments.
 """
 from pygments.styles.default import DefaultStyle
-DefaultStyle.styles = {k: v.replace("#0000FF", "#6fa8dc") for k, v in DefaultStyle.styles.items()}
+DefaultStyle.styles = {k: v.replace("#0000FF", "#3d85c6") for k, v in DefaultStyle.styles.items()}
