@@ -14,9 +14,10 @@ Find out the correct token type with:
  (Token.Text, '\n')]
 """
 c.TerminalInteractiveShell.highlighting_style_overrides = {
+    # Name.Variable: "#2CB5E9"
     Name.Variable: "#B8860B",         # Older ipython or pygments (unclear since which versions)
     Name.Variable.Magic: "#B8860B",   # Newer ipython or pygments (unclear since which versions)
-    # Name.Variable: "#2CB5E9"
+    Name.Function: "#6fa8dc",         # For IPython 8+ (tone down dark blue for function name)
 }
 
 c.TerminalInteractiveShell.highlight_matching_brackets = True
