@@ -129,6 +129,7 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 0,
     "files.eol": "\n",
+    "git.terminalAuthentication": false,
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.localEchoLatencyThreshold": -1,
     "workbench.editor.decorations.colors": true,
