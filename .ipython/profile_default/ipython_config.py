@@ -14,9 +14,8 @@ Find out the correct token type with:
  (Token.Text, '\n')]
 """
 c.TerminalInteractiveShell.highlighting_style_overrides = {
-    # Name.Variable: "#2CB5E9"
-    Name.Variable: "#B8860B",         # Older ipython or pygments (unclear since which versions)
-    Name.Variable.Magic: "#B8860B",   # Newer ipython or pygments (unclear since which versions)
+    Name.Variable: "#B8860B",
+    Name.Variable.Magic: "#B8860B",   # Unclear why certain ipython prefers this.
     Name.Function: "#6fa8dc",         # For IPython 8+ (tone down dark blue for function name)
 }
 
