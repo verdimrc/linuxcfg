@@ -105,11 +105,20 @@ prompt_prefix() {
     # Be aware when running under midnight commander.
     [[ -v MC_SID ]] && retval=${retval}"%B%F{red}[mc]%f%b "
 
+    # VScode uses pyenv shell instead of pyenv activate
+    if [[ (${TERM_PROGRAM} == "vscode") && (! -v VIRTUAL_ENV) && (-v PYENV_VERSION) ]]; then
+        retval=${retval}"($PYENV_VERSION) "
+    fi
+
     echo -n "${retval}"
 }
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
 #export PROMPT='$(prompt_prefix)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+
+# Use this when screencasting, to strip-off unecessary details in the prompt
+#export PROMPT='[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b%F{gray}
+
 export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 %# '
 
@@ -135,6 +144,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
     [[ -z "$TMUX" ]] || pyenv deactivate
     [[ -z "$JUPYTER_SERVER_ROOT" ]] || pyenv deactivate
 fi
+
+# pipx
+export PATH="$PATH:$HOME/.local/bin"
+eval "$(register-python-argcomplete pipx)"
 
 ################################################################################
 # Keybindings
