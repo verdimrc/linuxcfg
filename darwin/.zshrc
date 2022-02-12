@@ -45,12 +45,6 @@ setopt hist_reduce_blanks
 FPATH=/usr/local/share/zsh-completions:$FPATH
 autoload -Uz compinit
 compinit
-## https://htr3n.github.io/2018/07/faster-zsh/
-#if [[ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]]; then
-#    compinit
-#else
-#    compinit -C
-#fi
 
 command -v kitty &> /dev/null && kitty + complete setup zsh | source /dev/stdin
 
@@ -61,7 +55,7 @@ complete -C '/usr/local/bin/aws_completer' aws
 setopt autoparamslash
 
 # https://superuser.com/a/1020116
-zstyle ':completion:*:*:*:*:*' menu select # https://superuser.com/a/1020116
+zstyle ':completion:*:*:*:*:*' menu select
 
 ################################################################################
 # Enriched prompt

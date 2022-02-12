@@ -1,18 +1,47 @@
-# TODO: https://wiki.archlinux.org/index.php/Color_output_in_console
-#
 export PATH=$HOME/bin:$PATH
-[[ -s '/etc/zsh_command_not_found' ]] && source '/etc/zsh_command_not_found'
 
+###############################################################################
+# Command not found
+###############################################################################
+command_not_found_handler() {
+	local pkgs cmd="$1" files=()
+	printf 'zsh: command not found: %s' "$cmd" # print command not found asap, then search for packages
+	files=(${(f)"$(pacman -F --machinereadable -- "/usr/bin/${cmd}")"})
+	if (( ${#files[@]} )); then
+		printf '\r%s may be found in the following packages:\n' "$cmd"
+		local res=() repo package version file
+		for file in "$files[@]"; do
+			res=("${(0)file}")
+			repo="$res[1]"
+			package="$res[2]"
+			version="$res[3]"
+			file="$res[4]"
+			printf '  %s/%s %s: /%s\n' "$repo" "$package" "$version" "$file"
+		done
+	else
+		printf '\n'
+	fi
+	return 127
+}
+
+
+###############################################################################
+# CLI
+###############################################################################
+# https://wiki.archlinux.org/index.php/Color_output_in_console
 export CLICOLOR=1
 export LESS='-FMRX'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias ip='ip -color=auto'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
 alias vi='vim'
 alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
-
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 
 ################################################################################
@@ -32,9 +61,6 @@ fi
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 if [[ -n "$DISPLAY" ]]; then
    man() {
@@ -71,11 +97,6 @@ setopt hist_reduce_blanks
 # Completion
 ################################################################################
 autoload -Uz compinit
-#for dump in ~/.zcompdump(N.mh+24); do
-#    # https://medium.com/@dannysmith/little-thing-2-speeding-up-zsh-f1860390f92
-#    # Section "What else is slow then?"
-#    compinit
-#done
 compinit
 
 command -v kitty &> /dev/null && kitty + complete setup zsh | source /dev/stdin
@@ -144,6 +165,11 @@ prompt_prefix() {
     # Be aware when running under midnight commander.
     [[ -v MC_SID ]] && retval=${retval}"%B%F{red}[mc]%f%b "
 
+    # VScode uses pyenv shell instead of pyenv activate
+    if [[ (${TERM_PROGRAM} == "vscode") && (! -v VIRTUAL_ENV) && (-v PYENV_VERSION) ]]; then
+        retval=${retval}"($PYENV_VERSION) "
+    fi
+
     echo -n "${retval}"
 }
 
@@ -178,13 +204,9 @@ fi
 
 
 ################################################################################
-# linuxbrew
-################################################################################
-command -v /home/linuxbrew/.linuxbrew/bin/brew &> /dev/null \
-    && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-
-################################################################################
 # Keybindings
 ################################################################################
 source ~/.zshrc-keybindings.linux
+
+# Created by `pipx` on 2021-03-06 18:47:46
+export PATH="$PATH:$HOME/.local/bin"

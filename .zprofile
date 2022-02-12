@@ -1,7 +1,5 @@
-export PATH=/usr/local/opt/openssl/bin:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
-if [[ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]]; then
-    . "$HOME/miniconda3/etc/profile.d/conda.sh"
-    [[ -z "$TMUX" ]] || conda deactivate
-    [[ -z "$JUPYTER_SERVER_ROOT" ]] || conda deactivate
-fi
+export PATH="$PATH:$HOME/.local/bin"

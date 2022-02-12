@@ -99,7 +99,7 @@ fi
 
 
 ################################################################################
-# Keybindings on lxqt qterminal (TERM=xterm-256color)
+# Keybindings on lxqt
 ################################################################################
 # To find out keycode: ctrl-v, then type the keys to figure-out.
 bindkey "^[^H"    backward-kill-word-bash   # alt-backspace
