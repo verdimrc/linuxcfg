@@ -181,6 +181,10 @@ export PROMPT='$(prompt_prefix)[%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info
 
 ################################################################################
 # PyEnv
+#
+# NOTE for archlinux: if autocompletion is not working, apply the suggestion
+# from https://bbs.archlinux.org/viewtopic.php?pid=1957176#p1957176 to
+# /usr/share/zsh/site-functions/_pyenv
 ################################################################################
 export PATH="$HOME/.pyenv/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -189,7 +193,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
 
     # Speed-up pyenv init -- https://github.com/pyenv/pyenv/issues/784#issuecomment-404850327
     # NOTE: run 'pyenv rehash' after installing executables.
-    eval "$(pyenv init - --no-rehash zsh)"
+    #eval "$(pyenv init - --no-rehash zsh)"
+    eval "$(pyenv init - zsh)"
 
     # Prefer manual activation even if per-project virtualenv is defined.
     # Apart from full control, want to be able to 'reset' on tmux or jupyter
