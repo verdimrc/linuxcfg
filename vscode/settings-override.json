@@ -1,0 +1,16 @@
+// Optional project-level or workspace-level settings.
+// Use-case: to prevent reformatting existing code-base.
+{
+    "python.formatting.provider": "none",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.markdownlint": false, // Extension davidanson.vscode-markdownlint
+        "source.organizeImports": false
+    },
+
+    // Disable vscode built-in trailing-space trimmer.
+    "files.trimTrailingWhitespace": false,
+
+    // Extension: trim trailing-space selectively.
+    "trailing-spaces.trimOnSave": true,
+    "trailing-spaces.deleteModifiedLinesOnly": true
+}
