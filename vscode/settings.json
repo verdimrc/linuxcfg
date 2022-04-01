@@ -41,9 +41,9 @@
     ///////////////////////////////////////////////////////////////////////////
 
     // Global telemetries
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "telemetry.telemetryLevel": "off",  // Since v1.61 Oct'21
+    "telemetry.enableCrashReporter": false,  // Deprecated since v1.61 Oct'21
+    "telemetry.enableTelemetry": false,      // Deprecated since v1.61 Oct'21
+    "telemetry.telemetryLevel": "off",       // Since v1.61 Oct'21
     "python.experiments.enabled": false,
     "workbench.enableExperiments": false,
     // Extensions telemetries
@@ -134,6 +134,7 @@
     "workbench.editor.decorations.colors": true,
     "workbench.editor.decorations.badges": true,
     "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "workbench.reduceMotion": "on",
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 20,
 
@@ -177,6 +178,7 @@
         "visualstudioexptteam.vscodeintellicode",
         "redhat.vscode-yaml"
     ],
+    "rewrap.wrappingColumn": 100,
     "sql-formatter.uppercase": true,
     "todo-tree.general.tags": [
         "BUG",
