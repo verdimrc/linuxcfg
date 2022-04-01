@@ -4,9 +4,7 @@
     ///////////////////////////////////////////////////////////////////////////
 
     // Insider frequency: daily or weekly.
-    "jupyter.insidersChannel": "daily",
     "pylance.insidersChannel": "daily",
-    "python.insidersChannel": "daily",
 
     // Python paths
     "python.defaultInterpreterPath": "/home/verdi/miniconda3/envs/py/bin/python",
