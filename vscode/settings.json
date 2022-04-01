@@ -127,6 +127,8 @@
     "explorer.openEditors.visible": 0,
     "files.eol": "\n",
     "git.terminalAuthentication": false,
+    "outline.showVariables": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.localEchoLatencyThreshold": -1,
     "workbench.editor.decorations.colors": true,
@@ -155,6 +157,9 @@
     "aws.profile": "default",
     "gitlens.hovers.currentLine.over": "line",
     "markdown.extension.preview.autoShowPreviewToSide": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
     "remote.SSH.defaultExtensions": [
         "bungcip.better-toml",
         "editorconfig.editorconfig",
