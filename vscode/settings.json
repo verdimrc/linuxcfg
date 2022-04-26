@@ -15,6 +15,7 @@
     "terminal.integrated.env.linux": {
         "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
     },
+
     // To use binaries outside of selected python interpreter, e.g., those installed by pipx
     //"python.formatting.blackPath": "/usr/local/bin/black",
     //"python.linting.flake8Path": "/usr/local/bin/flake8",
@@ -31,7 +32,7 @@
     "terminal.integrated.fontSize": 12,
     "extensions.ignoreRecommendations": true,  // Default to true; set false if you prefer.
     "workbench.colorCustomizations": {
-      "editor.lineHighlightBackground": "#2a2a2a"  // For dark theme
+        "editor.lineHighlightBackground": "#2d2d2d"  // For dark theme
     },
     // GUI: extensions
     "markdown.preview.fontSize": 16,  // yzhang.markdown-all-in-one
@@ -134,6 +135,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.localEchoLatencyThreshold": -1,
+    "terminal.integrated.shellIntegration.enabled": true,
     "workbench.editor.decorations.colors": true,
     "workbench.editor.decorations.badges": true,
     "workbench.editor.enablePreviewFromCodeNavigation": true,
