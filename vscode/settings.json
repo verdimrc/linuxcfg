@@ -32,7 +32,7 @@
     "extensions.ignoreRecommendations": true,  // Default to true; set false if you prefer.
     "workbench.colorCustomizations": {
       "editor.lineHighlightBackground": "#2a2a2a"  // For dark theme
-    }
+    },
     // GUI: extensions
     "markdown.preview.fontSize": 16,  // yzhang.markdown-all-in-one
 
