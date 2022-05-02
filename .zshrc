@@ -131,6 +131,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats ' (%b)'
 setopt PROMPT_SUBST
 precmd() { vcs_info }
+
 aws_profile() {
     # For https://github.com/remind101/assume-role/ which adds ASSUME_ROLE
     # to the current shell process.
@@ -167,7 +168,6 @@ prompt_prefix() {
     else
         [[ ${SHLVL} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${SHLVL}]%f%b "
     fi
-    #[[ ${SHLVL} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${SHLVL}]%f%b "
 
     # Be aware when running under midnight commander.
     [[ -v MC_SID ]] && retval=${retval}"%B%F{red}[mc]%f%b "
@@ -180,6 +180,7 @@ prompt_prefix() {
     echo -n "${retval}"
 }
 
+# Shlvl of VSCode's integrated terminal
 if [[ ${TERM_PROGRAM} == "vscode" ]]; then
     local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))
     [[ "$pcmd" =~ "[Cc]ode*" ]] && export VSCODE_BASE_SHLVL=$SHLVL
@@ -187,6 +188,10 @@ fi
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
 #export PROMPT='$(prompt_prefix)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+
+# Use this when screencasting, to strip-off unecessary details in the prompt
+#export PROMPT='[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b%F{gray}
+
 export PROMPT='$(prompt_prefix)[%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 %# '
 
@@ -225,5 +230,17 @@ fi
 ################################################################################
 source ~/.zshrc-keybindings.linux
 
-# Created by `pipx` on 2021-03-06 18:47:46
+# pipx
 export PATH="$PATH:$HOME/.local/bin"
+eval "$(register-python-argcomplete pipx)"
+
+
+################################################################################
+# Specific stuffs for vscode terminal
+################################################################################
+if [[ (${TERM_PROGRAM} == "vscode") ]]; then
+    GITROOT=$(git rev-parse --show-toplevel 2> /dev/null)
+    if [[ $? -eq 0 ]]; then
+        [[ -e $GITROOT/.env.unversioned ]] && source $GITROOT/.env.unversioned
+    fi
+fi
