@@ -21,6 +21,11 @@ get_latest_release() {
 
 ################################################################################
 
+# git fetch --all to ignore MY_REMOTE
+git config remote.MY_REMOTE.skipDefaultUpdate true
+
+################################################################################
+
 # Descriptive branch
 git branch lr
 git branch --edit-description
