@@ -1,4 +1,5 @@
 export PATH=$HOME/bin:$PATH
+setopt interactive_comments
 
 ###############################################################################
 # Command not found
