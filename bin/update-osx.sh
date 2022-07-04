@@ -1,18 +1,22 @@
 #!/bin/bash
 
 # brew
+echo Updating brew packages...
 brew update
 brew upgrade
 brew cleanup -s
 
-# No longer use miniconda
-exit
+# updating pyenv
+echo 'Running pyenv rehash...'
+pyenv rehash
 
-# miniconda
-declare -a conda_env=( $(for i in ~/miniconda3/envs/*; do [[ -d $i && ! $i =~ '^.' ]] && echo $(basename $i);done) )
-for i in base "${conda_env[@]}"; do
-    echo Updating conda environment: $i
-    ~/miniconda3/bin/conda update -n $i --all -y
+# updating pipx
+echo 'Updating pipx packages...'
+pipx upgrade-all
+
+# updating conda
+echo 'Updating conda environments...'
+for i in base ~/.pyenv/versions/miniforge3/envs/base-*; do
+    ~/.pyenv/versions/miniforge3/bin/conda update --all --yes -n `basename $i`
 done
-~/miniconda3/bin/conda clean --all -y
-~/miniconda3/bin/conda build purge
+~/.pyenv/versions/miniforge3/bin/conda clean --all --yes
