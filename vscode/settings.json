@@ -92,7 +92,7 @@
     "jupyter.magicCommandsAsComments": true,
     "jupyter.sendSelectionToInteractiveWindow": true,
     "notebook.lineNumbers": "on",
-    // "python.formatting.provider": "black",
+    "python.formatting.provider": "black",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
