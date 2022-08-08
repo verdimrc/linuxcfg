@@ -94,7 +94,8 @@
     "notebook.lineNumbers": "on",
     "python.formatting.provider": "black",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "source.fixAll": true
     },
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
