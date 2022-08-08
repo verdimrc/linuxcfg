@@ -1,10 +1,31 @@
 {
     ///////////////////////////////////////////////////////////////////////////
-    // HYPER-PERSONALIZED STANZA
+    // OFF TELEMETRIES (LIFTED TO NEAR TOP FOR VISIBILITY
     ///////////////////////////////////////////////////////////////////////////
 
-    // Insider frequency: daily or weekly.
-    "pylance.insidersChannel": "daily",
+    // Global telemetries
+    "telemetry.enableCrashReporter": false, // Deprecated since v1.61 Oct'21
+    "telemetry.enableTelemetry": false, // Deprecated since v1.61 Oct'21
+    "telemetry.telemetryLevel": "off", // Since v1.61 Oct'21
+    "python.experiments.enabled": false,
+    "workbench.enableExperiments": false,
+
+    // Extensions telemetries
+    "aws.telemetry": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "redhat.telemetry.enabled": false,
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    // EXPERIMENTAL OR PREVIEW FEATURES
+    ///////////////////////////////////////////////////////////////////////////
+    "editor.experimental.stickyScroll.enabled": true, // vscode jul22
+    "editor.experimental.useCustomCodeActionMenu": true, // vscode jul22
+    "terminal.integrated.shellIntegration.enabled": true, // Jul22 default is on
+
+    ///////////////////////////////////////////////////////////////////////////
+    // HYPER-PERSONALIZED STANZA
+    ///////////////////////////////////////////////////////////////////////////
 
     // Python paths
     "python.defaultInterpreterPath": "/home/verdi/miniconda3/envs/py/bin/python",
@@ -21,34 +42,18 @@
     //"python.linting.pydocstylePath": "/home/verdi/.local/bin/pydocstyle",
 
     // GUI: vscode
-    "window.zoomLevel": 0,  // osx retina scaled: -1; lxqt 4k monitor: 1
+    "window.zoomLevel": 0, // osx retina scaled: 0.5; lxqt 4k monitor: 1
     //"editor.fontFamily": "Monego",
-    "debug.console.fontSize": 12,
-    "editor.fontSize": 12,
+    "debug.console.fontSize": 11,
+    "editor.fontSize": 11,
     //"editor.lineHeight": 18,
-    "terminal.integrated.fontSize": 12,
-    "extensions.ignoreRecommendations": true,  // Default to true; set false if you prefer.
+    "terminal.integrated.fontSize": 11,
+    "extensions.ignoreRecommendations": true, // Default to true; set false if you prefer.
     "workbench.colorCustomizations": {
-        "editor.lineHighlightBackground": "#2d2d2d"  // For dark theme
+        "editor.lineHighlightBackground": "#2d2d2d" // For dark theme
     },
     // GUI: extensions
-    "markdown.preview.fontSize": 16,  // yzhang.markdown-all-in-one
-
-
-    ///////////////////////////////////////////////////////////////////////////
-    // OFF TELEMETRIES (LIFTED TO NEAR TOP FOR VISIBILITY
-    ///////////////////////////////////////////////////////////////////////////
-
-    // Global telemetries
-    "telemetry.enableCrashReporter": false,  // Deprecated since v1.61 Oct'21
-    "telemetry.enableTelemetry": false,      // Deprecated since v1.61 Oct'21
-    "telemetry.telemetryLevel": "off",       // Since v1.61 Oct'21
-    "python.experiments.enabled": false,
-    "workbench.enableExperiments": false,
-    // Extensions telemetries
-    "aws.telemetry": false,
-    "gitlens.advanced.telemetry.enabled": false,
-    "redhat.telemetry.enabled": false,
+    "markdown.preview.fontSize": 16, // yzhang.markdown-all-in-one
 
 
     ///////////////////////////////////////////////////////////////////////////
@@ -95,7 +100,9 @@
     "python.formatting.provider": "black",
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
-        "source.fixAll": true
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true
+        }
     },
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
@@ -135,13 +142,13 @@
     "files.eol": "\n",
     "git.terminalAuthentication": false,
     "scm.diffDecorationsGutterPattern": {
-      "added": true
+        "added": true
     },
+    "json.format.keepLines": true,
     "outline.showVariables": false,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.localEchoLatencyThreshold": -1,
-    "terminal.integrated.shellIntegration.enabled": true, // Jul22 default is on
     "workbench.editor.decorations.colors": true,
     "workbench.editor.decorations.badges": true,
     "workbench.editor.enablePreviewFromCodeNavigation": true,
