@@ -141,7 +141,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.localEchoLatencyThreshold": -1,
-    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.shellIntegration.enabled": true, // Jul22 default is on
     "workbench.editor.decorations.colors": true,
     "workbench.editor.decorations.badges": true,
     "workbench.editor.enablePreviewFromCodeNavigation": true,
