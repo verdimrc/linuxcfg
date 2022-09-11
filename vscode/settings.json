@@ -19,9 +19,8 @@
     ///////////////////////////////////////////////////////////////////////////
     // EXPERIMENTAL OR PREVIEW FEATURES
     ///////////////////////////////////////////////////////////////////////////
-    "editor.experimental.stickyScroll.enabled": true, // vscode jul22
-    "editor.experimental.useCustomCodeActionMenu": true, // vscode jul22
-    "terminal.integrated.shellIntegration.enabled": true, // Jul22 default is on
+    "markdown.experimental.updateLinksOnFileMove.enabled": true,  // aug22
+
 
     ///////////////////////////////////////////////////////////////////////////
     // HYPER-PERSONALIZED STANZA
@@ -42,7 +41,7 @@
     //"python.linting.pydocstylePath": "/home/verdi/.local/bin/pydocstyle",
 
     // GUI: vscode
-    "window.zoomLevel": 0, // osx retina scaled: 0.5; lxqt 4k monitor: 1
+    "window.zoomLevel": 0,
     //"editor.fontFamily": "Monego",
     "debug.console.fontSize": 11,
     "editor.fontSize": 11,
@@ -52,6 +51,7 @@
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#2d2d2d" // For dark theme
     },
+    "window.titleBarStyle": "custom",
     // GUI: extensions
     "markdown.preview.fontSize": 16, // yzhang.markdown-all-in-one
 
@@ -133,6 +133,7 @@
         80,
         100
     ],
+    "editor.stickyScroll.enabled": true,
     "editor.stickyTabStops": true,
     "editor.suggestSelection": "first",
     "editor.wordWrapColumn": 100,
@@ -149,6 +150,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.localEchoLatencyThreshold": -1,
+    "terminal.integrated.shellIntegration.enabled": true, // Jul22 default is on
     "workbench.editor.decorations.colors": true,
     "workbench.editor.decorations.badges": true,
     "workbench.editor.enablePreviewFromCodeNavigation": true,
@@ -174,7 +176,7 @@
     "aws.samcli.location": "/usr/local/bin/sam",
     "aws.profile": "default",
     "gitlens.hovers.currentLine.over": "line",
-    "markdown.extension.preview.autoShowPreviewToSide": true,
+    // "markdown.extension.preview.autoShowPreviewToSide": true,
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
