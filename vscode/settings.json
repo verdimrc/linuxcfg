@@ -51,7 +51,7 @@
     "workbench.colorCustomizations": {
         "editor.lineHighlightBackground": "#2d2d2d" // For dark theme
     },
-    "window.titleBarStyle": "custom",
+    // "window.titleBarStyle": "custom",
     // GUI: extensions
     "markdown.preview.fontSize": 16, // yzhang.markdown-all-in-one
 
@@ -101,7 +101,7 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.codeActionsOnSave": {
-            "source.fixAll": true
+            "source.fixAll": false // Don't like. Import can be removed unpredictably.
         }
     },
     "python.analysis.inlayHints.variableTypes": true,
@@ -110,6 +110,7 @@
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.mypyEnabled": true,
+    "python.linting.mypyArgs": [ "--show-error-codes" ],
     "python.linting.pydocstyleEnabled": false,
     "python.showStartPage": false,
     "python.testing.pytestEnabled": true,
@@ -150,10 +151,12 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "terminal.integrated.lineHeight": 1.2,
     "terminal.integrated.localEchoLatencyThreshold": -1,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.enablePersistentSessions": false,
     "terminal.integrated.shellIntegration.enabled": true, // Jul22 default is on
     "workbench.editor.decorations.colors": true,
     "workbench.editor.decorations.badges": true,
-    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    // "workbench.editor.enablePreviewFromCodeNavigation": true,
     "workbench.reduceMotion": "on",
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 20,
