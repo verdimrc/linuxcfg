@@ -13,3 +13,4 @@ c.EnvironmentKernelSpecManager.virtualenv_env_dirs = ['/home/verdi/.pyenv/versio
 
 c.FileCheckpoints.checkpoint_dir = '/tmp/.ipynb_checkpoints'
 c.FileContentsManager.delete_to_trash = False
+c.FileContentsManager.always_delete_dir = True

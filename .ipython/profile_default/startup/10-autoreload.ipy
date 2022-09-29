@@ -1,0 +1,8 @@
+# autoreload silently ignores unknown level, so it's safe gradually increase
+# level and let IPython applies the highest level supported.
+#
+# NOTE: IPython>=8 supports up to level '3', older up to level '2'
+%load_ext autoreload
+%autoreload 2
+# autoreload 3 gives more frequent errors
+#%autoreload 3
