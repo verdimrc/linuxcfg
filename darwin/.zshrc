@@ -1,10 +1,14 @@
 export PATH=$HOME/bin:$PATH
 export CLICOLOR=1
 
+# Need: brew install coreutils
+alias ls='gls --color=auto --hyperlink=auto'
+alias ll='ls -al'
+
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -al'
 alias vi='vim'
+alias ncdu='ncdu --color dark'
 alias reset_title='echo -e "\033];\007"'
 alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
 
@@ -173,4 +177,7 @@ if [[ (${TERM_PROGRAM} == "vscode") ]]; then
     if [[ $? -eq 0 ]]; then
         [[ -e $GITROOT/.env.unversioned ]] && source $GITROOT/.env.unversioned
     fi
+
+    # Underlines make integrated terminal too noisy
+    alias ls='gls --color=auto'
 fi
