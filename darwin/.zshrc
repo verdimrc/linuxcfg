@@ -97,6 +97,18 @@ aws_profile() {
     fi
 }
 
+amplify_env() {
+    # Based on https://www.xiegerts.com/post/show-current-aws-amplify-environment/#display-the-active-amplify-env
+    local PROJECT_DIR=$(git rev-parse --show-toplevel 2>/dev/null)
+    local ENV=$PROJECT_DIR/amplify/.config/local-env-info.json
+
+    if [ -f "$ENV" ]; then
+        local env_info=$(cat $ENV | jq -r ".envName")
+        local env_name="%B%F{yellow}$env_info%f%b"
+        echo -n " %F{white}{$env_name%F{white}}"
+    fi
+}
+
 prompt_prefix() {
     local retval=""
 
@@ -127,12 +139,12 @@ if [[ ${TERM_PROGRAM} == "vscode" ]]; then
 fi
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
-#export PROMPT='$(prompt_prefix)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+#export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 
 # Use this when screencasting, to strip-off unecessary details in the prompt
 #export PROMPT='[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b%F{gray}
 
-export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+export PROMPT='$(prompt_prefix)[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(amplify_env)%b$(aws_profile)%F{gray}
 %# '
 
 
