@@ -103,9 +103,16 @@ amplify_env() {
     local ENV=$PROJECT_DIR/amplify/.config/local-env-info.json
 
     if [ -f "$ENV" ]; then
-        local env_info=$(cat $ENV | jq -r ".envName")
-        local env_name="%B%F{yellow}$env_info%f%b"
-        echo -n " %F{white}{$env_name%F{white}}"
+        local env=$(cat $ENV | jq -r ".envName")
+
+        [[ -f "$PROJECT_DIR/amplify/.config/project-config.json" ]] \
+            && local project=$(cat "$PROJECT_DIR/amplify/.config/project-config.json" | jq -r ".projectName")
+
+        [[ -f "$PROJECT_DIR/amplify/team-provider-info.json" ]] \
+            && local region=$(cat "$PROJECT_DIR/amplify/team-provider-info.json" | jq -r ".${env}.awscloudformation.Region")
+
+        local amplify_env="%B%F{yellow}$region/$project/$env%f%b"
+        echo -n " %F{white}{$amplify_env%F{white}}"
     fi
 }
 
