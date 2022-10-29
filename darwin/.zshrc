@@ -120,7 +120,12 @@ prompt_prefix() {
     local retval=""
 
     # Be aware when some CLI toolkits (e.g., assume role) spawns a new shell.
-    if [[ ${TERM_PROGRAM} == "vscode" ]]; then
+    if [[ ${JUPYTER_SERVER_ROOT} != "" ]]; then
+        # Normalize Jlab terminal to level 1. This must precedes the vscode
+        # check, because Jlab can be started from vscode integrated terminal.
+        local let effective_shlvl=$(($SHLVL-$JLAB_BASE_SHLVL+1))
+        [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
+    elif [[ ${TERM_PROGRAM} == "vscode" ]]; then
         # Normalize vscode integrated terminal to level 1
         local let effective_shlvl=$(($SHLVL-$VSCODE_BASE_SHLVL+1))
         [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
@@ -143,6 +148,12 @@ prompt_prefix() {
 if [[ ${TERM_PROGRAM} == "vscode" ]]; then
     local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))
     [[ "$pcmd" =~ "[Cc]ode*" ]] && export VSCODE_BASE_SHLVL=$SHLVL
+fi
+
+# Shlvl of JLab's terminal
+if [[ ${JUPYTER_SERVER_ROOT} != "" ]]; then
+    local pcmd=$(ps -c -o command=,args= -p $(ps -o ppid= -p $$))
+    [[ "$pcmd" == "python jupyter-lab" ]] && export JLAB_BASE_SHLVL=$SHLVL
 fi
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
