@@ -164,7 +164,12 @@ prompt_prefix() {
     local retval=""
 
     # Be aware when some CLI toolkits (e.g., assume role) spawns a new shell.
-    if [[ ${VSCODE_BASE_SHLVL} != "" ]]; then
+    if [[ ${JUPYTER_SERVER_ROOT} != "" ]]; then
+        # Normalize Jlab terminal to level 1. This must precedes the vscode
+        # check, because Jlab can be started from vscode integrated terminal.
+        local let effective_shlvl=$(($SHLVL-$JLAB_BASE_SHLVL+1))
+        [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
+    elif [[ ${VSCODE_BASE_SHLVL} != "" ]]; then
         # Normalize to level 1
         local let effective_shlvl=$(($SHLVL-$VSCODE_BASE_SHLVL+1))
         [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
