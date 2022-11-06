@@ -188,7 +188,7 @@ if [[ ${TERM_PROGRAM} == "vscode" ]]; then
     # Start an integrated terminal
     local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))
     [[ "$pcmd" =~ "[Cc]ode*" ]] && export VSCODE_BASE_SHLVL=$SHLVL
-else
+elif [[ $__CFBundleIdentifier == "" ]]; then  # __CF* env var is set if on OSX.
     # Linux-specific heuristic when starting an external terminal (VSCode -> ctrl+shift+c).
     # This is how the process tree looks like:
     #
