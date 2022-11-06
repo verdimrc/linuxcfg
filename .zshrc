@@ -164,7 +164,7 @@ prompt_prefix() {
     local retval=""
 
     # Be aware when some CLI toolkits (e.g., assume role) spawns a new shell.
-    if [[ ${TERM_PROGRAM} == "vscode" ]]; then
+    if [[ ${VSCODE_BASE_SHLVL} != "" ]]; then
         # Normalize vscode integrated terminal to level 1
         local let effective_shlvl=$(($SHLVL-$VSCODE_BASE_SHLVL+1))
         [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
@@ -183,9 +183,24 @@ prompt_prefix() {
     echo -n "${retval}"
 }
 
-# Shlvl of VSCode's integrated terminal
+# Shlvl of zsh when started from VSCode.
 if [[ ${TERM_PROGRAM} == "vscode" ]]; then
+    # Start an integrated terminal
     local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))
+    [[ "$pcmd" =~ "[Cc]ode*" ]] && export VSCODE_BASE_SHLVL=$SHLVL
+else
+    # Linux-specific heuristic when starting an external terminal (VSCode -> ctrl+shift+c).
+    # This is how the process tree looks like:
+    #
+    #     lxqt-sessions
+    #      \_ code-insider
+    #          \_ kitty
+    #              \_ kitty
+    #              \_ /usr/bin/zsh  # SHLVL=2, but closing the VSCode GUI won't close this kitty.
+    #                               # Instead, when the VSCode GUI is closed, the zsh parent kitty
+    #                               # will have lxqt-sessions as its new owner.
+    local -i pid_term_emu=$(ps -o ppid= -p $(ps -o ppid= -p $$))
+    local pcmd=$(ps -c -o command= -p $pid_term_emu)
     [[ "$pcmd" =~ "[Cc]ode*" ]] && export VSCODE_BASE_SHLVL=$SHLVL
 fi
 
