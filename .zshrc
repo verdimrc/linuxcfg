@@ -165,7 +165,7 @@ prompt_prefix() {
 
     # Be aware when some CLI toolkits (e.g., assume role) spawns a new shell.
     if [[ ${VSCODE_BASE_SHLVL} != "" ]]; then
-        # Normalize vscode integrated terminal to level 1
+        # Normalize to level 1
         local let effective_shlvl=$(($SHLVL-$VSCODE_BASE_SHLVL+1))
         [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
     else
