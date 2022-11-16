@@ -1,3 +1,6 @@
+# JLab (early Nov'22 version) refuses to load config from ~/.jupyter
+export JUPYTER_CONFIG_PATH=~/.jupyter
+
 export PATH=$HOME/bin:$PATH
 setopt interactive_comments
 
