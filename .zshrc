@@ -46,6 +46,7 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias vi='vim'
 alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
+alias ncdu='ncdu --color dark'
 
 
 ################################################################################
@@ -209,7 +210,7 @@ elif [[ $__CFBundleIdentifier == "" ]]; then  # __CF* env var is set if on OSX.
     #                               # will have lxqt-sessions as its new owner.
     local -i pid_term_emu=$(ps -o ppid= -p $(ps -o ppid= -p $$))
     local pcmd=$(ps -c -o command= -p $pid_term_emu)
-    [[ "$pcmd" =~ "[Cc]ode*" ]] && export VSCODE_BASE_SHLVL=$SHLVL
+    [[ "$pcmd" =~ "[Cc]ode*|lxqt-session" ]] && export VSCODE_BASE_SHLVL=$SHLVL
 fi
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
