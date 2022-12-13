@@ -97,6 +97,15 @@
     }
   },
 
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2
+  },
+
+  "[yaml]": {
+    "editor.tabSize": 2
+  },
+
   // Python
   "debug.allowBreakpointsEverywhere": true,
   "jupyter.askForKernelRestart": false,
