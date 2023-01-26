@@ -36,12 +36,11 @@
   },
 
   // To use binaries outside of selected python interpreter, e.g., those installed by pipx
-  //"python.linting.flake8Path": "/usr/local/bin/flake8",
   //"python.linting.mypyPath": "/usr/local/bin/mypy",
   //"python.linting.pydocstylePath": "/home/verdi/.local/bin/pydocstyle",
 
   // GUI: vscode
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 0.0,
   //"editor.fontFamily": "Monego",
   "debug.console.fontSize": 11,
   "editor.fontSize": 11,
@@ -126,7 +125,7 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.languageServer": "Pylance",
   "python.linting.enabled": true,
-  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Enabled": false,
   "python.linting.mypyEnabled": true,
   "python.linting.mypyArgs": [ "--show-error-codes" ],
   "python.linting.pydocstyleEnabled": false,
@@ -206,6 +205,7 @@
     "adpyke.vscode-sql-formatter",
     "bierner.markdown-mermaid",
     "bungcip.better-toml",
+    "charliermarsh.ruff",
     "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
     "donjayamanne.githistory",
@@ -216,8 +216,6 @@
     "mechatroner.rainbow-csv",
     "mhutchie.git-graph",
     "ms-python.black-formatter",
-    "ms-python.flake8",
-    "ms-python.isort",
     "ms-python.vscode-pylance",
     "ms-python.python",
     "ms-toolsai.jupyter",
