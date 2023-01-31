@@ -78,9 +78,19 @@ precmd() { vcs_info }
 aws_profile() {
     # For https://github.com/remind101/assume-role/ which adds ASSUME_ROLE
     # to the current shell process.
+    #
+    # NOTE: segfault on MBP M1.
     local assumed_role=""
     if [[ -n "$ASSUMED_ROLE" ]]; then
         assumed_role="%B%F{yellow}$ASSUMED_ROLE%f%b"
+    fi
+
+    # Replacement of assume-role for MBP M1
+    #
+    # AWSUME_SKIP_ALIAS_SETUP=true pipx install awsume
+    # . awsume <aws-profile>
+    if [[ -n "$AWSUME_PROFILE" ]]; then
+        assumed_role="%B%F{yellow}$AWSUME_PROFILE%f%b"
     fi
 
     # Isengard cli spanws a new shell process.
