@@ -104,8 +104,6 @@ setopt hist_reduce_blanks
 autoload -Uz compinit
 compinit
 
-command -v kitty &> /dev/null && kitty + complete setup zsh | source /dev/stdin
-
 autoload bashcompinit && bashcompinit
 
 #-------------------------------------------------------------------------------
