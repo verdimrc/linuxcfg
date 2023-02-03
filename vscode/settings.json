@@ -37,7 +37,6 @@
 
   // To use binaries outside of selected python interpreter, e.g., those installed by pipx
   //"python.linting.mypyPath": "/usr/local/bin/mypy",
-  //"python.linting.pydocstylePath": "/home/verdi/.local/bin/pydocstyle",
 
   // GUI: vscode
   "window.zoomLevel": 0.0,
@@ -116,6 +115,7 @@
   "python.formatting.provider": "black",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnType": true, // Auto-indent with Pylance, v1.75 Jan23
     "editor.codeActionsOnSave": {
       "source.organizeImports": true,
       "source.fixAll": false // Don't like. Import can be removed unpredictably.
