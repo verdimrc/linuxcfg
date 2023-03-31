@@ -55,11 +55,13 @@ autocmd BufNewFile,BufRead *.hql set filetype=sql
 autocmd BufNewFile,BufRead *.pmml set filetype=xml
 autocmd BufNewFile,BufRead *.cu set filetype=cuda
 autocmd BufNewFile,BufRead *.cuh set filetype=cuda
-" Smart paste mode. See Vim's xterm-bracketed-paste help topic.
-let &t_BE = "\<Esc>[?2004h"
-let &t_BD = "\<Esc>[?2004l"
-let &t_PS = "\<Esc>[200~"
-let &t_PE = "\<Esc>[201~"
+if v:version >= 800
+    " Smart paste mode. See Vim's xterm-bracketed-paste help topic.
+    let &t_BE = "\<Esc>[?2004h"
+    let &t_BD = "\<Esc>[?2004l"
+    let &t_PS = "\<Esc>[200~"
+    let &t_PE = "\<Esc>[201~"
+endif
 
 
 """ Coding style
