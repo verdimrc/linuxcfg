@@ -112,6 +112,7 @@
   "jupyter.magicCommandsAsComments": true,
   "jupyter.sendSelectionToInteractiveWindow": true,
   "notebook.lineNumbers": "on",
+  "notebook.output.scrolling": true,  // v1.77 (Mar23)
   "python.formatting.provider": "black",
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
