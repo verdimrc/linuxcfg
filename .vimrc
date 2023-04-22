@@ -10,6 +10,13 @@
 set nocompatible
 
 """ Plugins
+" Uncomment below stanza to auto-install Plug
+"let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+"if empty(glob(data_dir . '/autoload/plug.vim'))
+"  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
+
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeTabsToggle', 'NERDTreeToggle']}
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeTabsToggle'}
@@ -48,6 +55,14 @@ autocmd BufNewFile,BufRead *.hql set filetype=sql
 autocmd BufNewFile,BufRead *.pmml set filetype=xml
 autocmd BufNewFile,BufRead *.cu set filetype=cuda
 autocmd BufNewFile,BufRead *.cuh set filetype=cuda
+if v:version >= 800
+    " Smart paste mode. See Vim's xterm-bracketed-paste help topic.
+    let &t_BE = "\<Esc>[?2004h"
+    let &t_BD = "\<Esc>[?2004l"
+    let &t_PS = "\<Esc>[200~"
+    let &t_PE = "\<Esc>[201~"
+endif
+
 
 """ Coding style
 " prefer spaces to tabs
