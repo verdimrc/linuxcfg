@@ -1,6 +1,10 @@
 # JLab (early Nov'22 version) refuses to load config from ~/.jupyter
 export JUPYTER_CONFIG_PATH=~/.jupyter
 
+# Don't use golang proxy
+export GOPROXY=direct
+export HOMEBREW_GOPROXY=direct
+
 export PATH=$HOME/bin:$PATH
 setopt interactive_comments
 
