@@ -85,22 +85,20 @@ aws_profile() {
     local assumed_role=""
     if [[ -n "$ASSUMED_ROLE" ]]; then
         assumed_role="%B%F{yellow}$ASSUMED_ROLE%f%b"
-    fi
-
-    # Replacement of assume-role for MBP M1
-    #
-    # AWSUME_SKIP_ALIAS_SETUP=true pipx install awsume
-    # . awsume <aws-profile>
-    if [[ -n "$AWSUME_PROFILE" ]]; then
+    elif [[ -n "$AWSUME_PROFILE" ]]; then
+        # Replacement of assume-role for MBP M1
+        #
+        # AWSUME_SKIP_ALIAS_SETUP=true pipx install awsume
+        # . awsume <aws-profile>
         assumed_role="%B%F{yellow}$AWSUME_PROFILE%f%b"
-    fi
-
-    # Isengard cli spanws a new shell process.
-    local profile_name=""
-    if [[ -n "$AWS_DEFAULT_PROFILE" ]]; then
-        profile_name="%B%F{red}$AWS_DEFAULT_PROFILE%f%b"
-    elif [[ -n "$AWS_PROFILE" ]]; then
-        profile_name="%B%F{red}$AWS_PROFILE%f%b"
+    else
+        # Isengard cli spanws a new shell process.
+        local profile_name=""
+        if [[ -n "$AWS_DEFAULT_PROFILE" ]]; then
+            profile_name="%B%F{red}$AWS_DEFAULT_PROFILE%f%b"
+        elif [[ -n "$AWS_PROFILE" ]]; then
+            profile_name="%B%F{red}$AWS_PROFILE%f%b"
+        fi
     fi
 
     if [[ -n "$profile_name" && -n "$assumed_role" ]]; then
