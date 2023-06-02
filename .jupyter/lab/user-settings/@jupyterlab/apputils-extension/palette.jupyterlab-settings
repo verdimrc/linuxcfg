@@ -1,0 +1,10 @@
+{
+    // Command Palette
+    // @jupyterlab/apputils-extension:palette
+    // Command palette settings.
+    // **************************************
+
+    // Modal Command Palette
+    // Whether the command palette should be modal or in the left panel.
+    "modal": false
+}

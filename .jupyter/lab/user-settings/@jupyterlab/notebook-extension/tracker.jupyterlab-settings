@@ -1,0 +1,55 @@
+{
+    // Notebook
+    // @jupyterlab/notebook-extension:tracker
+    // Notebook settings.
+    // **************************************
+
+    // Code Cell Configuration
+    // The configuration for all code cells; it will override the CodeMirror default configuration.
+    "codeCellConfig": {
+        "codeFolding": true,
+        "lineNumbers": true,
+        "lineWrap": "off",
+        "wordWrapColumn": 100,
+        "rulers": [
+            80,
+            100
+        ],
+        "showTrailingSpace": true
+    },
+
+    // Shut down kernel
+    // Whether to shut down or not the kernel when closing a notebook.
+    "kernelShutdown": true,
+
+    // Markdown Cell Configuration
+    // The configuration for all markdown cells; it will override the CodeMirror default configuration.
+    "markdownCellConfig": {
+        "codeFolding": true,
+        "lineNumbers": true,
+        "lineWrap": "off",
+        "wordWrapColumn": 100,
+        "rulers": [
+            80,
+            100
+        ],
+        "showTrailingSpace": false
+    },
+
+    // Raw Cell Configuration
+    // The configuration for all raw cells; it will override the CodeMirror default configuration.
+    "rawCellConfig": {
+        "lineNumbers": true,
+        "lineWrap": "off",
+        "wordWrapColumn": 100,
+        "rulers": [
+            80,
+            100
+        ],
+        "showTrailingSpace": true
+    },
+
+    // Recording timing
+    // Should timing data be recorded in cell metadata
+    "recordTiming": true
+}

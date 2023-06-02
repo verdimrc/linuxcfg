@@ -1,0 +1,18 @@
+{
+    // Jupyterlab Code Formatter
+    // jupyterlab_code_formatter:settings
+    // Jupyterlab Code Formatter settings.
+    // ***********************************
+
+    // Black Config
+    // Config to be passed into black's format_str function call.
+    "black": {
+        "line_length": 100
+    },
+
+    // Isort Config
+    // Config to be passed into isort's SortImports function call.
+    "isort": {
+        "line_length": 100
+    }
+}
