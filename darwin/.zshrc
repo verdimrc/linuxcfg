@@ -5,6 +5,9 @@ export JUPYTER_CONFIG_PATH=~/.jupyter
 export GOPROXY=direct
 export HOMEBREW_GOPROXY=direct
 
+# pipx default python interpreter
+export PIPX_DEFAULT_PYTHON=/opt/homebrew/bin/python3
+
 export PATH=$HOME/bin:$PATH
 export CLICOLOR=1
 
