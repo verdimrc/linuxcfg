@@ -1,0 +1,15 @@
+{
+    // jupyter-fs
+    // jupyter-fs:plugin
+    // Settings for the jupyter-fs extension.
+    // **************************************
+
+    //
+    // The list of fs resource specifications
+    "resources": [
+        {
+            "name": "root at tmp",
+            "url": "osfs://"
+        }
+    ]
+}

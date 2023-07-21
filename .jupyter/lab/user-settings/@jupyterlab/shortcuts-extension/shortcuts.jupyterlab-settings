@@ -1,0 +1,37 @@
+{
+    // Keyboard Shortcuts
+    // @jupyterlab/shortcuts-extension:shortcuts
+    // Keyboard shortcut settings.
+    // *****************************************
+
+    "shortcuts": [
+        {
+            "command": "jupyterlab_code_formatter:black",
+            "keys": [
+                "Ctrl Shift B"
+            ],
+            "selector": ".jp-Notebook.jp-mod-editMode"
+        },
+        {
+            "command": "jupyterlab_code_formatter:black",
+            "keys": [
+                "Ctrl Shift B"
+            ],
+            "selector": ".jp-CodeMirrorEditor"
+        },
+        {
+            "command": "jupyterlab_code_formatter:isort",
+            "keys": [
+                "Ctrl Shift I"
+            ],
+            "selector": ".jp-Notebook.jp-mod-editMode"
+        },
+        {
+            "command": "jupyterlab_code_formatter:isort",
+            "keys": [
+                "Ctrl Shift I"
+            ],
+            "selector": ".jp-CodeMirrorEditor"
+        }
+    ]
+}
