@@ -75,6 +75,9 @@ origin  https://github.com/user/repo.git (push)
 # Set a new remote
 $ git remote add upstream https://github.com/otheruser/repo.git
 
+# Example of ssh remote
+$ git remote add ec2 https://hostname/home/ubuntu/repo
+
 # Verify new remote
 $ git remote -v
 origin    https://github.com/user/repo.git (fetch)
