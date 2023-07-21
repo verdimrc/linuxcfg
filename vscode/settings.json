@@ -206,7 +206,7 @@
   "remote.SSH.defaultExtensions": [
     "adpyke.vscode-sql-formatter",
     "bierner.markdown-mermaid",
-    "bungcip.better-toml",
+    "tamasfe.even-better-toml",
     "charliermarsh.ruff",
     "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
