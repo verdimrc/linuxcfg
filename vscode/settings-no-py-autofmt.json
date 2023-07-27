@@ -7,5 +7,6 @@
       "source.organizeImports": false,
       "source.fixAll": false // don't like. import can be removed unpredictably.
     }
-  }
+  },
+  "ruff.args": [ "--ignore E501" ]
 }
