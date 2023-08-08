@@ -5,7 +5,6 @@
     "recommendations": [
         "adpyke.vscode-sql-formatter",
         "bierner.markdown-mermaid",
-        "bungcip.better-toml",
         "charliermarsh.ruff",
         "christian-kohler.path-intellisense",
         "DavidAnson.vscode-markdownlint",
@@ -30,6 +29,7 @@
         "shardulm94.trailing-spaces",
         "stkb.rewrap",
         "tomoki1207.pdf",
+        "bungcip.better-toml",
         "usernamehw.errorlens",
         "VisualStudioExptTeam.vscodeintellicode",
         "yzhang.markdown-all-in-one"
