@@ -1,6 +1,6 @@
 {
   "[python]": {
-    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.defaultFormatter": null,
     "editor.formatOnType": true, // auto-indent with pylance, v1.75 jan23
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {

@@ -1,3 +1,4 @@
+// python-late-joiner
 {
   ///////////////////////////////////////////////////////////////////////////
   // OFF TELEMETRIES (LIFTED TO NEAR TOP FOR VISIBILITY
@@ -26,7 +27,7 @@
   ///////////////////////////////////////////////////////////////////////////
 
   // Python paths
-  "python.defaultInterpreterPath": "/home/verdi/miniconda3/envs/py/bin/python",
+  "python.defaultInterpreterPath": "/usr/bin/python3",
   "terminal.external.osxExec": "kitty",
   "terminal.integrated.env.osx": {
     "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
@@ -50,7 +51,7 @@
   },
   // "window.titleBarStyle": "custom",
   // GUI: extensions
-  "markdown.preview.fontSize": 16, // yzhang.markdown-all-in-one
+  "markdown.preview.fontSize": 14, // yzhang.markdown-all-in-one
 
 
   ///////////////////////////////////////////////////////////////////////////
@@ -111,20 +112,19 @@
   "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "notebook.lineNumbers": "on",
-  "notebook.output.scrolling": true,  // v1.77 (Mar23)
+  "notebook.output.scrolling": true, // v1.77 (Mar23)
   "[python]": {
-    // "editor.defaultFormatter": "ms-python.autopep8",
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": null,
     "editor.formatOnType": true, // Auto-indent with Pylance, v1.75 Jan23
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true,
+      "source.organizeImports": false,
       "source.fixAll": false // Don't like. Import can be removed unpredictably.
     }
   },
-  "python.analysis.inlayHints.variableTypes": true,
-  "python.analysis.inlayHints.functionReturnTypes": true,
-  "python.analysis.inlayHints.pytestParameters": true,
+  // "python.analysis.inlayHints.variableTypes": true,
+  // "python.analysis.inlayHints.functionReturnTypes": true,
+  // "python.analysis.inlayHints.pytestParameters": true,
   "python.languageServer": "Pylance",
   "python.linting.mypyEnabled": true, // TODO: migrate to extension
   "python.linting.mypyArgs": [ "--show-error-codes" ], // TODO: migrate to extension
@@ -134,7 +134,7 @@
   // Workbench & editor
   "breadcrumbs.enabled": true,
   "editor.bracketPairColorization.enabled": true,
-  //"editor.formatOnSave": true,  // Too intrusive when working with existing files
+  //"editor.formatOnSave": true,
   //"editor.formatOnSaveMode": "modifications",  //Not supported with Black
   "editor.codeActionsOnSave": {
     "source.fixAll.markdownlint": true // Extension davidanson.vscode-markdownlint
@@ -197,7 +197,8 @@
   "gitlens.hovers.currentLine.over": "line",
   // "markdown.extension.preview.autoShowPreviewToSide": true,
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.formatOnSave": false
   },
   "remote.SSH.defaultExtensions": [
     "adpyke.vscode-sql-formatter",
@@ -229,6 +230,7 @@
     "yzhang.markdown-all-in-one"
   ],
   "rewrap.wrappingColumn": 100,
+  "ruff.args": [ "--ignore E501" ],
   "sql-formatter.uppercase": true,
   "todo-tree.general.tags": [
     "BUG",
@@ -255,5 +257,7 @@
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.tree.showScanModeButton": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "security.workspace.trust.untrustedFiles": "open",
+  "hadolint.hadolintPath": "/opt/homebrew/bin/hadolint",
   "window.zoomLevel": 0.0
 }
