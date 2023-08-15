@@ -33,6 +33,11 @@ git config branch.lr.description
 
 ################################################################################
 
+# Lean clone
+git clone --single-branch -b main --depth 1 https://github.com/huggingface/transformers
+
+################################################################################
+
 # Squash commits and retain the latest timestamp
 
 # Get latest timestamp
