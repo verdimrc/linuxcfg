@@ -5,6 +5,8 @@ cd /home/person/src
 
 # local -> remote
 rsync -av --delete project user@1.2.3.4:/home/user/src
+# To disable permission (e.g., when remote is an smb mount),
+# add --no-perms --no-owner --no-group
 
 # remote -> local
 rsync -av --delete user@1.2.3.4:/home/user/src/project .
