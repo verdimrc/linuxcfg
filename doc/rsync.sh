@@ -5,8 +5,8 @@ cd /home/person/src
 
 # local -> remote
 rsync -av --delete project user@1.2.3.4:/home/user/src
-# To disable permission (e.g., when remote is an smb mount),
-# add --no-perms --no-owner --no-group
+# Add --no-perms --no-owner --no-group when remote is an smb mount, otherwise
+# rsync won't sync the files with permission operation error.
 
 # remote -> local
 rsync -av --delete user@1.2.3.4:/home/user/src/project .
