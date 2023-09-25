@@ -126,8 +126,8 @@
   // "python.analysis.inlayHints.functionReturnTypes": true,
   // "python.analysis.inlayHints.pytestParameters": true,
   "python.languageServer": "Pylance",
-  "python.linting.mypyEnabled": true, // TODO: migrate to extension
-  "python.linting.mypyArgs": [ "--show-error-codes" ], // TODO: migrate to extension
+  //"python.linting.mypyEnabled": true, // TODO: migrate to extension
+  //"python.linting.mypyArgs": [ "--show-error-codes" ], // TODO: migrate to extension
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
 
