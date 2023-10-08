@@ -103,7 +103,7 @@
   "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "notebook.lineNumbers": "on",
-  "notebook.output.scrolling": true,  // v1.77 (Mar23)
+  "notebook.output.scrolling": true, // v1.77 (Mar23)
   "[python]": {
     "editor.defaultFormatter": null,
     "editor.formatOnType": true, // Auto-indent with Pylance, v1.75 Jan23
@@ -188,7 +188,8 @@
   "gitlens.hovers.currentLine.over": "line",
   // "markdown.extension.preview.autoShowPreviewToSide": true,
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.formatOnSave": false
   },
   "remote.SSH.defaultExtensions": [
     "adpyke.vscode-sql-formatter",
@@ -205,6 +206,7 @@
     "mhutchie.git-graph",
     //"ms-python.autopep8",
     //"ms-python.black-formatter",
+    //"ms-python.mypy-type-checker",
     "ms-python.vscode-pylance",
     "ms-python.python",
     "ms-toolsai.jupyter",

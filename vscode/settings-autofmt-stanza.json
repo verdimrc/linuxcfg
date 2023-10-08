@@ -22,5 +22,13 @@
 
   // Extension: trim trailing-space selectively.
   "trailing-spaces.trimOnSave": true,
-  "trailing-spaces.deleteModifiedLinesOnly": true
+  "trailing-spaces.deleteModifiedLinesOnly": true,
+
+  // Uncomment extension to install-by-default on remote ssh.
+  "remote.SSH.defaultExtensions": [
+    "charliermarsh.ruff",
+    //"eamodio.gitlens",
+    //"ms-python.autopep8",
+    //"ms-python.black-formatter",
+  ],
 }
