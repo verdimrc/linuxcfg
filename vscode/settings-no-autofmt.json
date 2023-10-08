@@ -4,8 +4,6 @@
   ///////////////////////////////////////////////////////////////////////////
 
   // Global telemetries
-  "telemetry.enableCrashReporter": false, // Deprecated since v1.61 Oct'21
-  "telemetry.enableTelemetry": false, // Deprecated since v1.61 Oct'21
   "telemetry.telemetryLevel": "off", // Since v1.61 Oct'21
   "python.experiments.enabled": false,
   "workbench.enableExperiments": false,
@@ -120,8 +118,7 @@
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
   "python.languageServer": "Pylance",
-  "python.linting.mypyEnabled": false, // TODO: migrate to extension
-  "python.linting.mypyArgs": [ "--show-error-codes" ], // TODO: migrate to extension
+  "mypy-type-checker.args": [ "--show-error-codes" ], // ms-python.mypy-type-checker
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
 
