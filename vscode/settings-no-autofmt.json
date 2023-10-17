@@ -1,12 +1,9 @@
-// python-late-joiner
 {
   ///////////////////////////////////////////////////////////////////////////
   // OFF TELEMETRIES (LIFTED TO NEAR TOP FOR VISIBILITY
   ///////////////////////////////////////////////////////////////////////////
 
   // Global telemetries
-  "telemetry.enableCrashReporter": false, // Deprecated since v1.61 Oct'21
-  "telemetry.enableTelemetry": false, // Deprecated since v1.61 Oct'21
   "telemetry.telemetryLevel": "off", // Since v1.61 Oct'21
   "python.experiments.enabled": false,
   "workbench.enableExperiments": false,
@@ -27,19 +24,13 @@
   ///////////////////////////////////////////////////////////////////////////
 
   // Python paths
-  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.defaultInterpreterPath": "/home/verdi/miniconda3/envs/py/bin/python",
   "terminal.external.osxExec": "kitty",
-  "terminal.integrated.env.osx": {
-    "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
-  },
-  "terminal.integrated.env.linux": {
-    "PYTHONPATH": "${workspaceFolder}/src:${env:PYTHONPATH}"
-  },
 
   // To use binaries outside of selected python interpreter, e.g., those installed by pipx
   //"python.linting.mypyPath": "/usr/local/bin/mypy",
 
-  // GUI: vscode: moved to end of file.
+  // GUI: zoom level at the end of this file.
   //"editor.fontFamily": "Monego",
   "debug.console.fontSize": 11,
   "editor.fontSize": 11,
@@ -51,7 +42,7 @@
   },
   // "window.titleBarStyle": "custom",
   // GUI: extensions
-  "markdown.preview.fontSize": 14, // yzhang.markdown-all-in-one
+  "markdown.preview.fontSize": 16, // yzhang.markdown-all-in-one
 
 
   ///////////////////////////////////////////////////////////////////////////
@@ -122,22 +113,22 @@
       "source.fixAll": false // Don't like. Import can be removed unpredictably.
     }
   },
-  // "python.analysis.inlayHints.variableTypes": true,
-  // "python.analysis.inlayHints.functionReturnTypes": true,
-  // "python.analysis.inlayHints.pytestParameters": true,
+  "ruff.args": [ "--ignore E501" ],  // Disable "line too long" when charliemarsh.ruff extension is on
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
   "python.languageServer": "Pylance",
-  //"python.linting.mypyEnabled": true, // TODO: migrate to extension
-  //"python.linting.mypyArgs": [ "--show-error-codes" ], // TODO: migrate to extension
+  "mypy-type-checker.args": [ "--show-error-codes" ], // ms-python.mypy-type-checker
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
 
   // Workbench & editor
   "breadcrumbs.enabled": true,
   "editor.bracketPairColorization.enabled": true,
-  //"editor.formatOnSave": true,
+  //"editor.formatOnSave": true,  // Too intrusive when working with existing files
   //"editor.formatOnSaveMode": "modifications",  //Not supported with Black
   "editor.codeActionsOnSave": {
-    "source.fixAll.markdownlint": true // Extension davidanson.vscode-markdownlint
+    "source.fixAll.markdownlint": false // Extension davidanson.vscode-markdownlint
   },
   "editor.showUnused": true,
   "editor.minimap.enabled": false,
@@ -203,7 +194,7 @@
   "remote.SSH.defaultExtensions": [
     "adpyke.vscode-sql-formatter",
     "bierner.markdown-mermaid",
-    "charliermarsh.ruff",
+    //"charliermarsh.ruff",
     "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
     "donjayamanne.githistory",
@@ -213,8 +204,9 @@
     "gruntfuggly.todo-tree",
     "mechatroner.rainbow-csv",
     "mhutchie.git-graph",
-    "ms-python.autopep8",
-    "ms-python.black-formatter",
+    //"ms-python.autopep8",
+    //"ms-python.black-formatter",
+    //"ms-python.mypy-type-checker",
     "ms-python.vscode-pylance",
     "ms-python.python",
     "ms-toolsai.jupyter",
@@ -230,7 +222,6 @@
     "yzhang.markdown-all-in-one"
   ],
   "rewrap.wrappingColumn": 100,
-  "ruff.args": [ "--ignore E501" ],
   "sql-formatter.uppercase": true,
   "todo-tree.general.tags": [
     "BUG",
@@ -257,7 +248,5 @@
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.tree.showScanModeButton": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "security.workspace.trust.untrustedFiles": "open",
-  "hadolint.hadolintPath": "/opt/homebrew/bin/hadolint",
   "window.zoomLevel": 0.0
 }
