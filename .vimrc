@@ -55,6 +55,7 @@ autocmd BufNewFile,BufRead *.hql set filetype=sql
 autocmd BufNewFile,BufRead *.pmml set filetype=xml
 autocmd BufNewFile,BufRead *.cu set filetype=cuda
 autocmd BufNewFile,BufRead *.cuh set filetype=cuda
+autocmd BufEnter *.yaml,*.yml :set indentkeys-=0#
 if v:version >= 800
     " Smart paste mode. See Vim's xterm-bracketed-paste help topic.
     let &t_BE = "\<Esc>[?2004h"
