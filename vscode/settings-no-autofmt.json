@@ -147,6 +147,7 @@
   "files.eol": "\n",
   "git.terminalAuthentication": false,
   "json.format.keepLines": true,
+  "markdown.extension.toc.levels": "2..6",
   "markdown.occurrencesHighlight.enabled": true,
   "markdown.updateLinksOnFileMove.enabled": "always",
   "markdown.validate.enabled": true,
