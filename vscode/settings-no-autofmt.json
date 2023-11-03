@@ -27,9 +27,6 @@
   "python.defaultInterpreterPath": "/home/verdi/miniconda3/envs/py/bin/python",
   "terminal.external.osxExec": "kitty",
 
-  // To use binaries outside of selected python interpreter, e.g., those installed by pipx
-  //"python.linting.mypyPath": "/usr/local/bin/mypy",
-
   // GUI: zoom level at the end of this file.
   //"editor.fontFamily": "Monego",
   "debug.console.fontSize": 11,
