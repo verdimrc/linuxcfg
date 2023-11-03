@@ -1,0 +1,10 @@
+{
+  // Javascript
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit",
+      "source.fixAll.eslint": "never",
+      "source.fixAll": "never"
+    }
+  }
+}
