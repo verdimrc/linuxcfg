@@ -5,6 +5,7 @@
     "recommendations": [
         "adpyke.vscode-sql-formatter",
         "bierner.markdown-mermaid",
+        "bierner.github-markdown-preview",
         //"charliermarsh.ruff",
         "christian-kohler.path-intellisense",
         "DavidAnson.vscode-markdownlint",
