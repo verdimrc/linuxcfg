@@ -15,6 +15,7 @@
         "phplasma.csv-to-table",
         "randomfractalsinc.vscode-data-preview",  // Installation takes time (minutes)
         "slevesque.vscode-hexdump",
+        "TakumiI.markdowntable",
         "zeithaste.cursorCharCode"
     ]
 }
