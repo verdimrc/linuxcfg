@@ -143,3 +143,9 @@ git checkout --recurse-submodules <NEW_BRANCH>
 # Remove refs
 git branch -vva
 git update-ref -d refs/remotes/origin/branch_name
+
+################################################################################
+
+# Workaround to prevent git client to push to remote
+# https://stackoverflow.com/a/10260389
+git remote set-url --push origin no_push

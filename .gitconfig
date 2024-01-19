@@ -3,10 +3,15 @@
     name = Firstname Lastname
     email = first.last@email.com
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [core]
     editor = vim
-    pager = less -FMRiX
+    #pager = less -FMRiX
+    pager = delta -s
+[interactive]
+    diffFilter = delta -s --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
 [color]
     ui = true
 [pull]

@@ -142,6 +142,7 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
   "files.eol": "\n",
+  "git.detectSubmodules": false,
   "git.terminalAuthentication": false,
   "json.format.keepLines": true,
   "markdown.extension.toc.levels": "2..6",
@@ -159,6 +160,7 @@
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.shellIntegration.enabled": true, // Jul22 default is on
+  "terminal.integrated.stickyScroll.enabled": false, // Nov23 default is on
   "workbench.editor.decorations.colors": true,
   "workbench.editor.decorations.badges": true,
   // "workbench.editor.enablePreviewFromCodeNavigation": true,
@@ -191,8 +193,8 @@
   },
   "remote.SSH.defaultExtensions": [
     "adpyke.vscode-sql-formatter",
-    "bierner.markdown-mermaid",
     "bierner.github-markdown-preview",
+    "bierner.markdown-mermaid",
     //"charliermarsh.ruff",
     "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
@@ -205,6 +207,7 @@
     "mhutchie.git-graph",
     //"ms-python.autopep8",
     //"ms-python.black-formatter",
+    "ms-python.debugpy",
     //"ms-python.mypy-type-checker",
     "ms-python.vscode-pylance",
     "ms-python.python",

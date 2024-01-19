@@ -40,6 +40,8 @@ command_not_found_handler() {
 export CLICOLOR=1
 export LESS='-FMRX'
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export DSTAT_OPTS="-cdngym"
+export DOOL_OPTS="-cdngym"
 
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
