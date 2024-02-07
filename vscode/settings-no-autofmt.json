@@ -120,6 +120,7 @@
   "python.testing.unittestEnabled": false,
 
   // Workbench & editor
+  "audioCues.volume": 0,
   "breadcrumbs.enabled": true,
   "editor.bracketPairColorization.enabled": true,
   //"editor.formatOnSave": true,  // Too intrusive when working with existing files
