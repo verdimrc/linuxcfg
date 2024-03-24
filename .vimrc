@@ -136,6 +136,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 
-if exists('$KITTY_WINDOW_ID')
+" https://github.com/kovidgoyal/kitty/issues/108
+if exists('$KITTY_WINDOW_ID') || $TERM == "xterm-kitty"
     let &t_ut=''
 endif
