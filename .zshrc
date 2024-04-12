@@ -52,6 +52,7 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias vi='vim'
 alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
+alias gbvv-gone="git branch -vv | grep '\[.*: gone\]'"
 alias ncdu='ncdu --color dark'
 
 
