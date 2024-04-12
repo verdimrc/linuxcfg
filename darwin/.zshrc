@@ -21,6 +21,7 @@ alias vi='vim'
 alias ncdu='ncdu --color dark'
 alias reset_title='echo -e "\033];\007"'
 alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
+alias gbvv-gone="git branch -vv | grep '\[.*: gone\]'"
 
 export LANG=en_US.utf-8
 export LC_ALL=${LANG}
