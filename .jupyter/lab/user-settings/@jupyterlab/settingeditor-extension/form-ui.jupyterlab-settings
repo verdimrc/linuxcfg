@@ -3,7 +3,6 @@
     // @jupyterlab/settingeditor-extension:form-ui
     // Settings editor form ui settings.
     // *******************************************
-    // Type of editor for the setting.
-    // Set the type of editor to use while editing your settings.
+
     "settingEditorType": "json"
 }

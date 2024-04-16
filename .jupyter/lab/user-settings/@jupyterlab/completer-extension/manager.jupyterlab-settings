@@ -1,0 +1,8 @@
+{
+    // Code Completion
+    // @jupyterlab/completer-extension:manager
+    // Code Completion settings.
+    // ***************************************
+
+    "autoCompletion": true
+}

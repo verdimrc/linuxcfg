@@ -1,8 +1,0 @@
-{
-    // Table of Contents
-    // @jupyterlab/toc-extension:plugin
-    // Table of contents settings.
-    // ********************************
-    "includeOutput": false,
-    "numberingH1": false
-}

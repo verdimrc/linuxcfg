@@ -1,0 +1,16 @@
+{
+    // CodeMirror
+    // @jupyterlab/codemirror-extension:plugin
+    // Text editor settings for all CodeMirror editors.
+    // ************************************************
+
+    "defaultConfig": {
+        "codeFolding": true,
+        "highlightActiveLine": true,
+        "highlightTrailingWhitespace": true,
+        "rulers": [
+            80,
+            100
+        ]
+    }
+}

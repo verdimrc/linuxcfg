@@ -4,11 +4,7 @@
     // Default table of contents settings.
     // ***********************************
 
-    // Enable headings numbering
-    // Whether to automatically number the headings or not.
+    "includeOutput": false,
     "numberHeaders": true,
-
-    // Enable 1st headings numbering
-    // Whether to number first-level headings or not.
     "numberingH1": false
 }

@@ -4,7 +4,5 @@
     // Command palette settings.
     // **************************************
 
-    // Modal Command Palette
-    // Whether the command palette should be modal or in the left panel.
-    "modal": false
+    "modal": false      // Command palette on the left panel.
 }
