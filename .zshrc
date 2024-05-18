@@ -64,7 +64,7 @@ alias ncdu='ncdu --color dark'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    [[ ${TERM_PROGRAM} == "vscode" ]] && alias ls='ls --color=auto' || alias ls='ls --color=auto --hyperlink=auto'
+    [[ ${TERM_PROGRAM} == "vscode" || ! -z "$JUPYTER_SERVER_ROOT" ]] && alias ls='ls --color=auto' || alias ls='ls --color=auto --hyperlink=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
