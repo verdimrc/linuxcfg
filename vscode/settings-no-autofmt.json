@@ -162,6 +162,7 @@
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.shellIntegration.enabled": true, // Jul22 default is on
   "terminal.integrated.stickyScroll.enabled": false, // Nov23 default is on
+  "window.confirmSaveUntitledWorkspace": false,
   "workbench.editor.decorations.colors": true,
   "workbench.editor.decorations.badges": true,
   // "workbench.editor.enablePreviewFromCodeNavigation": true,
