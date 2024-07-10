@@ -1,0 +1,14 @@
+// Drop this file to project/.vscode
+// This file contains my frequently-used extensions.
+// See also: extensions-extras.json or extensions-all.json
+{
+  "recommendations": [
+      "emilast.LogFileHighlighter",
+      "IBM.output-colorizer",
+      "leonhard-s.python-sphinx-highlight",
+      "mikestead.dotenv",
+      "ms-vscode-remote.remote-ssh",
+      "ms-vscode-remote.remote-ssh-edit"
+      //"usernamehw.errorlens",
+  ]
+}
