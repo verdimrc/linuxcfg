@@ -263,8 +263,12 @@ if command -v pyenv 1>/dev/null 2>&1; then
     # Note that these will have no effect if pyenv-virtualenv-init is enabled.
     [[ -z "$TMUX" ]] || pyenv deactivate
     [[ -z "$JUPYTER_SERVER_ROOT" ]] || pyenv deactivate
-fi
 
+    #alias CONDA="~/.pyenv/versions/$(pyenv latest -k miniforge3)/bin/conda"
+    #
+    # Below assume there's a symlink miniforge3 -> miniforge3-<version>
+    alias CONDA="~/.pyenv/versions/miniforge3/bin/conda"
+fi
 
 ################################################################################
 # Keybindings
