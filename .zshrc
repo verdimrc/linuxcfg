@@ -233,8 +233,13 @@ fi
 # Use this when screencasting, to strip-off unecessary details in the prompt
 #export PROMPT='[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b%F{gray}
 
-export PROMPT='$(prompt_prefix)[%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+if [[ -z "${SSH_CONNECTION}" ]]; then
+    export PROMPT='$(prompt_prefix)[%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
 %# '
+else
+    export PROMPT='$(prompt_prefix)[%B%F{cyan}%n@%m%b%F{white}:%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+%# '
+fi
 
 
 ################################################################################
