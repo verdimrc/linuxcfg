@@ -21,20 +21,30 @@ Fetch just the API key, typically for scripting purposes:
     $ ngc-apikey.py
     <api_key>
 
-Set `NGC_CLI_*` environment variables
+Set `NGC_CLI_*` environment variables on current shell:
+
+.. code-block:: console
 
     $ source <(ngc-apikey.py --assume profile)
     $ env | grep NGC_CLI
-    NGC_CLI_PROFILE=profile
     NGC_CLI_ORG=org
     NGC_CLI_TEAM=team
+    NGC_CLI_PROFILE=profile
 
     $ source <(ngc-apikey.py --assume-with-key profile)
     $ env | grep NGC_CLI
-    NGC_CLI_PROFILE=profile
-    NGC_API_KEY=<api_key>
     NGC_CLI_ORG=org
     NGC_CLI_TEAM=team
+    NGC_CLI_PROFILE=profile
+    NGC_API_KEY=<api_key>
+
+Unset `NGC_CLI_*` environment variables on current shell:
+
+.. code-block:: console
+
+    $ source <(ngc-apikey.py --unassume)
+    $ env | grep NGC_CLI
+    <No more NGC_CLI_{PROFILE,API_KEY,ORG,TEAM}>
 
 '''
 
@@ -99,6 +109,9 @@ def main():
     parser.add_argument('--assume-with-key',
                         action='store_true',
                         help='To set NGC_CLI_* env vars instead of showing the API key')
+    parser.add_argument('--unassume',
+                        action='store_true',
+                        help='To unset NGC_CLI_* env vars instead of showing the API key')
     args = parser.parse_args()
 
     if args.profile:
@@ -145,7 +158,9 @@ def main():
         printerr(e)
         sys.exit(1)
 
-    if args.assume_with_key:
+    if args.unassume:
+        print('unset NGC_CLI_{ORG,TEAM,PROFILE,API_KEY}')
+    elif args.assume_with_key:
         print(f'export NGC_CLI_ORG={section["org"]}',
               f'export NGC_CLI_TEAM={section["team"]}',
               f'export NGC_CLI_PROFILE={section_name}',
