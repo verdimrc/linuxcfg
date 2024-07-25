@@ -5,7 +5,7 @@ USER_EMAIL="default@email.haha.com"
 
 case "$1" in
   vm)
-    USER_EMAIL="verdimrc@noreply.users.github.com"
+    USER_EMAIL="verdimrc@users.noreply.github.com"
     ;;
 
   mv)
@@ -20,6 +20,7 @@ case "$1" in
     ;;
 esac
 
-set -ex
-git config user.name $USER_NAME
-git config user.email $USER_EMAIL
+set -e
+git config user.name "${USER_NAME}"
+git config user.email "${USER_EMAIL}"
+echo $(git config user.name) / $(git config user.email)
