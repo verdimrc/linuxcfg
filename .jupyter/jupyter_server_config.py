@@ -5,6 +5,7 @@
 c.ServerApp.open_browser = False
 c.ServerApp.port_retries = 0
 c.KernelSpecManager.ensure_native_kernel = False
+c.LabServerApp.notebook_starts_kernel = False
 
 # Needs: pip install environment_kernels
 c.ServerApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSpecManager'
