@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Usage: sudo ./fix-pyenv.sh
+
 set -euxo pipefail
 mkdir -p /usr/share/zsh/site-functions/
 
@@ -34,4 +36,4 @@ esac
 return
 EOF
 
-rm /home/verdi/.zcompdump
+rm /home/${SUDO_USER}/.zcompdump
