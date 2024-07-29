@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -euxo pipefail
+mkdir -p /usr/share/zsh/site-functions/
 
 cat << 'EOF' > /usr/share/zsh/site-functions/_pyenv
 #compdef pyenv
