@@ -12,9 +12,10 @@ c.ServerApp.kernel_spec_manager_class = 'environment_kernels.EnvironmentKernelSp
 c.EnvironmentKernelSpecManager.find_conda_envs = False
 c.EnvironmentKernelSpecManager.use_conda_directly = False
 c.EnvironmentKernelSpecManager.blacklist_envs = ['virtualenv_jlab']
-#c.EnvironmentKernelSpecManager.virtualenv_env_dirs = ['/home/verdi/.pyenv/versions']
 import os.path
 c.EnvironmentKernelSpecManager.virtualenv_env_dirs = [os.path.expanduser('~/.pyenv/versions')]
+#c.EnvironmentKernelSpecManager.find_conda_envs = True
+#c.EnvironmentKernelSpecManager.conda_env_dirs = [os.path.expanduser('~/.pyenv/versions/miniforge3/envs')]
 
 c.FileCheckpoints.checkpoint_dir = '/tmp/.ipynb_checkpoints'
 c.FileContentsManager.delete_to_trash = False
