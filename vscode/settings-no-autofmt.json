@@ -120,7 +120,6 @@
   "python.testing.unittestEnabled": false,
 
   // Workbench & editor
-  "audioCues.volume": 0,
   "breadcrumbs.enabled": true,
   "editor.bracketPairColorization.enabled": true,
   //"editor.formatOnSave": true,  // Too intrusive when working with existing files
@@ -160,6 +159,7 @@
   "terminal.integrated.localEchoLatencyThreshold": -1,
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.rightClickBehavior": "default",
   "terminal.integrated.stickyScroll.enabled": false, // Nov23 default is on
   "window.confirmSaveUntitledWorkspace": false,
   "workbench.editor.decorations.colors": true,
