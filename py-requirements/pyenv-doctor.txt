@@ -1,0 +1,4 @@
+ 4595  sudo apt install libreadline-dev
+ 4600  sudo apt install libssl-dev
+ 4609  sudo apt install libbz2-dev
+ 4613  sudo apt install libsqlite3-dev
