@@ -294,3 +294,26 @@ if [[ (${TERM_PROGRAM} == "vscode") ]]; then
         [[ -e $GITROOT/.env.unversioned ]] && source $GITROOT/.env.unversioned
     fi
 fi
+
+
+################################################################################
+# https://github.com/zsh-users/zsh-syntax-highlighting
+################################################################################
+#source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern)
+
+# Declare the variable
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+# To differentiate aliases from other command types
+ZSH_HIGHLIGHT_STYLES[alias]='fg=magenta,bold'
+
+# To have paths colored instead of underlined
+ZSH_HIGHLIGHT_STYLES[path]='fg=cyan'
+# Declare the variable
+typeset -A ZSH_HIGHLIGHT_PATTERNS
+
+# To have commands starting with `rm -rf` in red:
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+ZSH_HIGHLIGHT_PATTERNS+=('rm -fr *' 'fg=white,bold,bg=red')
