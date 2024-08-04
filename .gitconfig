@@ -12,6 +12,10 @@
     diffFilter = delta -s --color-only
 [delta]
     navigate = true    # use n and N to move between diff sections
+    # https://github.com/dandavison/delta/discussions/1461#discussion-5342765
+    wrap-max-lines=unlimited
+    wrap-right-percent=1
+    wrap-left-symbol=" "
 [color]
     ui = true
 [pull]
