@@ -14,11 +14,11 @@ echo 'Updating pipx packages...'
 pipx upgrade-all
 
 # updating conda under pyenv
-for i in base ~/.pyenv/versions/miniforge3/envs/base-*; do
+for i in base ~/miniforge3/envs/base-*; do
     echo "Updating conda environments $(basename $i)..."
-    ~/.pyenv/versions/miniforge3/bin/conda update --all --yes -n `basename $i`
+    ~/miniforge3/bin/conda update --all --yes -n `basename $i`
 done
-~/.pyenv/versions/miniforge3/bin/conda clean --all --yes
+~/miniforge3/bin/conda clean --all --yes
 
 ## No longer uses miniconda. Left here for historical context only.
 ##
