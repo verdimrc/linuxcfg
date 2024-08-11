@@ -15,7 +15,7 @@ c.EnvironmentKernelSpecManager.blacklist_envs = ['virtualenv_jlab']
 import os.path
 c.EnvironmentKernelSpecManager.virtualenv_env_dirs = [os.path.expanduser('~/.pyenv/versions')]
 #c.EnvironmentKernelSpecManager.find_conda_envs = True
-#c.EnvironmentKernelSpecManager.conda_env_dirs = [os.path.expanduser('~/.pyenv/versions/miniforge3/envs')]
+#c.EnvironmentKernelSpecManager.conda_env_dirs = [os.path.expanduser('~/.pyenv/versions/miniforge3-latest/envs')]
 
 c.FileCheckpoints.checkpoint_dir = '/tmp/.ipynb_checkpoints'
 c.FileContentsManager.delete_to_trash = False

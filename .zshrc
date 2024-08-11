@@ -271,9 +271,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 
     #alias CONDA="~/.pyenv/versions/$(pyenv latest -k miniforge3)/bin/conda"
     #
-    # Below assume there's a symlink miniforge3 -> miniforge3-<version>
-    #alias CONDA="~/.pyenv/versions/miniforge3/bin/conda"
-    alias CONDA="~/miniforge3/bin/conda"
+    # Below assumes we've done `pyenv install miniforge3-latest`
+    alias CONDA="~/.pyenv/versions/miniforge3-latest/bin/conda"
+    alias conda-activate="source ~/.pyenv/versions/miniforge3-latest/bin/activate"
 fi
 
 ################################################################################
