@@ -301,7 +301,11 @@ fi
 # https://github.com/zsh-users/zsh-syntax-highlighting
 ################################################################################
 #source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null \
+    || source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null \
+    || source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2> /dev/null \
+    || echo "Cannot find zsh-syntax-highlighting.zsh" >&2
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern)
 
 # Declare the variable
