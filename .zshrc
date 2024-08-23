@@ -178,6 +178,22 @@ aws_profile() {
     fi
 }
 
+ngc_profile() {
+    # For my opinionated way of dealing with multiple NGC CLI profiles.
+    #
+    # ngc-cli-3.48.0:
+    # - NGC_CLI_PROFILE is custom, not official (https://docs.ngc.nvidia.com/cli/script.html).
+    # - Contrary to the docs, I found that NGC_CLI_HOME=xxx causes ngc cli to parse xxx/.ngc/config.
+    local assumed_profile=""
+    if [[ -n "$NGC_CLI_PROFILE" ]]; then
+        assumed_profile="%B%F{yellow}$NGC_CLI_PROFILE%f%b"
+    fi
+
+    if [[ -n "$assumed_profile" ]]; then
+        echo -n " %F{white}[$assumed_profile%F{white}]"
+    fi
+}
+
 prompt_prefix() {
     local retval=""
 
@@ -234,10 +250,12 @@ fi
 #export PROMPT='[%F{green}%~%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b%F{gray}
 
 if [[ -z "${SSH_CONNECTION}" ]]; then
-    export PROMPT='$(prompt_prefix)[%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+    #export PROMPT='$(prompt_prefix)[%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+    export PROMPT='$(prompt_prefix)[%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(ngc_profile)%F{gray}
 %# '
 else
-    export PROMPT='$(prompt_prefix)[%B%F{cyan}%n@%m%b%F{white}:%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+    #export PROMPT='$(prompt_prefix)[%B%F{cyan}%n@%m%b%F{white}:%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
+    export PROMPT='$(prompt_prefix)[%B%F{cyan}%n@%m%b%F{white}:%B%F{green}%~%b%F{white}]%B%F{magenta}${vcs_info_msg_0_}%b$(ngc_profile)%F{gray}
 %# '
 fi
 
