@@ -71,8 +71,7 @@
   },
 
   "files.associations": {
-    "Dockerfile.cpu": "dockerfile",
-    "Dockerfile.gpu": "dockerfile"
+    "**/.ngc/**/config": "ini"
   },
 
   // Javascript
