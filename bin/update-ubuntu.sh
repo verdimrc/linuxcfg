@@ -13,7 +13,10 @@ pyenv rehash
 echo 'Updating pipx packages...'
 pipx upgrade-all
 
-# updating conda under pyenv
+# Updating conda's python under pyenv. Special case for base python.
+~/.pyenv/versions/miniforge3-latest/bin/conda update --yes --update-all -n base python
+
+# Updating all conda's environment.
 for i in base ~/.pyenv/versions/miniforge3-latest/envs/base-*; do
     echo "Updating conda environments $(basename $i)..."
     ~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i`
