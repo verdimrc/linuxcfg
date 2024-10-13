@@ -14,6 +14,7 @@ echo 'Updating pipx packages...'
 pipx upgrade-all
 
 # Updating conda's python under pyenv. Special case for base python.
+echo "Updating conda's base python..."
 ~/.pyenv/versions/miniforge3-latest/bin/conda update --yes --update-all -n base python
 
 # Updating all conda's environment.
