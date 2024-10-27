@@ -33,6 +33,7 @@
   "editor.fontSize": 11,
   //"editor.lineHeight": 18,
   "terminal.integrated.fontSize": 11,
+  "terminal.integrated.lineHeight": 1.2,
   "extensions.ignoreRecommendations": true, // Default to true; set false if you prefer.
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#2d2d2d" // For dark theme
@@ -77,8 +78,8 @@
   // Javascript
   "[javascript]": {
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": false,
-      "source.fixAll": false
+      "source.fixAll.eslint": "never",
+      "source.fixAll": "never"
     }
   },
 
@@ -105,8 +106,8 @@
     "editor.formatOnType": true, // Auto-indent with Pylance, v1.75 Jan23
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": false,
-      "source.fixAll": false // Don't like. Import can be removed unpredictably.
+      "source.organizeImports": "never",
+      "source.fixAll": "never" // Don't like. Import can be removed unpredictably.
     }
   },
   "ruff.args": [ "--ignore E501" ],  // Disable "line too long" when charliemarsh.ruff extension is on
@@ -124,7 +125,7 @@
   //"editor.formatOnSave": true,  // Too intrusive when working with existing files
   //"editor.formatOnSaveMode": "modifications",  //Not supported with Black
   "editor.codeActionsOnSave": {
-    "source.fixAll.markdownlint": false // Extension davidanson.vscode-markdownlint
+    "source.fixAll.markdownlint": "never" // Extension davidanson.vscode-markdownlint
   },
   "editor.showUnused": true,
   "editor.minimap.enabled": false,
@@ -154,7 +155,6 @@
     "added": true
   },
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "terminal.integrated.lineHeight": 1.2,
   "terminal.integrated.localEchoLatencyThreshold": -1,
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.enablePersistentSessions": false,
