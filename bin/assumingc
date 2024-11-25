@@ -8,6 +8,21 @@
 #     . assumingc -u
 #
 # NOTE: shebang is just for documentation + syntax highlighting.
+#
+# Require this structure:
+#
+#     $HOME/.ngc
+#     ├── config                # Default profile
+#     ├── <ORG_01>
+#     │   ├── <TEAM_01>         # ORG_01/TEAM_01
+#     │   │   └── .ngc
+#     │   │       └── config
+#     │   └── <TEAM_02>         # ORG_01/TEAM_02
+#     │       └── .ngc
+#     │           └── config
+#     └── personal              # Profile of an individual account "personal"
+#         └── .ngc
+#             └── config
 
 declare -a HELP=(
     "-v|--verbose"
