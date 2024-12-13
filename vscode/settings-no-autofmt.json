@@ -111,9 +111,13 @@
     }
   },
   "ruff.args": [ "--ignore E501" ],  // Disable "line too long" when charliemarsh.ruff extension is on
+  "python.analysis.aiCodeActions": {
+        "generateDocstring": true
+  },
   "python.analysis.inlayHints.variableTypes": true,
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.supportDocstringTemplate": true,
   "python.languageServer": "Pylance",
   "mypy-type-checker.args": [ "--show-error-codes" ], // ms-python.mypy-type-checker
   "python.testing.pytestEnabled": true,
