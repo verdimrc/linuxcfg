@@ -24,6 +24,11 @@ for i in base ~/.pyenv/versions/miniforge3-latest/envs/base-*; do
 done
 ~/.pyenv/versions/miniforge3-latest/bin/conda clean --all --yes
 
+## Enable / disable this pipupgrade stanza as you like.
+echo Upgrading all packages under virtualenv \'jlab\'...
+VIRTUAL_ENV=~/.pyenv/versions/miniforge3-latest/envs/jlab \
+    pipupgrade --pip-path $VIRTUAL_ENV/bin/pip3 --pip -l --upgrade-type major
+
 ## No longer uses miniconda. Left here for historical context only.
 ##
 #declare -a conda_env=( $(for i in ~/miniconda3/envs/*; do [[ -d $i && ! $i =~ '^.' ]] && echo $(basename $i);done) )
