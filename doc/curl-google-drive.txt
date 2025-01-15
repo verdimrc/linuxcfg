@@ -1,0 +1,12 @@
+# Download link from browser history
+https://drive.usercontent.google.com/download?id=xxxx&export=download&authuser=0&confirm=t&uuid=yyyy:zzzz
+
+# This will show download page.
+https://drive.google.com/file/d/xxxx/view
+
+# This will download provided the file is public.
+curl -L https://drive.usercontent.google.com/download?id=xxxx > filename
+
+# Large file binary needs this. Otherwise, curl will download the html page
+# "this file is too large to scan, etc. etc."
+curl -L 'https://drive.usercontent.google.com/download?id=xxxx&export=download&authuser=0&confirm=t' > filename
