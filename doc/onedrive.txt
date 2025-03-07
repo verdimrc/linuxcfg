@@ -3,8 +3,11 @@ rclone config
 ll ~/.config/rclone
 mkdir ~/onedrive
 
+
+# Enable shortcut: https://github.com/OneDrive/onedrive-api-docs/issues/1674#issuecomment-1494727537
+
 # Run on foreground
-rclone --vfs-cache-mode writes mount onedrive: ~/onedrive
+rclone --header 'Prefer: Include-Feature=AddToOneDrive' --vfs-cache-mode writes mount onedrive: ~/onedrive
 
 # Run on background
-rclone --vfs-cache-mode writes mount --daemon onedrive: ~/onedrive
+rclone --header 'Prefer: Include-Feature=AddToOneDrive' --vfs-cache-mode writes mount --daemon onedrive: ~/onedrive
