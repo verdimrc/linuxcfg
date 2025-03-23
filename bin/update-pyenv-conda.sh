@@ -21,8 +21,11 @@ done
 
 ## Enable / disable this pipupgrade stanza as you like.
 echo Upgrading all packages under virtualenv \'jlab\'...
-VIRTUAL_ENV=~/.pyenv/versions/miniforge3-latest/envs/jlab \
-    pipupgrade --pip-path $VIRTUAL_ENV/bin/pip3 --pip -l --upgrade-type major
+export VIRTUAL_ENV=~/.pyenv/versions/miniforge3-latest/envs/jlab
+pipupgrade --pip-path $VIRTUAL_ENV/bin/pip3 --pip -l --upgrade-type major --yes
+export -n VIRTUAL_ENV
+#
+# NOTE: VIRTUAL_ENV=xxx pipupgrade ... still pipupgrade the current environment!
 
 ## No longer uses miniconda. Left here for historical context only.
 ##
