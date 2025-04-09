@@ -341,3 +341,8 @@ typeset -A ZSH_HIGHLIGHT_PATTERNS
 # To have commands starting with `rm -rf` in red:
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_PATTERNS+=('rm -fr *' 'fg=white,bold,bg=red')
+
+################################################################################
+# Extras
+################################################################################
+[[ -d $HOME/.zshrc.d ]] && source $HOME/.zshrc.d/*
