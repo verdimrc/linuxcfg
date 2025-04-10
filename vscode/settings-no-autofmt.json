@@ -131,17 +131,21 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.markdownlint": "never" // Extension davidanson.vscode-markdownlint
   },
-  "editor.showUnused": true,
+  "editor.accessibilitySupport": "off",
+  "editor.detectIndentation": false,
+  "editor.largeFileOptimizations": false,
   "editor.minimap.enabled": false,
   "editor.parameterHints.cycle": true,
   "editor.renderLineHighlight": "all",
   //"editor.renderWhitespace": "trailing",
   "editor.renderControlCharacters": false,
   "editor.rulers": [ 80, 100 ],
+  "editor.showUnused": true,
   "editor.stickyScroll.enabled": true,
   "editor.stickyTabStops": true,
   "editor.suggestSelection": "first",
   "editor.wordWrapColumn": 100,
+  "editor.wordWrap": "on",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
@@ -163,7 +167,8 @@
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.rightClickBehavior": "default",
-  "terminal.integrated.stickyScroll.enabled": false, // Nov23 default is on
+  "terminal.integrated.stickyScroll.enabled": true, // Nov23 default is on
+  "terminal.integrated.stickyScroll.maxLineCount": 5,
   "window.confirmSaveUntitledWorkspace": false,
   "workbench.editor.decorations.colors": true,
   "workbench.editor.decorations.badges": true,
@@ -192,7 +197,9 @@
   "gitlens.hovers.currentLine.over": "line",
   // "markdown.extension.preview.autoShowPreviewToSide": true,
   "[markdown]": {
+    // TODO: which one to enabled?
     "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    //"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",  // from wsl2
     "editor.formatOnSave": false
   },
   "remote.SSH.defaultExtensions": [
@@ -256,5 +263,13 @@
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.tree.showScanModeButton": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.zoomLevel": 0.0
+  "window.zoomLevel": 0.0,
+
+  // Misc
+  "security.workspace.trust.untrustedFiles": "open",
+  "remote.autoForwardPortsSource": "hybrid",
+  //"remote.SSH.configFile": "C:\\Users\\vmarch\\Documents\\.ssh\\config",
+  //"remote.SSH.remotePlatform": {
+  //  "win-hgx-056": "linux"
+  //}
 }
