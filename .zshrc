@@ -313,6 +313,10 @@ if [[ (${TERM_PROGRAM} == "vscode") ]]; then
     if [[ $? -eq 0 ]]; then
         [[ -e $GITROOT/.env.unversioned ]] && source $GITROOT/.env.unversioned
     fi
+
+    # 20250410: fix suddenly zsh on wsl2 has no shell integration.
+    # https://github.com/cline/cline/wiki/Troubleshooting-%E2%80%90-Shell-Integration-Unavailable#still-having-trouble
+    . "$(code --locate-shell-integration-path zsh)"
 fi
 
 
