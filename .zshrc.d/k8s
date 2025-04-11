@@ -1,0 +1,5 @@
+export PATH=/snap/bin:$PATH
+alias kubectl='microk8s kubectl'
+
+## Reference for minikube
+# alias kubectl="minikube kubectl --"
