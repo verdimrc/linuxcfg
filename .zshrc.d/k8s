@@ -1,5 +1,7 @@
-export PATH=/snap/bin:$PATH
-alias kubectl='microk8s kubectl'
+## Not working on wsl2. GPU operator does not support efi secure boot
+#export PATH=/snap/bin:$PATH
+#alias kubectl='microk8s kubectl'
+#alias helm='microk8s helm'
 
 ## Reference for minikube
-# alias kubectl="minikube kubectl --"
+ alias kubectl="minikube kubectl --"
