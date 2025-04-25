@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# JQ must be absolute path
+: "${JQ:=/usr/bin/jq}"
+
+# Easiest way is to:
+#     ln -s ~/src/linuxcfg/.local/bin/jq ~/bin/
+# because Ubuntu 22.04 puts ~/.local/bin after /usr/**/bin, and my .zshrc
+# prepend ~/bin before those /usr/**/bin.
+
+# NOTE: wrapper is meant to be used in a pipe.
+# - jq => calls /usr/bin/jq, print usage.
+# - USE_ROBUST_JQ=1 jq => hangs, waiting on stdin
+[[ "${USE_ROBUST_JQ}" == 1 ]] \
+    && "$JQ" -R '. as $line | try (fromjson) catch $line' $@ \
+    || "$JQ" $@

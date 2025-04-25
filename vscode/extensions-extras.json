@@ -3,7 +3,6 @@
     "recommendations": [
         "amazonwebservices.aws-toolkit-vscode",
         "codezombiech.gitignore",
-        "donjayamanne.python-environment-manager",
         "eamodio.gitlens",
         "GrapeCity.gc-excelviewer",
         //"gxl.git-graph-3",

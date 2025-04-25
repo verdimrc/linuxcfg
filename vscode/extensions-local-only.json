@@ -5,10 +5,12 @@
   "recommendations": [
       "emilast.LogFileHighlighter",
       "IBM.output-colorizer",
-      "leonhard-s.python-sphinx-highlight",
       "mikestead.dotenv",
       "ms-vscode-remote.remote-ssh",
       "ms-vscode-remote.remote-ssh-edit",
+      "rodolphebarbanneau.python-docstring-highlighter",
+      "stkb.rewrap",
+      "tomoki1207.pdf",
       //"usernamehw.errorlens",
   ]
 }
