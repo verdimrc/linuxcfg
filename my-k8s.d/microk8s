@@ -1,0 +1,3 @@
+# USAGE: source <thisfile>
+export PATH=~/.local/bin/microk8s:$PATH
+echo $PATH
