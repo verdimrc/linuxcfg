@@ -1,0 +1,5 @@
+https://www.cnblogs.com/sleepy-turtle/p/18531325
+=> https://github.com/yuanzhoulvpi2017/vscode_debug_transformers
+
+https://blog.csdn.net/ph12345687/article/details/136299953
+https://medium.com/@franoisponchon/pytorch-ddp-debugging-in-vscode-4fb162eba07e
