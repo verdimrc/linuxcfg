@@ -102,7 +102,7 @@ let g:strip_whitespace_on_save = 1
 let g:strip_whitespace_confirm = 0
 let g:strip_only_modified_lines = 0
 
-if exists('$DISPLAY') || exists('$JUPYTER_SERVER_URL')
+if exists('$DISPLAY') || exists('$JUPYTER_SERVER_URL') || exists('$WSL_DISTRO_NAME')
     " running under X11
     set t_Co=256
     set cursorline
