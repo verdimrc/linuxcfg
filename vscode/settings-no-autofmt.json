@@ -223,6 +223,7 @@
     //"ms-python.mypy-type-checker",
     "ms-python.vscode-pylance",
     "ms-python.python",
+    "ms-python.vscode-python-envs",
     "ms-toolsai.jupyter",
     "ms-toolsai.vscode-jupyter-powertoys",
     "ms-vscode.live-server",

@@ -25,6 +25,7 @@
         //"ms-python.black-formatter",
         //"ms-python.mypy-type-checker",
         "ms-python.python",
+        "ms-python.vscode-python-envs",
         "ms-toolsai.vscode-jupyter-powertoys",
         "ms-vscode.live-server",
         "ms-vscode-remote.remote-ssh",

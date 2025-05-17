@@ -1,0 +1,66 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/anaconda
+{
+  "name": "Nemo",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "adpyke.vscode-sql-formatter",
+        "bierner.github-markdown-preview",
+        "bierner.markdown-mermaid",
+        //"charliermarsh.ruff",
+        "christian-kohler.path-intellisense",
+        "davidanson.vscode-markdownlint",
+        "donjayamanne.githistory",
+        "editorconfig.editorconfig",
+        //"eamodio.gitlens",
+        "gruntfuggly.todo-tree",
+        //"gxl.git-graph-3",
+        "hyunkyunmoon.gzipdecompressor",
+        "janisdd.vscode-edit-csv",
+        "mechatroner.rainbow-csv",
+        //"ms-python.autopep8",
+        //"ms-python.black-formatter",
+        "ms-python.debugpy",
+        //"ms-python.mypy-type-checker",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "ms-python.vscode-python-envs",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-powertoys",
+        "ms-vscode.live-server",
+        "njpwerner.autodocstring",
+        "redhat.vscode-yaml",
+        "shardulm94.trailing-spaces",
+        "stkb.rewrap",
+        "tamasfe.even-better-toml",
+        "tomoki1207.pdf",
+        "visualstudioexptteam.vscodeintellicode",
+        "xadillax.viml",
+        "yzhang.markdown-all-in-one"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python"
+      }
+    }
+  }
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "python --version",
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
