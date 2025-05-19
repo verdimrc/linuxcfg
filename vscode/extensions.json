@@ -21,6 +21,7 @@
         "rodolphebarbanneau.python-docstring-highlighter",
         "mechatroner.rainbow-csv",
         "mikestead.dotenv",
+        "ms-azuretools.vscode-containers",
         //"ms-python.autopep8",
         //"ms-python.black-formatter",
         //"ms-python.mypy-type-checker",
