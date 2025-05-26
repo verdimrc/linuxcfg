@@ -115,6 +115,12 @@ $ git branch -va
 $ git checkout master
 $ git merge upstream/master
 
+# Restrict remote to selected branch -- https://stackoverflow.com/a/24085552
+$ vi .git/config
+[remote "my-origin"]
+    fetch = +refs/heads/branch1:refs/my-remotes/origin/branch1
+    fetch = +refs/heads/branch2:refs/my-remotes/origin/branch2
+
 # Sync local's master to forked repo's master
 $ git push origin master
 
