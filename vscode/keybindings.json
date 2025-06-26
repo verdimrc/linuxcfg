@@ -24,5 +24,16 @@
     {
         "key": "alt+w",
         "command": "-workbench.action.terminal.toggleFindWholeWord"
+    },
+
+
+    {
+      "key": "ctrl+'",
+      "command": "workbench.action.createTerminalEditor"
+    },
+    {
+      "key": "ctrl+shift+'",
+      "command": "workbench.action.createTerminalEditorSide"
     }
 ]
+
