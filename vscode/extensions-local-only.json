@@ -4,7 +4,6 @@
 {
   "recommendations": [
       "emilast.LogFileHighlighter",
-      "IBM.output-colorizer",
       "mikestead.dotenv",
       "ms-vscode-remote.remote-ssh",
       "ms-vscode-remote.remote-ssh-edit",

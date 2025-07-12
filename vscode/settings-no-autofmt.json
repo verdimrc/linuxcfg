@@ -228,7 +228,7 @@
     "ms-python.vscode-python-envs",
     "ms-toolsai.jupyter",
     "ms-toolsai.vscode-jupyter-powertoys",
-    "ms-vscode.live-server",
+    //"ms-vscode.live-server",
     "njpwerner.autodocstring",
     "redhat.vscode-yaml",
     "shardulm94.trailing-spaces",
@@ -256,6 +256,9 @@
     },
     "FIXME": {
       "foreground": "red"
+    },
+    "HACK": {
+      "foreground": "magenta"
     }
   },
   "todo-tree.highlights.defaultHighlight": {
