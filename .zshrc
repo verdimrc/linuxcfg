@@ -136,6 +136,10 @@ setopt autoparamslash
 # https://superuser.com/a/1020116
 zstyle ':completion:*:*:*:*:*' menu select
 
+ENABLE_CORRECTION="false"
+unsetopt correct_all
+unsetopt correct
+
 
 ################################################################################
 # Enriched prompt
@@ -292,7 +296,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
     #
     # Below assumes we've done `pyenv install miniforge3-latest`
     alias CONDA="~/.pyenv/versions/miniforge3-latest/bin/conda"
+    alias MAMBA="~/.pyenv/versions/miniforge3-latest/bin/mamba"
     alias conda-activate="source ~/.pyenv/versions/miniforge3-latest/bin/activate"
+    alias conda-deactivate="source ~/.pyenv/versions/miniforge3-latest/bin/deactivate"
 fi
 
 ################################################################################
