@@ -299,6 +299,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
     alias MAMBA="~/.pyenv/versions/miniforge3-latest/bin/mamba"
     alias conda-activate="source ~/.pyenv/versions/miniforge3-latest/bin/activate"
     alias conda-deactivate="source ~/.pyenv/versions/miniforge3-latest/bin/deactivate"
+
+    # 20250719: experimental. Test this when vscode's python environment extension
+    # by DEFAULT shows the icon. See vscode/settings.json for details.
+    # which heavily relies on conda binary (not pyenv shim)
+    #export PATH="$HOME/.local/bin-override-pyenv-shims:$PATH"
 fi
 
 ################################################################################

@@ -270,12 +270,23 @@
   "todo-tree.tree.showScanModeButton": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.zoomLevel": 0.0,
+  //"extensions.verifySignature": false,   // workaround extensions stop working on Linux insider, since Feb'25
 
   // Misc
-  "security.workspace.trust.untrustedFiles": "open",
+  //"security.workspace.trust.untrustedFiles": "open",
   "remote.autoForwardPortsSource": "hybrid",
   //"remote.SSH.configFile": "C:\\Users\\vmarch\\Documents\\.ssh\\config",
   //"remote.SSH.remotePlatform": {
   //  "win-hgx-056": "linux"
-  //}
+  //},
+
+  // Pre-release
+  // Last Released: 2025-07-16, 18:44:16
+  // Last Updated: 2025-07-19, 18:28:57
+  //
+  // Note: The Python Environments icon may no longer appear in the Activity Bar due to the ongoing
+  // rollout of the Python Environments extension. To restore the extension, add
+  // "python.useEnvironmentsExtension": true to your User settings. This setting is temporarily
+  // necessary until the rollout is complete!
+  //"python.useEnvironmentsExtension": true,
 }
