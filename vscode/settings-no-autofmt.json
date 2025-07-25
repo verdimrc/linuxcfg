@@ -132,6 +132,7 @@
     "source.fixAll.markdownlint": "never" // Extension davidanson.vscode-markdownlint
   },
   "editor.accessibilitySupport": "off",
+  "editor.comments.ignoreEmptyLines": false,
   "editor.detectIndentation": false,
   "editor.largeFileOptimizations": false,
   "editor.minimap.enabled": false,
