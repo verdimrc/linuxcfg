@@ -27,14 +27,14 @@ Fetch just the API key, typically for scripting purposes:
 
 .. code-block:: console
 
-    $ ngc-apikey-v2.py
+    $ ngc-apikey.py
     <api_key>
 
-    $ ngc-apikey-v2.py org/team
+    $ ngc-apikey.py org/team
     <api_key>
 
     $ export NGC_CLI_PROFILE=profile
-    $ ngc-apikey-v2.py
+    $ ngc-apikey.py
     <api_key>
 
 Set a few `NGC_CLI_*` `environment variables <https://docs.ngc.nvidia.com/cli/script.html>`_ on
