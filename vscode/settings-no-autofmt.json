@@ -99,6 +99,7 @@
   "jupyter.disableJupyterAutoStart": true,
   "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "notebook.insertFinalNewline": true,
   "notebook.lineNumbers": "on",
   "notebook.output.scrolling": true, // v1.77 (Mar23)
   "[python]": {
@@ -151,6 +152,8 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.openEditors.visible": 0,
   "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "git.detectSubmodules": false,
   "git.terminalAuthentication": false,
   "json.format.keepLines": true,
