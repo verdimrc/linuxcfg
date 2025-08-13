@@ -1,0 +1,12 @@
+Preference .json, add:
+
+ "remote.SSH.serverInstallPath": {
+    "whackathon": "/home/username/.vscode-server.marcverd"
+  },
+
+This way, each real person can run remote-ssh-ed vscode concurrently without
+stepping into each other's configs.
+
+By default, remote-ssh uses $HOME/.vscode-server, so we want each individual
+to use $PREFIX/.vscode-server (NOTE: vscode automatically create the
+leaf dir .vscode-server).
