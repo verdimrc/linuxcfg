@@ -163,6 +163,7 @@
   "markdown.validate.enabled": true,
   "outline.showVariables": false,
   "outline.collapseItems": "alwaysCollapse",
+  "search.mode": "reuseEditor",
   "scm.diffDecorationsGutterPattern": {
     "added": true
   },
@@ -229,7 +230,7 @@
     //"ms-python.mypy-type-checker",
     "ms-python.vscode-pylance",
     "ms-python.python",
-    "ms-python.vscode-python-envs",
+    //"ms-python.vscode-python-envs",
     "ms-toolsai.jupyter",
     "ms-toolsai.vscode-jupyter-powertoys",
     //"ms-vscode.live-server",
@@ -279,7 +280,10 @@
   // Misc
   //"security.workspace.trust.untrustedFiles": "open",
   "remote.autoForwardPortsSource": "hybrid",
-  //"remote.SSH.configFile": "C:\\Users\\vmarch\\Documents\\.ssh\\config",
+  //"remote.SSH.configFile": "C:\\Users\\vmarch\\Documents\\.ssh\\config",   // VSCode windows (host)
+  //"remote.SSH.serverInstallPath": {
+  //  "whackathon": "/home/vmarch/.vscode-server.marcverd"    // Use-case: multiple individuals share the same remote Linux uid
+  //},
   //"remote.SSH.remotePlatform": {
   //  "win-hgx-056": "linux"
   //},
