@@ -23,6 +23,18 @@
   // HYPER-PERSONALIZED STANZA
   ///////////////////////////////////////////////////////////////////////////
 
+  // Misc
+  "extensions.verifySignature": false,   // workaround extensions stop working on Linux insider, since Feb'25
+  "security.workspace.trust.untrustedFiles": "open",
+  "remote.autoForwardPortsSource": "hybrid",
+  //"remote.SSH.configFile": "C:\\Users\\vmarch\\Documents\\.ssh\\config",   // VSCode windows (host)
+  //"remote.SSH.serverInstallPath": {
+  //  "whackathon": "/home/vmarch/.vscode-server.marcverd"    // Use-case: multiple individuals share the same remote Linux uid
+  //},
+  //"remote.SSH.remotePlatform": {
+  //  "win-hgx-056": "linux"
+  //},
+
   // Python paths
   "python.defaultInterpreterPath": "/home/verdi/miniconda3/envs/py/bin/python",
   "terminal.external.osxExec": "kitty",
@@ -58,7 +70,11 @@
     "**/__pycache__": true,
     "**/.ipynb_checkpoints": true,
     "**/.*_cache": true,
-    "**/.tox": true
+    "**/.tox": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/*.pyc": true
   },
   "files.watcherExclude": {
     "**/.git/objects/**": true,
@@ -68,7 +84,10 @@
     "**/__pycache__/**": true,
     "**/.ipynb_checkpoints/**": true,
     "**/.*_cache/**": true,
-    "**/.tox/**": true
+    "**/.tox/**": true,
+    "**/.mypy_cache/**": true,
+    "**/.pytest_cache/**": true,
+    "**/.ruff_cache/**": true
   },
 
   "files.associations": {
@@ -99,6 +118,7 @@
   "jupyter.disableJupyterAutoStart": true,
   "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "mypy-type-checker.args": [ "--show-error-codes" ], // ms-python.mypy-type-checker
   "notebook.insertFinalNewline": true,
   "notebook.lineNumbers": "on",
   "notebook.output.scrolling": true, // v1.77 (Mar23)
@@ -111,7 +131,6 @@
       "source.fixAll": "never" // Don't like. Import can be removed unpredictably.
     }
   },
-  "ruff.args": [ "--ignore E501" ],  // Disable "line too long" when charliemarsh.ruff extension is on
   "python.analysis.aiCodeActions": {
         "generateDocstring": true
   },
@@ -120,9 +139,10 @@
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.supportDocstringTemplate": true,
   "python.languageServer": "Pylance",
-  "mypy-type-checker.args": [ "--show-error-codes" ], // ms-python.mypy-type-checker
+  "python.terminal.activateEnvInCurrentTerminal": false,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
+  "ruff.args": [ "--ignore E501" ],  // Disable "line too long" when charliemarsh.ruff extension is on
 
   // Workbench & editor
   "breadcrumbs.enabled": true,
@@ -155,6 +175,7 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "git.detectSubmodules": false,
+  "git.openRepositoryInParentFolders": "never",
   "git.terminalAuthentication": false,
   "json.format.keepLines": true,
   "markdown.extension.toc.levels": "2..6",
@@ -199,6 +220,7 @@
   "autoDocstring.docstringFormat": "google",
   "aws.samcli.location": "/usr/local/bin/sam",
   "aws.profile": "default",
+  "docker.extension.enableComposeLanguageServer": true,
   "gitlens.hovers.currentLine.over": "line",
   // "markdown.extension.preview.autoShowPreviewToSide": true,
   "[markdown]": {
@@ -275,18 +297,6 @@
   "todo-tree.tree.showScanModeButton": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.zoomLevel": 0.0,
-  //"extensions.verifySignature": false,   // workaround extensions stop working on Linux insider, since Feb'25
-
-  // Misc
-  //"security.workspace.trust.untrustedFiles": "open",
-  "remote.autoForwardPortsSource": "hybrid",
-  //"remote.SSH.configFile": "C:\\Users\\vmarch\\Documents\\.ssh\\config",   // VSCode windows (host)
-  //"remote.SSH.serverInstallPath": {
-  //  "whackathon": "/home/vmarch/.vscode-server.marcverd"    // Use-case: multiple individuals share the same remote Linux uid
-  //},
-  //"remote.SSH.remotePlatform": {
-  //  "win-hgx-056": "linux"
-  //},
 
   // Pre-release
   // Last Released: 2025-07-16, 18:44:16

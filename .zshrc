@@ -8,6 +8,9 @@ export HOMEBREW_GOPROXY=direct
 export PATH=$HOME/bin:$PATH
 setopt interactive_comments
 
+export CUDA_HOME=/usr/local/cuda
+export PATH=$CUDA_HOME/bin:$PATH
+
 ###############################################################################
 # Command not found
 ###############################################################################
