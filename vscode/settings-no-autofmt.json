@@ -139,7 +139,7 @@
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.supportDocstringTemplate": true,
   "python.languageServer": "Pylance",
-  "python.terminal.activateEnvInCurrentTerminal": false,
+  "python.terminal.activateEnvInCurrentTerminal": true,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   "ruff.args": [ "--ignore E501" ],  // Disable "line too long" when charliemarsh.ruff extension is on
