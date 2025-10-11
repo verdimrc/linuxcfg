@@ -21,7 +21,7 @@ echo "Updating conda's base python..."
 for i in base ~/.pyenv/versions/miniforge3-latest/envs/base-*; do
     echo "Updating conda environments $(basename $i)..."
     PY_VER=$($i/bin/python -c 'import sys ; print(f"{sys.version_info.major}.{sys.version_info.minor}", end="")' )
-    ~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i` "python==$PY_VER"
+    ~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i` "python=$PY_VER"
     ~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i`
 done
 ~/.pyenv/versions/miniforge3-latest/bin/conda clean --all --yes
