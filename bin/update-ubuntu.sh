@@ -25,9 +25,12 @@ echo "Updating conda's base python..."
 # Updating all conda's environment.
 for i in ~/.pyenv/versions/miniforge3-latest/envs/base-*; do
     echo "Updating conda environments $(basename $i)..."
-    PY_VER=$($i/bin/python -c 'import sys ; print(f"{sys.version_info.major}.{sys.version_info.minor}", end="")' )
-    ~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i` "python~=${PY_VER}.0"
-    ~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i`
+    ## DEPRECATED: conda results in (python-3.13.7, libffi-3.4.6) => (python-3.13.2, libffi-3.5.2)
+    ## Solution: mamba
+    #PY_VER=$($i/bin/python -c 'import sys ; print(f"{sys.version_info.major}.{sys.version_info.minor}", end="")' )
+    #~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i` "python~=${PY_VER}.0"
+    #~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i`
+    ~/.pyenv/versions/miniforge3-latest/bin/mamba update --all --yes -n `basename $i`
 done
 ~/.pyenv/versions/miniforge3-latest/bin/conda clean --all --yes
 
