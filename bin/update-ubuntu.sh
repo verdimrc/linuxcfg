@@ -1,30 +1,55 @@
 #!/bin/bash
 
+if [[ -t 1 ]] && [[ $(tput colors) -ge 8 ]]; then
+    # All colors are bold
+    RED="\033[1;31m"
+    GREEN="\033[1;32m"
+    PURPLE="\033[1;35m"
+    YELLOW="\033[1;33m"
+    BLUE="\033[01;34m"
+    OFF="\033[0m"
+else
+    RED=''
+    GREEN=''
+    PURPLE=''
+    YELLOW=''
+    BLUE=''
+    OFF=''
+fi
+
+show_info() {
+   echo -e "${BLUE}[INFO]${OFF} ${GREEN}${1}${OFF}"
+}
+
+show_warn() {
+   echo -e "${YELLOW}[WARN]${OFF} ${PURPLE}${1}${OFF}"
+}
+
 if command -v apt &> /dev/null; then
     # OS packages
-    echo Updating Ubuntu packages...
+    show_info "Updating Ubuntu packages..."
     sudo apt update
     sudo apt dist-upgrade -V -y
 else
-    echo "Command apt not found. Skip updating Ubuntu packages..."
+    show_warn "Command apt not found. Skip updating Ubuntu packages..."
 fi
 
 # updating pyenv
-echo 'Running pyenv rehash...'
+show_info "Running pyenv rehash..."
 pyenv rehash
 
 # updating pipx
-echo 'Updating pipx packages...'
+show_info 'Updating pipx packages...'
 pipx upgrade-all
 
 # Updating conda's python under pyenv. Special case for base python.
-echo "Updating conda's base python..."
+show_info "Updating conda's base python..."
 ~/.pyenv/versions/miniforge3-latest/bin/conda update --yes --update-all -n base python
 ~/.pyenv/versions/miniforge3-latest/bin/conda update --yes --update-all -n base
 
 # Updating all conda's environment.
 for i in ~/.pyenv/versions/miniforge3-latest/envs/base-*; do
-    echo "Updating conda environments $(basename $i)..."
+    show_info "Updating conda environments ${YELLOW}$(basename $i)${GREEN}..."
     ## DEPRECATED: conda results in (python-3.13.7, libffi-3.4.6) => (python-3.13.2, libffi-3.5.2)
     ## Solution: mamba
     #PY_VER=$($i/bin/python -c 'import sys ; print(f"{sys.version_info.major}.{sys.version_info.minor}", end="")' )
@@ -35,13 +60,14 @@ done
 ~/.pyenv/versions/miniforge3-latest/bin/conda clean --all --yes
 
 ## Enable / disable this pipupgrade stanza as you like.
-echo Upgrading all packages under virtualenv \'jlab\'...
+show_info Upgrading all packages under virtualenv \'jlab\'...
 export VIRTUAL_ENV=~/.pyenv/versions/miniforge3-latest/envs/jlab
 pipupgrade --pip-path $VIRTUAL_ENV/bin/pip3 --pip -l --upgrade-type major --yes
 export -n VIRTUAL_ENV
 #
 # NOTE: VIRTUAL_ENV=xxx pipupgrade ... still pipupgrade the current environment!
 
+show_info "All done."
 exit $?
 
 
