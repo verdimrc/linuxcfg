@@ -41,7 +41,7 @@ export PATH=$CUDA_HOME/bin:$PATH
 ###############################################################################
 # https://wiki.archlinux.org/index.php/Color_output_in_console
 export CLICOLOR=1
-export LESS='-FMRX'
+export LESS='-FMrX'
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export DSTAT_OPTS="-cdngym"
 export DOOL_OPTS="-cdngym"
