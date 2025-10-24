@@ -1,0 +1,12 @@
+Examples. Run these commands on powershell.
+
+powercfg /q
+
+
+        powercfg /setdcvalueindex Scheme_GUID Sub_GUID Setting_GUID SettingIndex
+
+Intel graphics
+powercfg /setdcvalueindex 381b4222-f694-41f0-9685-ff5bb260df2e 44f3beca-a7c0-460e-9df2-bb8b99e0cba6 3619c3f2-afb2-4afc-b0e9-e7fef372de36 002
+
+IE js timer
+powercfg /setdcvalueindex 381b4222-f694-41f0-9685-ff5bb260df2e 02f815b5-a5cf-4c84-bf20-649d1f75d3d8 4c793e7d-a264-42e1-87d3-7a0d2f523ccd 001
