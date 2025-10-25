@@ -49,12 +49,13 @@ export DOOL_OPTS="-cdngym"
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 alias ip='ip -color=auto'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
 alias vi='vim'
-alias gbvv="git branch -vv | egrep '^.*(behind|ahead).*|$'"
+alias gbvv="git branch -vv | grep -E '^.*(behind|ahead).*|$'"
 alias gbvv-gone="git branch -vv | grep '\[.*: gone\]'"
 alias ncdu='ncdu --color dark'
 
@@ -67,10 +68,8 @@ alias ncdu='ncdu --color dark'
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    [[ ${TERM_PROGRAM} == "vscode" || ! -z "$JUPYTER_SERVER_ROOT" || ! -z "$WSL_DISTRO_NAME" ]] && alias ls='ls --color=auto' || alias ls='ls --color=auto --hyperlink=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    [[ ${TERM_PROGRAM} == "vscode" || ! -z "$JUPYTER_SERVER_ROOT" || ! -z "$WSL_DISTRO_NAME" ]] \
+        && alias ls='ls --color=auto' || alias ls='ls --color=auto --hyperlink=auto'
 fi
 
 # Add an "alert" alias for long running commands.  Use like so:
