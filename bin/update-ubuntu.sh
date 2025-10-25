@@ -18,11 +18,11 @@ else
 fi
 
 show_info() {
-   echo -e "${BLUE}[INFO]${OFF} ${GREEN}${1}${OFF}"
+   echo -e "${BLUE}[INFO]${OFF} ${GREEN}${@}${OFF}"
 }
 
 show_warn() {
-   echo -e "${YELLOW}[WARN]${OFF} ${PURPLE}${1}${OFF}"
+   echo -e "${YELLOW}[WARN]${OFF} ${PURPLE}${@}${OFF}"
 }
 
 if command -v apt &> /dev/null; then
@@ -60,7 +60,7 @@ done
 ~/.pyenv/versions/miniforge3-latest/bin/conda clean --all --yes
 
 ## Enable / disable this pipupgrade stanza as you like.
-show_info Upgrading all packages under virtualenv \'jlab\'...
+show_info Upgrading all packages under virtualenv ${YELLOW}jlab${GREEN}...
 export VIRTUAL_ENV=~/.pyenv/versions/miniforge3-latest/envs/jlab
 pipupgrade --pip-path $VIRTUAL_ENV/bin/pip3 --pip -l --upgrade-type major --yes
 export -n VIRTUAL_ENV
