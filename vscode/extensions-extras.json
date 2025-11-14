@@ -1,20 +1,23 @@
 // Drop this file as project/.vscode/extensions.json
 {
     "recommendations": [
+        "adpyke.vscode-sql-formatter",
         "amazonwebservices.aws-toolkit-vscode",
         "codezombiech.gitignore",
+        "docker.docker",
         "eamodio.gitlens",
         "GrapeCity.gc-excelviewer",
-        "gxl.git-graph-3",
         "hbenl.vscode-test-explorer",
         "imagio.vscode-dimmer-block",
         "jeff-hykin.polacode-2019",
         "littlefoxteam.vscode-python-test-adapter",
+        "ms-vscode.live-server",
         "nhoizey.gremlins",
         "phplasma.csv-to-table",
         "randomfractalsinc.vscode-data-preview",  // Installation takes time (minutes)
         "slevesque.vscode-hexdump",
         "TakumiI.markdowntable",
+        "usernamehw.errorlens",
         "zeithaste.cursorCharCode"
     ]
 }

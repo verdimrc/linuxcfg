@@ -9,7 +9,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "adpyke.vscode-sql-formatter",
+        //"adpyke.vscode-sql-formatter",
         "bierner.github-markdown-preview",
         "bierner.markdown-mermaid",
         //"charliermarsh.ruff",
@@ -32,7 +32,7 @@
         "ms-python.vscode-python-envs",
         "ms-toolsai.jupyter",
         "ms-toolsai.vscode-jupyter-powertoys",
-        "ms-vscode.live-server",
+        //"ms-vscode.live-server",
         "njpwerner.autodocstring",
         "redhat.vscode-yaml",
         "shardulm94.trailing-spaces",

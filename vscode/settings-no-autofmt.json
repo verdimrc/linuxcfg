@@ -91,7 +91,8 @@
   },
 
   "files.associations": {
-    "**/.ngc/**/config": "ini"
+    "**/.ngc/**/config": "ini",
+    ".env*": "dotenv"
   },
 
   // Javascript
@@ -230,22 +231,20 @@
     "editor.formatOnSave": false
   },
   "remote.SSH.defaultExtensions": [
-    "adpyke.vscode-sql-formatter",
     "bierner.github-markdown-preview",
     "bierner.markdown-mermaid",
     //"charliermarsh.ruff",
     "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
-    "docker.docker",
     "donjayamanne.githistory",
+    "dotenv.dotenv-vscode",
     "editorconfig.editorconfig",
-    //"eamodio.gitlens",
     "gruntfuggly.todo-tree",
-    //"gxl.git-graph-3",
+    "gxl.git-graph-3",
     "hyunkyunmoon.gzipdecompressor",
     "janisdd.vscode-edit-csv",
     "mechatroner.rainbow-csv",
-    "ms-azuretools.vscode-containers",
+    //"ms-azuretools.vscode-containers",
     //"ms-python.autopep8",
     //"ms-python.black-formatter",
     "ms-python.debugpy",
@@ -255,13 +254,10 @@
     //"ms-python.vscode-python-envs",
     "ms-toolsai.jupyter",
     "ms-toolsai.vscode-jupyter-powertoys",
-    //"ms-vscode.live-server",
     "njpwerner.autodocstring",
     "redhat.vscode-yaml",
     "shardulm94.trailing-spaces",
-    "stkb.rewrap",
     "tamasfe.even-better-toml",
-    "tomoki1207.pdf",
     "visualstudioexptteam.vscodeintellicode",
     "xadillax.viml",
     "yzhang.markdown-all-in-one"
