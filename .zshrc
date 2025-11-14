@@ -323,8 +323,10 @@ eval "$(register-python-argcomplete pipx)"
 ################################################################################
 if [[ (${TERM_PROGRAM} == "vscode") ]]; then
     GITROOT=$(git rev-parse --show-toplevel 2> /dev/null)
-    if [[ $? -eq 0 ]]; then
-        [[ -e $GITROOT/.env.unversioned ]] && source $GITROOT/.env.unversioned
+    if [[ $? -eq 0 && -e $GITROOT/.env.unversioned ]]; then
+        set -a
+        source $GITROOT/.env.unversioned
+        set +a
     fi
 
     # 20250410: fix suddenly zsh on wsl2 has no shell integration.
