@@ -35,8 +35,16 @@ else
 fi
 
 # updating pyenv
-show_info "Running pyenv rehash..."
+if ! command -v pyenv &> /dev/null; then
+    show_warn "Command pyenv not found. Skip all."
+    exit 0
+fi
+
+show_info "Updating pyenv..."
+show_info "pyenv before update: ${YELLOW}$(pyenv --version)${GREEN}"
+pyenv update
 pyenv rehash
+show_info "pyenv after update: ${YELLOW}$(pyenv --version)${GREEN}"
 
 # updating pipx
 show_info 'Updating pipx packages...'
