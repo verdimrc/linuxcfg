@@ -34,17 +34,21 @@ else
     show_warn "Command apt not found. Skip updating Ubuntu packages..."
 fi
 
-# updating pyenv
-if ! command -v pyenv &> /dev/null; then
+! command -v pyenv &> /dev/null && {
     show_warn "Command pyenv not found. Skip all."
     exit 0
-fi
+}
 
-show_info "Updating pyenv..."
-show_info "pyenv before update: ${YELLOW}$(pyenv --version)${GREEN}"
-pyenv update
+# updating pyenv
+if [[ $(stat -c '%U' $(pyenv which pyenv)) == "root" ]]; then
+    show_warn "Skip pyenv update because it's a system-wide installation..."
+else
+    show_info "Updating pyenv..."
+    show_info "pyenv before update: ${YELLOW}$(pyenv --version)${GREEN}"
+    pyenv update
+    show_info "pyenv after update: ${YELLOW}$(pyenv --version)${GREEN}"
+fi
 pyenv rehash
-show_info "pyenv after update: ${YELLOW}$(pyenv --version)${GREEN}"
 
 # updating pipx
 show_info 'Updating pipx packages...'
