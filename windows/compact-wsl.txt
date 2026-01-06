@@ -1,8 +1,15 @@
+# powershell
+Get-ChildItem HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | ForEach-Object { (Get-ItemProperty $_.PSPATH) | Select-Object DistributionName,BasePath }
+##
+DistributionName BasePath
+---------------- --------
+Ubuntu           C:\Users\vmarch\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState
+
 # https://github.com/microsoft/WSL/issues/4699#issuecomment-627133168
 wsl --shutdown
 diskpart
 # open window Diskpart
-select vdisk file="C:\WSL-Distros\…\ext4.vhdx"
+select vdisk file="C:\Users\vmarch\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState\ext4.vhdx"
 attach vdisk readonly
 compact vdisk
 detach vdisk
