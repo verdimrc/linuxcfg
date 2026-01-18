@@ -4,4 +4,5 @@
 #alias helm='microk8s helm'
 
 ## Reference for minikube
- alias kubectl="minikube kubectl --"
+# alias kubectl="minikube kubectl --"
+export PATH=~/.local/bin/minikube:$PATH

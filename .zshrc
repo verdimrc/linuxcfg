@@ -248,6 +248,7 @@ elif [[ $__CFBundleIdentifier == "" ]]; then  # __CF* env var is set if on OSX.
     local -i pid_term_emu=$(ps -o ppid= -p $(ps -o ppid= -p $$))
     local pcmd=$(ps -c -o command= -p $pid_term_emu)
     [[ "$pcmd" =~ "[Cc]ode*|lxqt-session" ]] && export VSCODE_BASE_SHLVL=$SHLVL
+    unset pcmd pid_term_emu pcmd
 fi
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
@@ -328,6 +329,7 @@ if [[ (${TERM_PROGRAM} == "vscode") ]]; then
         source $GITROOT/.env.unversioned
         set +a
     fi
+    unset GITROOT
 
     # 20250410: fix suddenly zsh on wsl2 has no shell integration.
     # https://github.com/cline/cline/wiki/Troubleshooting-%E2%80%90-Shell-Integration-Unavailable#still-having-trouble
@@ -361,7 +363,8 @@ typeset -A ZSH_HIGHLIGHT_PATTERNS
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_PATTERNS+=('rm -fr *' 'fg=white,bold,bg=red')
 
+
 ################################################################################
 # Extras
 ################################################################################
-[[ -d $HOME/.zshrc.d ]] && source $HOME/.zshrc.d/*
+[[ -d $HOME/.zshrc.d ]] && { for i in $HOME/.zshrc.d/* ; do source $i; done ; unset i ; }

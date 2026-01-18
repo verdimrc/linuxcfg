@@ -1,0 +1,53 @@
+[2] [/tmp]
+% glxinfo -B
+name of display: :0
+display: :0  screen: 0
+direct rendering: Yes
+Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: Microsoft Corporation (0xffffffff)
+    Device: D3D12 (Intel(R) Iris(R) Xe Graphics) (0xffffffff)
+    Version: 25.3.3
+    Accelerated: yes
+    Video memory: 16315MB
+    Unified memory: yes
+    Preferred profile: core (0x1)
+    Max core profile version: 4.1
+    Max compat profile version: 4.1
+    Max GLES1 profile version: 1.1
+    Max GLES[23] profile version: 3.0
+Memory info (GL_ATI_meminfo):
+    VBO free memory - total: 15410 MB, largest block: 15410 MB
+    VBO free aux. memory - total: 0 MB, largest block: 0 MB
+    Texture free memory - total: 15410 MB, largest block: 15410 MB
+    Texture free aux. memory - total: 0 MB, largest block: 0 MB
+    Renderbuffer free memory - total: 15410 MB, largest block: 15410 MB
+    Renderbuffer free aux. memory - total: 0 MB, largest block: 0 MB
+Memory info (GL_NVX_gpu_memory_info):
+    Dedicated video memory: 16315 MB
+    Total available memory: 16315 MB
+    Currently available dedicated video memory: 15410 MB
+OpenGL vendor string: Microsoft Corporation
+OpenGL renderer string: D3D12 (Intel(R) Iris(R) Xe Graphics)
+OpenGL core profile version string: 4.1 (Core Profile) Mesa 25.3.3 - kisak-mesa PPA
+OpenGL core profile shading language version string: 4.10
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 4.1 (Compatibility Profile) Mesa 25.3.3 - kisak-mesa PPA
+OpenGL shading language version string: 4.10
+OpenGL context flags: (none)
+OpenGL profile mask: compatibility profile
+
+OpenGL ES profile version string: OpenGL ES 3.0 Mesa 25.3.3 - kisak-mesa PPA
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.00
+
+[2] [/tmp]
+% glxgears
+480 frames in 5.0 seconds = 95.994 FPS
+516 frames in 5.0 seconds = 103.065 FPS
+516 frames in 5.0 seconds = 103.133 FPS
+507 frames in 5.0 seconds = 101.374 FPS
+493 frames in 5.0 seconds = 98.530 FPS
+494 frames in 5.0 seconds = 98.765 FPS
+500 frames in 5.0 seconds = 99.974 FPS
+^C
