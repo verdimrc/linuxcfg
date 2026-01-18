@@ -13,6 +13,12 @@ export KITTY_DISABLE_WAYLAND=1
 export MESA_D3D12_DEFAULT_ADAPTER_NAME="NVIDIA"
 
 
+# Direct launch on Powershell: needs to replicate the env vars from .zshrc,
+# else the kitty window itself still uses the default (mesa & wayland), and
+# the env vars from .zshrc only affects the shell session (and child processes).
+wsl GALLIUM_DRIVER=d3d12 KITTY_DISABLE_WAYLAND=1 /home/vmarch/kitty/bin/kitty
+
+
 ###############################################################################
 # Scratchpad
 ###############################################################################
