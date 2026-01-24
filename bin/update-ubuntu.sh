@@ -62,11 +62,6 @@ show_info "Updating conda's base python..."
 # Updating all conda's environment.
 for i in ~/.pyenv/versions/miniforge3-latest/envs/base-*; do
     show_info "Updating conda environments ${YELLOW}$(basename $i)${GREEN}..."
-    ## DEPRECATED: conda results in (python-3.13.7, libffi-3.4.6) => (python-3.13.2, libffi-3.5.2)
-    ## Solution: mamba
-    #PY_VER=$($i/bin/python -c 'import sys ; print(f"{sys.version_info.major}.{sys.version_info.minor}", end="")' )
-    #~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i` "python~=${PY_VER}.0"
-    #~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i`
     ~/.pyenv/versions/miniforge3-latest/bin/mamba update --all --yes -n `basename $i`
 done
 ~/.pyenv/versions/miniforge3-latest/bin/conda clean --all --yes
@@ -85,8 +80,18 @@ exit $?
 
 ###############################################################################
 # DEPRECATED. Left here for historical context only
+# Reverse chronological order
 ###############################################################################
-# No longer uses miniconda. Left here for historical context only.
+# DEPRECATED: conda downgrades python: (python-3.13.7, libffi-3.4.6) => (python-3.13.2, libffi-3.5.2)
+# Solution: mamba
+for i in ~/.pyenv/versions/miniforge3-latest/envs/base-*; do
+    show_info "Updating conda environments ${YELLOW}$(basename $i)${GREEN}..."
+    PY_VER=$($i/bin/python -c 'import sys ; print(f"{sys.version_info.major}.{sys.version_info.minor}", end="")' )
+    ~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i` "python~=${PY_VER}.0"
+    ~/.pyenv/versions/miniforge3-latest/bin/conda update --all --yes -n `basename $i`
+done
+
+# No longer uses miniconda.
 declare -a conda_env=( $(for i in ~/miniconda3/envs/*; do [[ -d $i && ! $i =~ '^.' ]] && echo $(basename $i);done) )
 for i in base "${conda_env[@]}"; do
     echo Updating conda environment: $i
