@@ -40,6 +40,7 @@ fi
 }
 
 # updating pyenv
+# Require: git clone https://github.com/pyenv/pyenv-update $(pyenv root)/plugins/pyenv-update
 if [[ $(stat -c '%U' $(pyenv which pyenv)) == "root" ]]; then
     show_warn "Skip pyenv update because it's a system-wide installation..."
 else
