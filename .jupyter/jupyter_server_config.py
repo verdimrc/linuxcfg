@@ -4,6 +4,7 @@ c.ServerApp.open_browser = False
 c.ServerApp.port_retries = 0
 c.KernelSpecManager.ensure_native_kernel = False
 c.LabServerApp.notebook_starts_kernel = False
+c.ContentsManager.allow_hidden = True
 
 try:
     import environment_kernels
