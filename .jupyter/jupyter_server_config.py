@@ -31,14 +31,15 @@ def __haha():
     ---
     # YAML fragment of elements to drop
     data:
-      file-browser-filebrowser:openState    # ALL GONE
       layout-restorer:data
-        main              # ALL GONE
-      docmanager:recents  # ALL GONE
-      console:asdf        # ALL GONE
-      editor:asdf         # ALL GONE
-      notebook:asdf       # ALL GONE
-      terminal:asdf       # ALL GONE
+        main                          # ALL GONE
+      docmanager:recents              # ALL GONE
+      console:asdf                    # ALL GONE
+      editor:asdf                     # ALL GONE
+      notebook:asdf                   # ALL GONE
+      terminal:asdf                   # ALL GONE
+      markdownviewer-widget:asdf      # ALL GONE
+      file-browser-filebrowser:asdf   # ALL GONE
     ---
     '''
     import glob
@@ -59,7 +60,9 @@ def __haha():
                 or k.startswith('editor:')
                 or k.startswith('notebook:')
                 or k.startswith('terminal:')
-                or k.startswith('file-browser-filebrowser:openState')
+                or k.startswith('file-browser-filebrowser:')
+                or k.startswith('markdownviewer-widget:')
+                or k.startswith('file-browser-filebrowser:')
             ):
                 try: del d['data'][k]
                 except Exception as e: print(e)
