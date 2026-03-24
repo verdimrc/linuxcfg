@@ -167,3 +167,16 @@ git update-ref -d refs/remotes/origin/branch_name
 # Workaround to prevent git client to push to remote
 # https://stackoverflow.com/a/10260389
 git remote set-url --push origin no_push
+
+
+################################################################################
+# Comparisons, slice-n-dice, needle-in-haystack
+
+# Find the ancestor commit out of these two
+git merge-base <commit_id_1> <commit_id_2>
+
+# Show history between these commits
+git lol --boundary <commit_1>..<commit_2>
+
+# Show in local timezone
+git show --date=local <commit_id>
