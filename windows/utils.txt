@@ -1,0 +1,7 @@
+https://github.com/FancyWM/fancywm
+
+https://github.com/greenshot/greenshot
+- capture fullscreen :  ctrl + prnscrn
+- capture window     :   alt + prnscrn
+- capture region     :         prnscrn
+- capture last region: shift + prnscrn
