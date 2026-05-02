@@ -206,8 +206,15 @@ for_window [all] title_format "%class"
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 6px
 
+# ----------------------------------------------------------------------------
+# DO NOT ENABLE. Kept here for FYI only (to remember this has been tried)
+#
+# Danger. Buggy: 'move scratchpad' without window open shows sddm, then
+# 'scratchpad show' fails to re-show the desktop.
+# ----------------------------------------------------------------------------
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+#bindsym $mod+Shift+minus move scratchpad
+#
+## Show the first scratchpad window
+#bindsym $mod+minus scratchpad show
+# ----------------------------------------------------------------------------
