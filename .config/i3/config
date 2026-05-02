@@ -205,3 +205,9 @@ focus_follows_mouse no
 for_window [all] title_format "%class"
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 6px
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
