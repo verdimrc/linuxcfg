@@ -1,0 +1,7 @@
+## From: /etc/i3status.conf
+general {
+        colors = true
+        interval = 3600
+}
+
+order += ""

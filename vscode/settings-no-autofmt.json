@@ -50,7 +50,7 @@
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#2d2d2d" // For dark theme
   },
-  // "window.titleBarStyle": "custom",
+  // "window.titleBarStyle": "native",
   // GUI: extensions
   "markdown.preview.fontSize": 16, // yzhang.markdown-all-in-one
 
