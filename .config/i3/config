@@ -193,16 +193,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# i3bar displays a workspace bar (plus the system information i3status finds out, if available)
+bar {
+        status_command i3status
+        tray_output none   # HAHA: do not advertise systray. Let lxqt panel takes precedence.
+}
+
+
 ###############################################################################
 # HAHA: more customizations
 ###############################################################################
-# Do not start i3bar to avoid stealing nm-applet systray icon
-# i3bar displays a workspace bar (plus the system information i3status finds out, if available)
-#bar {
-#        status_command i3status
-#        tray_output none
-#}
-
 focus_follows_mouse no
 
 # Window title shows just the app name. No need for details (%title is the default)
