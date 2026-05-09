@@ -1,0 +1,7 @@
+configuration {
+  font: "Ubuntu 20";
+  icon: "Papirus";
+  show-icons: true;
+}
+@theme "squared-nord" // Example theme
+
