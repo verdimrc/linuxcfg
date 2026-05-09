@@ -66,12 +66,12 @@ bindsym $mod+Shift+q kill
 
 # start a program launcher. Once shown, ctrl+tab to switch mode.
 # HAHA:
-# * TODO: emoji needs clipboard. Probably https://wiki.archlinux.org/title/Rofi#Rofi_as_a_Clipboard_Manager
-# * Enable emoji with -modi emoji [-emoji-mode copy]"
+# * emoji needs xsel and xdootool
 # * can't tell why rofi-calc doc uses -no-show-match -no-sort. Enter to copy, but missing clipboard. Example uses xclip
-bindsym $mod+d   exec --no-startup-id "rofi -modi drun,window,calc -show drun   -no-history"
-bindsym $mod+Tab exec --no-startup-id "rofi -modi drun,window,calc -show window -no-history"
-bindsym $mod+c   exec --no-startup-id "rofi -modi drun,window,calc -show calc   -no-history"
+bindsym $mod+d   exec --no-startup-id "rofi -modi drun,window,calc,emoji -show drun   -no-history"
+bindsym $mod+Tab exec --no-startup-id "rofi -modi drun,window,calc,emoji -show window -no-history"
+bindsym $mod+c   exec --no-startup-id "rofi -modi drun,window,calc,emoji -show calc   -no-history"
+bindsym $mod+o   exec --no-startup-id "rofi -modi drun,window,calc,emoji -show emoji  -no-history"
 
 # change focus
 bindsym $mod+j focus left
