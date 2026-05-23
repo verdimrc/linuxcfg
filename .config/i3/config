@@ -212,9 +212,12 @@ bindsym $mod+minus scratchpad show
 
 # Create a ghost window (i.e., empty container) on "empty desktop" (i.e., root workspace),
 # to make new terminal (must be via $mod+Return) occupies half bottom only (on a vertical monitor).
+#
+# https://www.reddit.com/r/i3wm/comments/775c2t/blankempty_container/
+# https://www.reddit.com/r/i3wm/comments/6x5vgp/oc_i3gw/
 exec --no-startup-id i3-msg 'open; mark ghost'
 
-bindsym $mod+g exec --no-startup-id i3-msg 'open'
+bindsym $mod+g open
 
 # Start a program launcher. The drun mode will launch a new app using its .desktop file.
 # Wrap it within an i3-frame. Without this trick, the new app fills-up the entire empty
