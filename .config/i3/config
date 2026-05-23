@@ -64,15 +64,6 @@ bindsym $mod+Return exec kitty  # HAHA
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start a program launcher. Once shown, ctrl+tab to switch mode.
-# HAHA:
-# * emoji needs xsel and xdootool
-# * can't tell why rofi-calc doc uses -no-show-match -no-sort. Enter to copy, but missing clipboard. Example uses xclip
-bindsym $mod+d   exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show drun   -no-history"
-bindsym $mod+Tab exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show window -no-history"
-bindsym $mod+c   exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show calc   -no-history"
-bindsym $mod+o   exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show emoji  -no-history"
-
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -122,6 +113,7 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+bindsym $mod+i focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -221,4 +213,30 @@ bindsym $mod+minus scratchpad show
 
 # Create a ghost window (i.e., empty container) on "empty desktop" (i.e., root workspace),
 # to make new terminal (must be via $mod+Return) occupies half bottom only (on a vertical monitor).
+#
+# https://www.reddit.com/r/i3wm/comments/775c2t/blankempty_container/
+# https://www.reddit.com/r/i3wm/comments/6x5vgp/oc_i3gw/
 exec --no-startup-id i3-msg 'open; mark ghost'
+
+bindsym $mod+g open
+
+# Start a program launcher. The drun mode will launch a new app using its .desktop file.
+# Wrap it within an i3-frame. Without this trick, the new app fills-up the entire empty
+# container (aka, the ghost window trick).
+#
+# Q: How to figure out that i3-frame is the difference?
+# A: Use `xprop WM_CLASS` to check the difference between terminal launched by
+#    $mod+Return [vs] rofi => click the "window" bar. The one launched by $mod+Return
+#    shows 'i3-frame', the one launched by rofi shows "kitty".
+#
+# To wrap new window in i3-frame, prefix with i3-msg exec.
+# Source: Gemini (no further citation, but it works).
+bindsym $mod+d exec --no-startup-id rofi -show drun -run-command 'i3-msg exec -- \"{cmd}\"'
+
+# Start a program launcher. Once shown, ctrl+tab to switch mode.
+# * emoji needs xsel and xdootool
+# * can't tell why rofi-calc doc uses -no-show-match -no-sort. Enter to copy, but missing clipboard. Example uses xclip
+bindsym $mod+Shift+d exec --no-startup-id "rofi -modi window,run,calc,emoji -show run    -no-history"
+bindsym $mod+Tab     exec --no-startup-id "rofi -modi window,run,calc,emoji -show window -no-history"
+bindsym $mod+c       exec --no-startup-id "rofi -modi window,run,calc,emoji -show calc   -no-history"
+bindsym $mod+o       exec --no-startup-id "rofi -modi window,run,calc,emoji -show emoji  -no-history"
