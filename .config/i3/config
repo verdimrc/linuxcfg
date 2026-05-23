@@ -68,10 +68,10 @@ bindsym $mod+Shift+q kill
 # HAHA:
 # * emoji needs xsel and xdootool
 # * can't tell why rofi-calc doc uses -no-show-match -no-sort. Enter to copy, but missing clipboard. Example uses xclip
-bindsym $mod+d   exec --no-startup-id "rofi -modi drun,window,calc,emoji -show drun   -no-history"
-bindsym $mod+Tab exec --no-startup-id "rofi -modi drun,window,calc,emoji -show window -no-history"
-bindsym $mod+c   exec --no-startup-id "rofi -modi drun,window,calc,emoji -show calc   -no-history"
-bindsym $mod+o   exec --no-startup-id "rofi -modi drun,window,calc,emoji -show emoji  -no-history"
+bindsym $mod+d   exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show drun   -no-history"
+bindsym $mod+Tab exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show window -no-history"
+bindsym $mod+c   exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show calc   -no-history"
+bindsym $mod+o   exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show emoji  -no-history"
 
 # change focus
 bindsym $mod+j focus left
@@ -218,3 +218,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
+
+# Create a ghost window (i.e., empty container) on "empty desktop" (i.e., root workspace),
+# to make new app occupies half bottom only (on a vertical monitor).
+exec --no-startup-id i3-msg 'open; mark ghost'
