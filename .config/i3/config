@@ -214,6 +214,8 @@ bindsym $mod+minus scratchpad show
 # to make new terminal (must be via $mod+Return) occupies half bottom only (on a vertical monitor).
 exec --no-startup-id i3-msg 'open; mark ghost'
 
+bindsym $mod+g exec --no-startup-id i3-msg 'open'
+
 # Start a program launcher. The drun mode will launch a new app using its .desktop file.
 # Wrap it within an i3-frame. Without this trick, the new app fills-up the entire empty
 # container (aka, the ghost window trick).
