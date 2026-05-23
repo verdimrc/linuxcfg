@@ -231,7 +231,15 @@ bindsym $mod+g open
 #
 # To wrap new window in i3-frame, prefix with i3-msg exec.
 # Source: Gemini (no further citation, but it works).
-bindsym $mod+d exec --no-startup-id rofi -show drun -run-command 'i3-msg exec -- \"{cmd}\"'
+#
+# Bah, this only affect kitty. Other Qt application still eats the ghost window
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -run-command 'i3-msg exec -- \"{cmd}\"'
+##------------------------------------------------
+## Documenting what was tried and didn't work.
+## With Gemini, sometimes without further citation
+##------------------------------------------------
+#bindsym $mod+d exec --no-startup-id env QT_QPA_PLATFORM="xcb" QT_QPA_PLATFORMTHEME="qt6ct" i3-dmenu-desktop --dmenu="rofi -dmenu -i" --entry-type=desktop
+##------------------------------------------------
 
 # Start a program launcher. Once shown, ctrl+tab to switch mode.
 # * emoji needs xsel and xdootool
