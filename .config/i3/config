@@ -220,5 +220,5 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Create a ghost window (i.e., empty container) on "empty desktop" (i.e., root workspace),
-# to make new app occupies half bottom only (on a vertical monitor).
+# to make new terminal (must be via $mod+Return) occupies half bottom only (on a vertical monitor).
 exec --no-startup-id i3-msg 'open; mark ghost'
