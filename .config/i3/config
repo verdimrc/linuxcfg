@@ -207,6 +207,7 @@ focus_follows_mouse no
 for_window [all] title_format "%class"
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 6px
+for_window [class="kcalc"] floating enable
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -222,6 +223,7 @@ bindsym $mod+minus scratchpad show
 #exec --no-startup-id i3-msg 'open; mark ghost'
 exec --no-startup-id i3-msg 'open'
 
+# Manually create a ghost window
 bindsym $mod+g open
 
 # NOTE: app/window launched with drun will eat the ghost container. See the "Doesn't work" section of
