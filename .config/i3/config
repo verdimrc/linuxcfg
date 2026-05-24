@@ -15,6 +15,9 @@
 #   * nm-applet aka NetworkManager Applet
 # - Re-login
 
+# HAHA
+default_orientation vertical
+
 set $mod Mod4
 
 ## HAHA
@@ -216,24 +219,46 @@ bindsym $mod+minus scratchpad show
 #
 # https://www.reddit.com/r/i3wm/comments/775c2t/blankempty_container/
 # https://www.reddit.com/r/i3wm/comments/6x5vgp/oc_i3gw/
-exec --no-startup-id i3-msg 'open; mark ghost'
+#exec --no-startup-id i3-msg 'open; mark ghost'
+exec --no-startup-id i3-msg 'open'
 
 bindsym $mod+g open
 
-# Start a program launcher. The drun mode will launch a new app using its .desktop file.
-# Wrap it within an i3-frame. Without this trick, the new app fills-up the entire empty
-# container (aka, the ghost window trick).
+# NOTE: app/window launched with drun will eat the ghost container. See the "Doesn't work" section of
+# failed attempts to fix (only kitty can work; other qt applications don't)
+#
+# Start a program launcher. Once shown, ctrl+tab to switch mode.
+# * emoji needs xsel and xdootool
+# * can't tell why rofi-calc doc uses -no-show-match -no-sort. Enter to copy, but missing clipboard. Example uses xclip
+bindsym $mod+d       exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show drun   -no-history"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show run    -no-history"
+bindsym $mod+Tab     exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show window -no-history"
+bindsym $mod+c       exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show calc   -no-history"
+bindsym $mod+o       exec --no-startup-id "rofi -modi drun,window,run,calc,emoji -show emoji  -no-history"
+
+
+###############################################################################
+# HAHA: Doesn't work. Kept here for historical context
+###############################################################################
+# The drun mode will launch a new app using its .desktop file and the new window will eat
+# the ghost window.
+#
+# In theory, fix by wrapping it within an i3-frame.
 #
 # Q: How to figure out that i3-frame is the difference?
 # A: Use `xprop WM_CLASS` to check the difference between terminal launched by
 #    $mod+Return [vs] rofi => click the "window" bar. The one launched by $mod+Return
 #    shows 'i3-frame', the one launched by rofi shows "kitty".
 #
-# To wrap new window in i3-frame, prefix with i3-msg exec.
-# Source: Gemini (no further citation, but it works).
+# To wrap new window in i3-frame, prefix with i3-msg exec. Source: Gemini (no further citation, but it works).
+# Outcome: failed miserably! This only affects kitty. Other Qt application still eats the ghost window.
+#bindsym $mod+d exec --no-startup-id  rofi -modi drun -show drun -run-command 'i3-msg exec -- \"{cmd}\"'
 #
-# Bah, this only affect kitty. Other Qt application still eats the ghost window
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -run-command 'i3-msg exec -- \"{cmd}\"'
+#bindsym $mod+Shift+d exec --no-startup-id "rofi -modi window,run,calc,emoji -show run    -no-history"
+#bindsym $mod+Tab     exec --no-startup-id "rofi -modi window,run,calc,emoji -show window -no-history"
+#bindsym $mod+c       exec --no-startup-id "rofi -modi window,run,calc,emoji -show calc   -no-history"
+#bindsym $mod+o       exec --no-startup-id "rofi -modi window,run,calc,emoji -show emoji  -no-history"
+##
 ##------------------------------------------------
 ## Documenting what was tried and didn't work.
 ## With Gemini, sometimes without further citation
@@ -241,10 +266,10 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -run-command 'i3-
 #bindsym $mod+d exec --no-startup-id env QT_QPA_PLATFORM="xcb" QT_QPA_PLATFORMTHEME="qt6ct" i3-dmenu-desktop --dmenu="rofi -dmenu -i" --entry-type=desktop
 ##------------------------------------------------
 
-# Start a program launcher. Once shown, ctrl+tab to switch mode.
-# * emoji needs xsel and xdootool
-# * can't tell why rofi-calc doc uses -no-show-match -no-sort. Enter to copy, but missing clipboard. Example uses xclip
-bindsym $mod+Shift+d exec --no-startup-id "rofi -modi window,run,calc,emoji -show run    -no-history"
-bindsym $mod+Tab     exec --no-startup-id "rofi -modi window,run,calc,emoji -show window -no-history"
-bindsym $mod+c       exec --no-startup-id "rofi -modi window,run,calc,emoji -show calc   -no-history"
-bindsym $mod+o       exec --no-startup-id "rofi -modi window,run,calc,emoji -show emoji  -no-history"
+
+# None of these work to inhibit fullscree mode within a container.
+#for_window [class="Chromium"] fullscreen disable
+#for_window [class="chromium"] fullscreen disable
+#for_window [instance="^chromium$"] fullscreen disable
+## https://unix.stackexchange.com/a/342742
+#for_window [instance="^chromium$"] exec "sh -c 'sleep 2; i3-msg \[instance=chromium\] fullscreen disable'"
