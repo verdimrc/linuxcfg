@@ -5,6 +5,7 @@
 // @description  Prevent this website to hijack navigational keys
 // @author       Gemini
 // @match        *://*.detik.com/*
+// @match        *://*.kompas.com/*
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
