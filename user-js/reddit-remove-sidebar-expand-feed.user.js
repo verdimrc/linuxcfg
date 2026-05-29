@@ -20,7 +20,6 @@
 // - Make main takes the full width. Via Perplexity: many rounds of "search"
 //   mode led to nowhere; then switch to "deep research" with one attempt
 //   generated the correct script.
-// - Another round with Perplexity (deep research mode) to simplify the script.
 (function() {
     'use strict';
 
