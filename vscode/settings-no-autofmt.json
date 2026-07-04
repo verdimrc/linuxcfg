@@ -50,7 +50,7 @@
   "workbench.colorCustomizations": {
     "editor.lineHighlightBackground": "#2d2d2d" // For dark theme
   },
-  // "window.titleBarStyle": "native",
+  "window.titleBarStyle": "native",
   // GUI: extensions
   "markdown.preview.fontSize": 16, // yzhang.markdown-all-in-one
 
@@ -194,7 +194,7 @@
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.rightClickBehavior": "default",
-  "terminal.integrated.stickyScroll.enabled": true, // Nov23 default is on
+  "terminal.integrated.stickyScroll.enabled": false, // Nov23 default is on
   "terminal.integrated.stickyScroll.maxLineCount": 5,
   "window.confirmSaveUntitledWorkspace": false,
   "workbench.editor.decorations.colors": true,
@@ -222,6 +222,7 @@
   "aws.samcli.location": "/usr/local/bin/sam",
   "aws.profile": "default",
   "docker.extension.enableComposeLanguageServer": true,
+  "dotenv.enableAutocloaking": false,
   "gitlens.hovers.currentLine.over": "line",
   // "markdown.extension.preview.autoShowPreviewToSide": true,
   "[markdown]": {
@@ -231,19 +232,22 @@
     "editor.formatOnSave": false
   },
   "remote.SSH.defaultExtensions": [
+    //"adpyke.vscode-sql-formatter",
+    "asispts.neo-git-graph",
     "bierner.github-markdown-preview",
     "bierner.markdown-mermaid",
     //"charliermarsh.ruff",
     "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
+    //"docker.docker",
     "donjayamanne.githistory",
     "dotenv.dotenv-vscode",
     "editorconfig.editorconfig",
-    "gruntfuggly.todo-tree",
+    //"eamodio.gitlens",
+    "fanaticpythoner.better-todo-tree",
     "hyunkyunmoon.gzipdecompressor",
     "janisdd.vscode-edit-csv",
     "mechatroner.rainbow-csv",
-    "mhutchie.git-graph",
     //"ms-azuretools.vscode-containers",
     //"ms-python.autopep8",
     //"ms-python.black-formatter",
@@ -254,16 +258,19 @@
     //"ms-python.vscode-python-envs",
     "ms-toolsai.jupyter",
     "ms-toolsai.vscode-jupyter-powertoys",
+    //"ms-vscode.live-server",
     "njpwerner.autodocstring",
     "redhat.vscode-yaml",
     "shardulm94.trailing-spaces",
+    "stkb.rewrap",
     "tamasfe.even-better-toml",
+    //"tomoki1207.pdf",
     "xadillax.viml",
     "yzhang.markdown-all-in-one"
   ],
   "rewrap.wrappingColumn": 100,
   "sql-formatter.uppercase": true,
-  "todo-tree.general.tags": [
+  "better-todo-tree.general.tags": [
     "BUG",
     "HACK",
     "FIXME",
@@ -272,7 +279,7 @@
     "[ ]",
     "[x]"
   ],
-  "todo-tree.highlights.customHighlight": {
+  "better-todo-tree.highlights.customHighlight": {
     "TODO": {
       "foreground": "yellow"
     },
@@ -283,15 +290,16 @@
       "foreground": "magenta"
     }
   },
-  "todo-tree.highlights.defaultHighlight": {
+  "better-todo-tree.highlights.defaultHighlight": {
     "opacity": 0,
     "fontStyle": "italic",
     "fontWeight": "bold"
   },
-  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "todo-tree.tree.showScanModeButton": true,
+  "better-todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "better-todo-tree.tree.showScanModeButton": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.zoomLevel": 0.0,
+  //"chat.disableAIFeatures": true,
 
   // Pre-release
   // Last Released: 2025-07-16, 18:44:16

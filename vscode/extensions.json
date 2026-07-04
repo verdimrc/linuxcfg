@@ -3,6 +3,7 @@
 // See also: extensions-extras.json or extensions-all.json
 {
     "recommendations": [
+        "asispts.neo-git-graph",
         "bierner.markdown-mermaid",
         "bierner.github-markdown-preview",
         //"charliermarsh.ruff",
@@ -12,8 +13,7 @@
         "dotenv.dotenv-vscode",
         "EditorConfig.EditorConfig",
         "emilast.LogFileHighlighter",
-        "Gruntfuggly.todo-tree",
-        "mhutchie.git-graph",
+        "fanaticpythoner.better-todo-tree",
         "hyunkyunmoon.gzipdecompressor",
         "janisdd.vscode-edit-csv",
         "rodolphebarbanneau.python-docstring-highlighter",
