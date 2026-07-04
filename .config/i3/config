@@ -12,7 +12,7 @@
 # - Start menu => Preferences => Lxqt settings => Session settings => Autostart,
 # - Uncheck these items:
 #   * Desktop
-#   * nm-applet aka NetworkManager Applet
+#   * nm-applet aka NetworkManager Applet => prevent blackbox on desktop
 # - Re-login
 
 # HAHA
@@ -28,12 +28,14 @@ font pango:Ubuntu 14
 # HAHA: Wallpaper. NOTE: Lxqt users must disable "Desktop" in startup.
 exec_always --no-startup-id feh --bg-scale $HOME/Downloads/wallpaper.png
 
+# HAHA: disabled, because lxqt-session handles autostart entries. Else, even
+# with ~/.config/autostart/nm-tray-autostart.desktop sets X-LXQt-Autostart-disabled=true,
+# dex will still start nm-tray, causing blackbox on the desktop)
+#
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
+# HAHA
+#exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -208,6 +210,7 @@ for_window [all] title_format "%class"
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 6px
 for_window [class="kcalc"] floating enable
+for_window [class="dosbox"] floating disable
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
