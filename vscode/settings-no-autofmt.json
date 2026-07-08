@@ -92,7 +92,8 @@
 
   "files.associations": {
     "**/.ngc/**/config": "ini",
-    ".env*": "dotenv"
+    ".env*": "dotenv",
+    "*.mdx": "markdown"
   },
 
   // Javascript
