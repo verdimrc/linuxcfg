@@ -1,0 +1,62 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 0,
+  "default_container_padding": -2,
+  "border": false,
+  "border_width": 0,
+  "border_offset": 0,
+  "theme": {
+    "palette": "Base16",
+    "name": "Ashes",
+    "unfocused_border": "Base03",
+    "bar_accent": "Base0D"
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "BSP"
+        },
+        {
+          "name": "II",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "III",
+          "layout": "HorizontalStack"
+        },
+        {
+          "name": "IV",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "V",
+          "layout": "Rows"
+        },
+        {
+          "name": "VI",
+          "layout": "Grid"
+        },
+        {
+          "name": "VII",
+          "layout": "RightMainVerticalStack"
+        }
+      ]
+    }
+  ],
+  "stackbar": {
+    "height": 28,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 300,
+      "focused_text": "#00a542",
+      "unfocused_text": "#b3b3b3",
+      "background": "#141414",
+      "font_size": 38
+    }
+  }
+}
