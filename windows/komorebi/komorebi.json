@@ -46,6 +46,22 @@
           "layout": "RightMainVerticalStack"
         }
       ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "UltrawideVerticalStack"
+        }
+      ]
+    },
+    {
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "Rows"
+        }
+      ]
     }
   ],
   "stackbar": {
