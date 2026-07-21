@@ -59,7 +59,7 @@
       "workspaces": [
         {
           "name": "I",
-          "layout": "Rows"
+          "layout": "HorizontalStack"
         }
       ]
     }
