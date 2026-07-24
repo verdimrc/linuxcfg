@@ -1,5 +1,8 @@
+Two .vbs scripts to start and stop. Start script in vbs, because .bat will
+create a persistent, minimized terminal icon in the taskbar.
+
 ```text
-# V1
+# V1. The one being used.
 # komorebi.json needs mouse_follows_focus=false
 komorebi_mouse_spawn.ps1
 
