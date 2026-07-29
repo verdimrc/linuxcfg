@@ -182,7 +182,7 @@ widgets:
     options:
       #label: "{data[indicator]} {data[mode]}"
       label: "{data[indicator]}"
-      label_alt: "HEHE {data[raw]}"
+      label_alt: "{data[raw]}"
       label_placeholder: "KOMOREBI ..."
       class_name: "komorebi-container-mode"
 
