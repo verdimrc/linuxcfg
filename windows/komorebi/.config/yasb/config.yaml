@@ -40,6 +40,7 @@ bars:
         - quick_launch
         - komorebi_workspaces
         - komorebi_active_layout
+        - komorebi_container_mode   # HAHA: my custom widget
         - active_window
       center: []
       right:
@@ -174,3 +175,30 @@ widgets:
         'maximized': 'MAX', 'floating': 'FLOATING', 'paused': 'PAUSED'}
   komorebi_control:
     type: komorebi.control.KomorebiControlWidget
+
+  # HAHA: my custom widget
+  komorebi_container_mode:
+    type: "yasb.custom.CustomWidget"
+    options:
+      #label: "{data[indicator]} {data[mode]}"
+      label: "{data[indicator]}"
+      label_alt: "HEHE {data[raw]}"
+      label_placeholder: "KOMOREBI ..."
+      class_name: "komorebi-container-mode"
+
+      tooltip: true
+      tooltip_label: "{data[tooltip]}"
+
+      exec_options:
+        run_cmd: 'powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File C:\Users\vmarch\Desktop\komorebi-container-mode.ps1'
+        run_once: false
+        run_interval: 1000
+        return_format: "json"
+        hide_empty: false
+        use_shell: false
+        encoding: "utf-8"
+
+      callbacks:
+        on_left: "do_nothing"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
