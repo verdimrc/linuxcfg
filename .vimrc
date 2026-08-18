@@ -21,7 +21,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', {'on': ['NERDTreeTabsToggle', 'NERDTreeToggle']}
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeTabsToggle'}
 Plug 'bling/vim-airline'
-Plug 'vim-scripts/RltvNmbr.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tmsvg/pear-tree'
 
@@ -72,6 +71,7 @@ set shiftwidth=4
 set expandtab
 set nowrap
 set number
+set relativenumber
 set foldmethod=indent
 set foldlevel=99
 
