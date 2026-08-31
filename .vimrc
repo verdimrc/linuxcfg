@@ -70,8 +70,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set nowrap
-set number
-set relativenumber
+set number relativenumber
 set foldmethod=indent
 set foldlevel=99
 
