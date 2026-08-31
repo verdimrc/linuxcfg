@@ -1,0 +1,3 @@
+Use web-browser: https://github.com/jcardama/LeopardWM/blob/main/assets/leopardwm.png
+
+Permalink (snapshot on 20260831): https://github.com/38a75625-b5eb-448a-a5fe-c7949e8a82c9
