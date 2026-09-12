@@ -1,9 +1,16 @@
 
 ```powershell
+# Deprecated
 winget install jcardama.LeopardWM
 winget upgrade
 winget upgrade jcardama.LeopardWM
+
+# New install instructions:
+# - clone https://github.com/verdimrc/LeopardWM/tree/haha => has customizations
+# - build from source.
+c:\sw\LeopardWM\target\x86_64-pc-windows-msvc\release\lwm.exe stop ; cargo build --release ; c:\sw\LeopardWM\target\x86_64-pc-windows-msvc\release\lwm.exe run
 ```
+
 
 Does not run yasb, though its config is included FYI only.
 Reason: some yasb widgets (active window, and custom ps1 scripts which run in
