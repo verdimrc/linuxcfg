@@ -23,3 +23,5 @@ Notes on window rules:
 - outlook (classic and new): `config.toml` shows the working combo. Other combos swept and was found ineffective;
   consult Claude for a detailed explanation. TL/DR: Outlook starts a "helper" process/window whose values
   (class, exe, and/or title) differs from steady state's ones.
+
+Log files: `C:\Users\vmarch\AppData\Local\leopardwm\logs\` aka `%LOCALAPPDATA%\leopardwm\logs`.
