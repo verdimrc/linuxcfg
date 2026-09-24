@@ -123,7 +123,8 @@ disabled = []
 "Ctrl+Alt+Win+Shift+Down" = "move_to_monitor_down"
 "Ctrl+Alt+S" = "scratchpad_toggle"
 "Ctrl+Alt+Shift+S" = "scratchpad_stash"
-"Ctrl+Alt+N" = "toggle_new_window_placement"
+"Ctrl+Alt+N" = "toggle_new_window_placement_once"
+"Ctrl+Alt+Shift+N" = "toggle_new_window_placement"
 "Ctrl+Alt+R" = "refresh"
 "Ctrl+Alt+Shift+R" = "reload"
 "Ctrl+Alt+P" = "toggle_pause"
@@ -138,8 +139,9 @@ sticky = false
 tile_on_os_monitor = false
 
 [[window_rules]]
-match_class = "Chrome_WidgetWin_1"
+#match_class = "Chrome_WidgetWin_1"
 match_executable = "code.exe"
+#match_title = "^Visual Studio Code$"
 action = "tile"
 open_maximized = false
 column_width = 1.0
