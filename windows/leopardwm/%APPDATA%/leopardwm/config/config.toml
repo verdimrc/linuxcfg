@@ -20,10 +20,7 @@ height_presets = [
     0.5,
     0.667,
 ]
-rtl_monitor_indices = [
-    2,
-    3,
-]
+rtl_monitor_indices = [2, 3]
 desktop_peek_min_width = 0.25
 
 [appearance]
@@ -53,82 +50,84 @@ hide_offscreen_taskbar_buttons = false
 workspace_edge_wrap = false
 mouse_follows_focus = false
 fullscreen_follows_focus = true
-notify_elevation_blocked = false
 symmetric_modifiers = true
+notify_elevation_blocked = false
 
 [hotkeys]
 scroll_modifier = "Ctrl+Alt"
 disabled = []
-"Ctrl+Alt+Win+Down" = "focus_monitor_down"
+"Ctrl+Alt+Shift+0" = "equalize_heights"
+"Ctrl+Alt+R" = "refresh"
 "Ctrl+Alt+N" = "toggle_new_window_placement"
 "Ctrl+Alt+S" = "scratchpad_toggle"
-"Ctrl+Alt+," = "consume_from_left"
-"Ctrl+Alt+Shift+H" = "move_column_left"
-"Ctrl+Alt+Shift+8" = "move_to_workspace_8"
-"Ctrl+Alt+J" = "focus_down"
-"Ctrl+Alt+Shift+0" = "equalize_heights"
-"Ctrl+Alt+4" = "switch_workspace_4"
-"Ctrl+Alt+]" = "move_window_right"
-"Ctrl+Alt+Win+." = "focus_monitor_right"
-"Ctrl+Alt+7" = "switch_workspace_7"
-"Ctrl+Alt+Win+Space" = "toggle_overview_all"
-"Ctrl+Alt+3" = "switch_workspace_3"
-"Ctrl+Alt+F" = "toggle_floating"
-"Ctrl+Alt+2" = "switch_workspace_2"
-"Ctrl+Alt+Shift+Right" = "workspace_next"
-"Ctrl+Alt+Shift+S" = "scratchpad_stash"
 "Ctrl+Alt+Space" = "toggle_overview"
-"Ctrl+Alt+[" = "move_window_left"
-"Ctrl+Alt+Shift+End" = "move_column_to_end"
-"Ctrl+Alt+End" = "focus_end"
-"Ctrl+Alt+H" = "focus_left"
-"Ctrl+Alt+P" = "toggle_pause"
-"Ctrl+Alt+Shift+]" = "expel_to_right"
-"Ctrl+Alt+Shift+=" = "cycle_height_up"
-"Ctrl+Alt+Shift+9" = "move_to_workspace_9"
-"Ctrl+Alt+Shift+PageUp" = "move_to_workspace_prev"
-"Ctrl+Alt+6" = "switch_workspace_6"
-"Ctrl+Alt+Shift+1" = "move_to_workspace_1"
-"Ctrl+Alt+Shift+5" = "move_to_workspace_5"
-"Ctrl+Alt+C" = "center_column"
-"Ctrl+Alt+Win+Shift+." = "move_to_monitor_right"
-"Win+Ctrl+Escape" = "panic_revert"
-"Ctrl+Alt+Win+Shift+Down" = "move_to_monitor_down"
-"Ctrl+Alt+R" = "refresh"
-"Ctrl+Alt+Shift+F" = "toggle_fullscreen"
-"Ctrl+Alt+Shift+3" = "move_to_workspace_3"
-"Ctrl+Alt+Shift+K" = "move_window_up"
 "Ctrl+Alt+Win+Shift+Up" = "move_to_monitor_up"
-"Ctrl+Alt+Win+Up" = "focus_monitor_up"
-"Ctrl+Alt+0" = "equalize_widths"
-"Ctrl+Alt+=" = "cycle_width_up"
-"Ctrl+Alt+Y" = "toggle_sticky"
-"Ctrl+Alt+Shift+J" = "move_window_down"
-"Ctrl+Alt+Shift+PageDown" = "move_to_workspace_next"
-"Ctrl+Alt+K" = "focus_up"
-"Ctrl+Alt+." = "consume_from_right"
-"Ctrl+Alt+M" = "maximize_column"
-"Ctrl+Alt+8" = "switch_workspace_8"
-"Ctrl+Alt+L" = "focus_right"
-"Ctrl+Alt+Shift+L" = "move_column_right"
-"Ctrl+Alt+Shift+-" = "cycle_height_down"
-"Ctrl+Alt+Shift+7" = "move_to_workspace_7"
-"Ctrl+Alt+9" = "switch_workspace_9"
-"Ctrl+Alt+Shift+6" = "move_to_workspace_6"
-"Ctrl+Alt+W" = "close_window"
-"Ctrl+Alt+Shift+2" = "move_to_workspace_2"
-"Ctrl+Alt+Shift+[" = "expel_to_left"
-"Ctrl+Alt+Home" = "focus_start"
-"Ctrl+Alt+Shift+Home" = "move_column_to_start"
-"Ctrl+Alt+T" = "toggle_tabbed"
-"Ctrl+Alt+5" = "switch_workspace_5"
-"Ctrl+Alt+-" = "cycle_width_down"
-"Ctrl+Alt+Win+Shift+," = "move_to_monitor_left"
-"Ctrl+Alt+Win+," = "focus_monitor_left"
-"Ctrl+Alt+Shift+Left" = "workspace_prev"
-"Ctrl+Alt+1" = "switch_workspace_1"
 "Ctrl+Alt+Shift+R" = "reload"
+"Ctrl+Alt+9" = "switch_workspace_9"
+"Ctrl+Alt+Shift+=" = "cycle_height_up"
+"Ctrl+Alt+Win+Up" = "focus_monitor_up"
+"Ctrl+Alt+L" = "focus_right"
+"Ctrl+Alt+'" = "toggle_desktop_peek_anchored"
+"Ctrl+Alt+Shift+'" = "toggle_desktop_peek"
+"Ctrl+Alt+-" = "cycle_width_down"
+"Ctrl+Alt+Shift+3" = "move_to_workspace_3"
+"Ctrl+Alt+Shift+[" = "expel_to_left"
+"Ctrl+Alt+Shift+1" = "move_to_workspace_1"
+"Ctrl+Alt+Shift+7" = "move_to_workspace_7"
+"Ctrl+Alt+]" = "move_window_right"
+"Ctrl+Alt+K" = "focus_up"
+"Ctrl+Alt+F" = "toggle_floating"
+"Ctrl+Alt+Shift+8" = "move_to_workspace_8"
+"Ctrl+Alt+7" = "switch_workspace_7"
+"Ctrl+Alt+[" = "move_window_left"
+"Ctrl+Alt+T" = "toggle_tabbed"
+"Ctrl+Alt+J" = "focus_down"
+"Ctrl+Alt+W" = "close_window"
+"Ctrl+Alt+Win+Shift+," = "move_to_monitor_left"
+"Ctrl+Alt+Win+Shift+Down" = "move_to_monitor_down"
+"Ctrl+Alt+Shift+F" = "toggle_fullscreen"
+"Ctrl+Alt+Win+Space" = "toggle_overview_all"
+"Ctrl+Alt+Shift+9" = "move_to_workspace_9"
+"Ctrl+Alt+," = "consume_from_left"
+"Ctrl+Alt+Shift+End" = "move_column_to_end"
+"Ctrl+Alt+Win+." = "focus_monitor_right"
+"Ctrl+Alt+2" = "switch_workspace_2"
+"Ctrl+Alt+Shift+PageUp" = "move_to_workspace_prev"
+"Win+Ctrl+Escape" = "panic_revert"
+"Ctrl+Alt+Shift+2" = "move_to_workspace_2"
+"Ctrl+Alt+Win+Down" = "focus_monitor_down"
+"Ctrl+Alt+6" = "switch_workspace_6"
+"Ctrl+Alt+Shift+H" = "move_column_left"
+"Ctrl+Alt+Win+," = "focus_monitor_left"
+"Ctrl+Alt+0" = "equalize_widths"
+"Ctrl+Alt+8" = "switch_workspace_8"
+"Ctrl+Alt+M" = "maximize_column"
+"Ctrl+Alt+Shift+J" = "move_window_down"
+"Ctrl+Alt+Win+Shift+." = "move_to_monitor_right"
+"Ctrl+Alt+Shift+5" = "move_to_workspace_5"
+"Ctrl+Alt+=" = "cycle_width_up"
+"Ctrl+Alt+H" = "focus_left"
+"Ctrl+Alt+Shift+K" = "move_window_up"
+"Ctrl+Alt+Shift+PageDown" = "move_to_workspace_next"
+"Ctrl+Alt+Shift+Home" = "move_column_to_start"
+"Ctrl+Alt+Shift+Left" = "workspace_prev"
+"Ctrl+Alt+." = "consume_from_right"
+"Ctrl+Alt+Shift+6" = "move_to_workspace_6"
+"Ctrl+Alt+3" = "switch_workspace_3"
+"Ctrl+Alt+Shift+-" = "cycle_height_down"
+"Ctrl+Alt+4" = "switch_workspace_4"
+"Ctrl+Alt+Y" = "toggle_sticky"
+"Ctrl+Alt+C" = "center_column"
+"Ctrl+Alt+Home" = "focus_start"
+"Ctrl+Alt+5" = "switch_workspace_5"
+"Ctrl+Alt+P" = "toggle_pause"
+"Ctrl+Alt+Shift+S" = "scratchpad_stash"
+"Ctrl+Alt+Shift+Right" = "workspace_next"
+"Ctrl+Alt+End" = "focus_end"
+"Ctrl+Alt+Shift+L" = "move_column_right"
+"Ctrl+Alt+1" = "switch_workspace_1"
 "Ctrl+Alt+Shift+4" = "move_to_workspace_4"
+"Ctrl+Alt+Shift+]" = "expel_to_right"
 
 [[window_rules]]
 match_class = "MozillaDialogClass"
@@ -151,7 +150,7 @@ tile_on_os_monitor = false
 match_class = "Outlook Host"
 action = "tile"
 open_maximized = false
-column_width = 1.0
+column_width = { "1" = 1.0, "2" = 4 }
 sticky = false
 tile_on_os_monitor = false
 
@@ -160,7 +159,16 @@ match_title = ".*Outlook"
 match_executable = "OUTLOOK.EXE"
 action = "tile"
 open_maximized = false
-column_width = 1.0
+column_width = { "1" = 1.0, "2" = 4 }
+sticky = false
+tile_on_os_monitor = false
+
+[[window_rules]]
+match_class = "PPTFrameClass"
+match_executable = "POWERPNT.EXE"
+action = "tile"
+open_maximized = false
+column_width = { "1" = 4 }
 sticky = false
 tile_on_os_monitor = false
 
