@@ -1,0 +1,158 @@
+config_version = 14
+
+[accessibility]
+ui_scale = 1.1000000000000001
+
+[bar.default]
+center = []
+concave_edge_corners = false
+end = [ "tray", "notifications", "network", "bluetooth", "volume", "spacer_4", "clock", "bar", "session" ]
+margin_ends = 0
+radius = 6
+scale = 1.1000000000000001
+shadow = false
+start = [ "launcher", "workspaces", "spacer_2", "active_window" ]
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "clock_main" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.clock_main]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 0.0
+    cy = 0.0
+    output = "DP-1"
+    placement_height = 3072.0
+    placement_width = 1728.0
+    rotation = 0.0
+    type = "clock"
+
+[dock]
+concave_edge_corners = false
+cross_axis_padding = 0
+enabled = true
+icon_size = 24
+item_spacing = 4
+launcher_position = "start"
+main_axis_padding = 0
+radius = 6
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1536.0
+    cy = 1546.0
+    output = "DP-1"
+    placement_height = 3072.0
+    placement_width = 1728.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[osd.kinds]
+lock_keys = false
+
+[plugin_settings."noctalia/world_clock"]
+panel_placement = "floating"
+panel_position = "top_right"
+
+[plugins]
+enabled = [ "noctalia/world_clock" ]
+
+[shell]
+clipboard_confirm_clear_history = false
+clipboard_enabled = false
+clipboard_history_max_entries = 10
+date_format = "%a %d-%b-%Y"
+font_family = "Ubuntu"
+
+    [shell.animation]
+    enabled = false
+
+    [shell.launcher]
+    fetch_exchange_rates = false
+
+    [shell.panel]
+    clipboard_position = "top_right"
+    control_center_placement = "floating"
+    control_center_position = "top_right"
+    launcher_placement = "attached"
+    open_near_click_launcher = true
+    polkit_placement = "attached"
+    session_placement = "floating"
+    session_position = "top_right"
+    shadow = false
+
+    [shell.session]
+    grid = true
+
+[system.monitor]
+enabled = false
+
+[theme]
+builtin = "Noctalia"
+community_palette = "Oxocarbon"
+mode = "light"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+[wallpaper.default]
+path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+
+[wallpaper.last]
+path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+
+[weather]
+enabled = false
+
+[widget.bar]
+type = "noctalia/world_clock:bar"
+
+[widget.clock]
+format = "{:%a %d-%b-%Y %H:%M}"
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.spacer_4]
+length = 12
+type = "spacer"
+
+[widget.taskbar]
+inactive_opacity = 0.69999999999999996
+show_window_title = true
+
+[widget.volume]
+mute_color = "on_surface"

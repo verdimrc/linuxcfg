@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=switch-chromium-flags.sh
+Name=Setup desktop-specific chromium flags
+NoDisplay=true
+TryExec=switch-chromium-flags.sh
+Type=Application
+X-LXQt-Module=true
