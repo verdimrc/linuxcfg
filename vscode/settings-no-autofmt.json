@@ -91,9 +91,12 @@
   },
 
   "files.associations": {
-    "**/.ngc/**/config": "ini",
     ".env*": "dotenv",
-    "*.mdx": "markdown"
+    "*.mdx": "markdown",
+    "Dockerfile.cpu": "dockerfile",
+    "Dockerfile.gpu": "dockerfile",
+    "**/.ngc/**/config": "ini",
+    "config": "ini"
   },
 
   // Javascript

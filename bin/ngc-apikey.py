@@ -37,8 +37,12 @@ Fetch just the API key, typically for scripting purposes:
     $ ngc-apikey.py
     <api_key>
 
-Set a few `NGC_CLI_*` `environment variables <https://docs.ngc.nvidia.com/cli/script.html>`_ on
-current shell:
+    $ export NGC_CLI_ORG=org
+    $ export NGC_CLI_TEAM=team
+    $ ngc-apikey.py
+    <api_key>
+
+For more `NGC_CLI_*` environment variables, see <https://docs.ngc.nvidia.com/cli/script.html>
 
 .. code-block:: console
 
