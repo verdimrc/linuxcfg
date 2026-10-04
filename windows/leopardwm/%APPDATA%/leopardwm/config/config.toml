@@ -6,20 +6,10 @@ outer_gap_top = 0
 outer_gap_bottom = 0
 centering_mode = "on_overflow"
 center_past_edges = false
-width_presets = [
-    0.25,
-    0.333,
-    0.5,
-    0.667,
-    0.75,
-    1.0,
-]
+width_presets = [ 0.25, 0.333, 0.5, 0.667, 0.75, 1.0 ]
 default_width_preset = 3
-height_presets = [
-    0.333,
-    0.5,
-    0.667,
-]
+default_width_preset_monitor_overrides = { "2" = 2 }
+height_presets = [ 0.333, 0.5, 0.667]
 rtl_monitor_indices = [2, 3]
 desktop_peek_min_width = 0.25
 
@@ -144,7 +134,7 @@ match_executable = "code.exe"
 #match_title = "^Visual Studio Code$"
 action = "tile"
 open_maximized = false
-column_width = 1.0
+column_width = { "1" = 1.0 }
 sticky = false
 tile_on_os_monitor = false
 
@@ -166,11 +156,19 @@ sticky = false
 tile_on_os_monitor = false
 
 [[window_rules]]
+match_executable = "EXCEL.EXE"
+action = "tile"
+open_maximized = false
+column_width = { "1" = 4, "2" = 3 }
+sticky = false
+tile_on_os_monitor = false
+
+[[window_rules]]
 match_class = "PPTFrameClass"
 match_executable = "POWERPNT.EXE"
 action = "tile"
 open_maximized = false
-column_width = { "1" = 4 }
+column_width = { "1" = 4, "2" = 3 }
 sticky = false
 tile_on_os_monitor = false
 
@@ -195,7 +193,7 @@ match_class = "CabinetWClass"
 match_executable = "explorer.exe"
 action = "tile"
 open_maximized = false
-column_width = 0.333
+column_width = { "1" = 2, "2" = 1 }
 sticky = false
 tile_on_os_monitor = false
 
@@ -203,7 +201,7 @@ tile_on_os_monitor = false
 match_class = "Notepad"
 action = "tile"
 open_maximized = false
-column_width = 0.333
+column_width = { "1" = 2, "2" = 1 }
 sticky = false
 tile_on_os_monitor = false
 
