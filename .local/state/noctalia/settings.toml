@@ -11,7 +11,7 @@ margin_ends = 0
 radius = 6
 scale = 1.1000000000000001
 shadow = false
-start = [ "launcher", "workspaces", "spacer_2", "active_window" ]
+start = [ "launcher", "btn", "workspaces", "spacer_2", "active_window" ]
 
 [desktop_widgets]
 enabled = false
@@ -84,12 +84,17 @@ widget_order = [ "lockscreen-login-box@DP-1" ]
 [osd.kinds]
 lock_keys = false
 
+[plugin_settings."ezequiel/mango_layouts"]
+list_mode = true
+panel_open_near_click = true
+panel_position = "top_left"
+
 [plugin_settings."noctalia/world_clock"]
 panel_placement = "floating"
 panel_position = "top_right"
 
 [plugins]
-enabled = [ "noctalia/world_clock" ]
+enabled = [ "noctalia/world_clock", "ezequiel/mango_layouts" ]
 
 [shell]
 clipboard_confirm_clear_history = false
@@ -139,6 +144,9 @@ enabled = false
 
 [widget.bar]
 type = "noctalia/world_clock:bar"
+
+[widget.btn]
+type = "ezequiel/mango_layouts:btn"
 
 [widget.clock]
 format = "{:%a %d-%b-%Y %H:%M}"

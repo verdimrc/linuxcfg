@@ -1,0 +1,7 @@
+# noctalia
+noctalia msg config-reload
+noctalia msg plugins enable ezequiel/mango_layouts   # Destructive, will refresh materialized/
+
+# mangowc
+mmsg dispatch reload_config
+mango -d -c ~/.config/mango/config.conf
