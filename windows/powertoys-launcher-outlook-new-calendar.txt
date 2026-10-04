@@ -1,0 +1,8 @@
+alt-space => ms-outlook:launch:calendar
+
+Create shortcut:
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Calendar (New Outlook)
+URL: ms-outlook:launch:calendar
+
+Then, alt-space => just type calendar, then choose "Calendar (New Outlook).url"
+
