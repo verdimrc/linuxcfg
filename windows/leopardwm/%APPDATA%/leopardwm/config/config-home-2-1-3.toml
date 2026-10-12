@@ -42,6 +42,7 @@ mouse_follows_focus = false
 fullscreen_follows_focus = true
 symmetric_modifiers = true
 notify_elevation_blocked = false
+new_window_monitor = "cursor"
 
 [hotkeys]
 scroll_modifier = "Ctrl+Alt"
@@ -113,8 +114,8 @@ disabled = []
 "Ctrl+Alt+Win+Shift+Down" = "move_to_monitor_down"
 "Ctrl+Alt+S" = "scratchpad_toggle"
 "Ctrl+Alt+Shift+S" = "scratchpad_stash"
-"Ctrl+Alt+N" = "toggle_new_window_placement_once"
-"Ctrl+Alt+Shift+N" = "toggle_new_window_placement"
+"Ctrl+Alt+N" = "toggle_new_window_placement"
+"Ctrl+Alt+Shift+N" = "toggle_new_window_placement_once"
 "Ctrl+Alt+R" = "refresh"
 "Ctrl+Alt+Shift+R" = "reload"
 "Ctrl+Alt+P" = "toggle_pause"
@@ -122,88 +123,52 @@ disabled = []
 
 [[window_rules]]
 match_class = "MozillaDialogClass"
-action = "tile"
 corner_style = "square"
-open_maximized = false
-sticky = false
-tile_on_os_monitor = false
 
 [[window_rules]]
 #match_class = "Chrome_WidgetWin_1"
 match_executable = "code.exe"
 #match_title = "^Visual Studio Code$"
-action = "tile"
-open_maximized = false
-column_width = { "1" = 1.0 }
-sticky = false
-tile_on_os_monitor = false
+column_width = { "1" = 1.0, "2" = 3 }
 
 [[window_rules]]
 match_class = "Outlook Host"
-action = "tile"
-open_maximized = false
-column_width = { "1" = 1.0, "2" = 4 }
-sticky = false
-tile_on_os_monitor = false
+column_width = { "1" = 1.0, "2" = 3 }
 
 [[window_rules]]
 match_title = ".*Outlook"
 match_executable = "OUTLOOK.EXE"
-action = "tile"
-open_maximized = false
-column_width = { "1" = 1.0, "2" = 4 }
-sticky = false
-tile_on_os_monitor = false
+column_width = { "1" = 1.0, "2" = 3 }
 
 [[window_rules]]
 match_executable = "EXCEL.EXE"
-action = "tile"
-open_maximized = false
 column_width = { "1" = 4, "2" = 3 }
-sticky = false
-tile_on_os_monitor = false
 
 [[window_rules]]
 match_class = "PPTFrameClass"
 match_executable = "POWERPNT.EXE"
-action = "tile"
-open_maximized = false
 column_width = { "1" = 4, "2" = 3 }
-sticky = false
-tile_on_os_monitor = false
 
+# Presenter view
 [[window_rules]]
 match_class = "PodiumParent"
 match_executable = "POWERPNT.EXE"
-action = "tile"
-open_maximized = false
-sticky = false
-tile_on_os_monitor = true
+new_window_monitor = "opening"
 
+# Slide show
 [[window_rules]]
 match_class = "screenClass"
 match_executable = "POWERPNT.EXE"
 action = "ignore"
-open_maximized = false
-sticky = false
-tile_on_os_monitor = false
 
 [[window_rules]]
 match_class = "CabinetWClass"
 match_executable = "explorer.exe"
-action = "tile"
-open_maximized = false
 column_width = { "1" = 2, "2" = 1 }
-sticky = false
-tile_on_os_monitor = false
 
 [[window_rules]]
 match_class = "Notepad"
-action = "tile"
-open_maximized = false
 column_width = { "1" = 2, "2" = 1 }
-sticky = false
-tile_on_os_monitor = false
 
 [gestures]
 enabled = true
