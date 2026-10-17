@@ -34,7 +34,9 @@ default_border normal
 
 # To open on above row
 #for_window [app_id=".*"] title_format "<b>%app_id</b>" ; move up
+
 for_window [app_id=".*"] title_format "<b>%app_id</b>"
+for_window [app_id="chromium"] lua $scripts/fake_fullscreen.lua
 
 font pango:Ubuntu 14
 gaps inner 0
