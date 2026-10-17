@@ -16,3 +16,12 @@ export ELECTRON_OZONE_PLATFORM_HINT=auto
 export GST_VAAPI_ALL_DRIVERS=1
 export MOZ_ENABLE_WAYLAND=1
 export NO_AT_BRIDGE=1
+
+# Bah, dunno why, after restart, with monitor scaling 1.0, fonts in qt and gtk
+# apps become too small. So, let's apply the tried-and-tested settings from
+# lxqt.
+
+export GDK_DPI_SCALE=1.15
+export GDK_SCALE=1.25
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR=1.25
