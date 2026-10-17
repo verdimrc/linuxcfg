@@ -1,17 +1,18 @@
-config_version = 14
+config_version = 15
 
 [accessibility]
-ui_scale = 1.1000000000000001
+ui_scale = 1.5000000149011612
 
 [bar.default]
 center = []
 concave_edge_corners = false
 end = [ "tray", "notifications", "network", "bluetooth", "volume", "spacer_4", "clock", "bar", "session" ]
+font_scale = 1.2499999795109034
 margin_ends = 0
 radius = 6
 scale = 1.1000000000000001
 shadow = false
-start = [ "launcher", "btn", "workspaces", "spacer_2", "active_window" ]
+start = [ "launcher", "sway-mode", "workspaces", "spacer_2", "active_window" ]
 
 [desktop_widgets]
 enabled = false
@@ -29,8 +30,8 @@ widget_order = [ "clock_main" ]
     cx = 0.0
     cy = 0.0
     output = "DP-1"
-    placement_height = 3072.0
-    placement_width = 1728.0
+    placement_height = 3840.0
+    placement_width = 2160.0
     rotation = 0.0
     type = "clock"
 
@@ -57,11 +58,11 @@ widget_order = [ "lockscreen-login-box@DP-1" ]
     [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 1536.0
-    cy = 1546.0
+    cx = 1920.000244140625
+    cy = 1932.5
     output = "DP-1"
-    placement_height = 3072.0
-    placement_width = 1728.0
+    placement_height = 3840.0
+    placement_width = 2160.0
     rotation = 0.0
     type = "login_box"
 
@@ -77,6 +78,7 @@ widget_order = [ "lockscreen-login-box@DP-1" ]
         show_keyboard_layout = true
         show_login_button = true
         show_media = true
+        show_password_reveal = true
         show_session_buttons = true
         show_unlock_hint = true
         show_weather = true
@@ -94,7 +96,7 @@ panel_placement = "floating"
 panel_position = "top_right"
 
 [plugins]
-enabled = [ "noctalia/world_clock", "ezequiel/mango_layouts" ]
+enabled = [ "noctalia/world_clock", "ismay/sway-mode" ]
 
 [shell]
 clipboard_confirm_clear_history = false
@@ -145,9 +147,6 @@ enabled = false
 [widget.bar]
 type = "noctalia/world_clock:bar"
 
-[widget.btn]
-type = "ezequiel/mango_layouts:btn"
-
 [widget.clock]
 format = "{:%a %d-%b-%Y %H:%M}"
 
@@ -157,6 +156,9 @@ type = "spacer"
 [widget.spacer_4]
 length = 12
 type = "spacer"
+
+[widget.sway-mode]
+type = "ismay/sway-mode:sway-mode"
 
 [widget.taskbar]
 inactive_opacity = 0.69999999999999996

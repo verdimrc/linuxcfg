@@ -209,14 +209,16 @@ prompt_prefix() {
         # Normalize Jlab terminal to level 1. This must precedes the vscode
         # check, because Jlab can be started from vscode integrated terminal.
         local let effective_shlvl=$(($SHLVL-$JLAB_BASE_SHLVL+1))
-        [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
     elif [[ ${VSCODE_BASE_SHLVL} != "" ]]; then
         # Normalize to level 1
         local let effective_shlvl=$(($SHLVL-$VSCODE_BASE_SHLVL+1))
-        [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
+    elif [[ ${XDG_CURRENT_DESKTOP} = "scroll:wlroots" ]]; then
+        # Normalize to level 1, otherwise top-level kitty errornously shows [2]
+        local let effective_shlvl=$(($SHLVL-1))
     else
-        [[ ${SHLVL} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${SHLVL}]%f%b "
+        [[ ${SHLVL} -gt 1 ]] && local effective_shlvl=${SHLVL}
     fi
+    [[ ${effective_shlvl} -gt 1 ]] && retval=${retval}"%B%F{yellow}[${effective_shlvl}]%f%b "
 
     # Be aware when running under midnight commander.
     [[ -v MC_SID ]] && retval=${retval}"%B%F{red}[mc]%f%b "
