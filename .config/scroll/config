@@ -22,7 +22,7 @@ bindsym --locked XF86AudioMute exec $ipc volume-mute
 bindsym --locked XF86MonBrightnessUp exec $ipc brightness-up
 bindsym --locked XF86MonBrightnessDown exec $ipc brightness-down
 
-bindsym $mod+Shift+e exec rofi-noctalia-session-menu
+bindsym $mod+Shift+e exec scroll-session-menu
 
 output DP-1 {
     resolution 3840x2160 position 3840 0 scale 1.0 transform 270

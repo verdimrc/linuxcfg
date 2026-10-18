@@ -1,7 +1,7 @@
 #!/bin/bash
 
 choice=$(
-    echo -en '🔒 Lock (1)\n🔚 Logout (2)\n⏸️ Suspend (3)\n🔄 Reboot (4)\n🛑 Shutdown (5)\n' \
+    echo -en '🔒 Lock (1)\n🔚 Logout (2)\n⏸️ Sleep (3)\n🔄 Reboot (4)\n🛑 Shutdown (5)\n' \
         | rofi -dmenu -i -no-custom -p 'session' \
             -kb-custom-1 1 \
             -kb-custom-2 2 \
@@ -15,7 +15,7 @@ if [[ "${code}" -eq 0 ]]; then
     case "$choice" in
         *Lock*)     code=10 ;;
         *Logout*)   code=11 ;;
-        *Suspend*)  code=12 ;;
+        *Sleep*)    code=12 ;;
         *Reboot*)   code=13 ;;
         *Shutdown*) code=14 ;;
     esac
@@ -23,8 +23,8 @@ fi
 
 case $code in
     10) noctalia msg session lock ;;
-    11) noctalia msg session logout ;;
-    12) noctalia msg session suspend ;;
-    13) noctalia msg session reboot ;;
-    14) noctalia msg session shutdown ;;
+    11) swaymsg exit ;;
+    12) systemctl suspend ;;
+    13) systemctl reboot ;;
+    14) systemctl poweroff ;;
 esac
