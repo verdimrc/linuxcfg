@@ -76,8 +76,13 @@ widget_order = [ "lockscreen-login-box@DP-1" ]
         show_unlock_hint = true
         show_weather = true
 
-[osd.kinds]
-lock_keys = false
+[osd]
+orientation = "vertical"
+position = "top_right"
+position_vertical = "center_right"
+
+    [osd.kinds]
+    lock_keys = false
 
 [plugin_settings."ezequiel/mango_layouts"]
 list_mode = true
