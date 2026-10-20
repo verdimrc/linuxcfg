@@ -1,20 +1,20 @@
 # Monitor layout:
 #
-#                          +--------------+
-#                          |              |
-#                          |              |
-#                          |      3       |
-#                          | 1080 x 1920  |
-#   +----------------------+   @ 125%     |
-#   |          2           | (864 x 1536) |
-#   |  1920 x 1080 @ 125%  |              |
-#   |     (1536 x 864)     |              |
-#   +----------------------+--------------+
-#              +------------------------+
-#              |            1           |
-#              |   2560 x 1600 @ 175%   |
-#              |      (1463 x 914)      |
-#              +------------------------+
+#                        +--------------+
+#                        |              |
+#                        |              |
+#                        |      3       |
+#                        | 1080 x 1920  |
+#   +--------------------+   @ 125%     |
+#   |         2          | (864 x 1536) |
+#   | 1920 x 1080 @ 125% |              |
+#   |    (1536 x 864)    |              |
+#   +--------------------+--------------+
+#            +--------------------+
+#            |         1          |
+#            | 2560 x 1600 @ 175% |
+#            |    (1463 x 914)    |
+#            +--------------------+
 
 [layout]
 gap = 0
@@ -24,7 +24,6 @@ outer_gap_top = 0
 outer_gap_bottom = 0
 width_presets = [ 0.25, 0.333, 0.5, 0.667, 0.75, 1.0 ]
 default_width_preset = 3
-# default_width_preset_monitor_overrides = { "2" = 2 }
 height_presets = [ 0.333, 0.5, 0.667]
 rtl_monitor_indices = [2]
 desktop_peek_min_width = 0.25
@@ -141,14 +140,23 @@ disabled = []
 "Win+Ctrl+Escape" = "panic_revert"
 
 [[window_rules]]
+match_class = "^HwndWrapper\\[PowerToys\\.PowerLauncher"
+launcher = true
+
+[[window_rules]]
 match_class = "MozillaDialogClass"
 corner_style = "square"
 
 [[window_rules]]
 #match_class = "Chrome_WidgetWin_1"
+match_executable = "chrome.exe"
+column_width = { "2" = 3 }
+
+[[window_rules]]
+#match_class = "Chrome_WidgetWin_1"
 match_executable = "code.exe"
 #match_title = "^Visual Studio Code$"
-column_width = { "1" = 1.0 }
+column_width = { "1" = 1.0, "2" = 5 }
 
 [[window_rules]]
 match_class = "Outlook Host"
