@@ -140,10 +140,6 @@ disabled = []
 "Win+Ctrl+Escape" = "panic_revert"
 
 [[window_rules]]
-match_class = "^HwndWrapper\\[PowerToys\\.PowerLauncher"
-launcher = true
-
-[[window_rules]]
 match_class = "MozillaDialogClass"
 corner_style = "square"
 
