@@ -1,0 +1,28 @@
+[
+  {
+    "name": "azure/anthropic/claude-opus-5",
+    "vendor": "customendpoint",
+    "apiKey": "${input:chat.lm.secret.12345678}",
+    "apiType": "chat-completions",
+    "models": [
+      {
+        "id": "azure/anthropic/claude-opus-5", // For request payload
+        "name": "azure/anthropic/claude-opus-5", // Just for display
+        "url": "https://a.b.c.d/v1/chat/completions",
+        "toolCalling": true,
+        "vision": true,
+        "maxInputTokens": 128000,
+        "maxOutputTokens": 16000,
+
+        // Fix Copilot forces temperature and top_p but rejected by this model.
+        // References:
+        // - https://github.com/microsoft/vscode/issues/291973#issue-3877290731
+        // - https://github.com/microsoft/vscode/issues/321514#issuecomment-4887556595
+        "modelOptions": {
+          "temperature": 1.0,
+          "top_p": null // Must be null. 1 or 0 don't work.
+        }
+      }
+    ]
+  }
+]

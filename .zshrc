@@ -234,7 +234,15 @@ prompt_prefix() {
 # Shlvl of zsh when started from VSCode.
 if [[ ${TERM_PROGRAM} == "vscode" ]]; then
     # Start an integrated terminal
-    local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))
+
+    # HAHA: to fix wrong detection when run ./code from wsl2 terminal
+    # ps -c -o command= (or -r args) shows MainThread, but I need to pattern
+    # match the executable path.
+    # TODO: verify the __CF* case too!
+    #local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))
+    local pcmd=$(ps -ww -f -o args= -p $(ps -o ppid= -p $$))
+
+    # Pattern match the executable
     [[ "$pcmd" =~ "[Cc]ode*" ]] && export VSCODE_BASE_SHLVL=$SHLVL
 elif [[ $__CFBundleIdentifier == "" ]]; then  # __CF* env var is set if on OSX.
     # Linux-specific heuristic when starting an external terminal (VSCode -> ctrl+shift+c).
