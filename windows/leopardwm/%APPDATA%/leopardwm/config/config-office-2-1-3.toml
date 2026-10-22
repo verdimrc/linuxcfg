@@ -61,6 +61,7 @@ fullscreen_follows_focus = true
 symmetric_modifiers = true
 notify_elevation_blocked = false
 new_window_monitor = "cursor"
+new_width_on_monitor_move = "window_rule_width_or_default_width"
 
 [hotkeys]
 scroll_modifier = "Ctrl+Alt"
