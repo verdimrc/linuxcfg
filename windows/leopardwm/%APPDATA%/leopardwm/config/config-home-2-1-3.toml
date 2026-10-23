@@ -22,14 +22,15 @@ outer_gap_left = 0
 outer_gap_right = 0
 outer_gap_top = 0
 outer_gap_bottom = 0
-centering_mode = "on_overflow"
-center_past_edges = false
 width_presets = [ 0.25, 0.333, 0.5, 0.667, 0.75, 1.0 ]
 default_width_preset = 3
 default_width_preset_monitor_overrides = { "2" = 2 }
 height_presets = [ 0.333, 0.5, 0.667]
 rtl_monitor_indices = [2, 3]
 desktop_peek_min_width = 0.25
+center_single_column = true
+centering_mode = "on_overflow"
+center_past_edges = false
 
 [appearance]
 active_border = false

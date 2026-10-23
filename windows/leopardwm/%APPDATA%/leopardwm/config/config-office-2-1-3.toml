@@ -29,7 +29,7 @@ rtl_monitor_indices = [2]
 desktop_peek_min_width = 0.25
 center_single_column = true
 centering_mode = "just_in_view"
-center_past_edges = false
+center_past_edges = true
 
 [appearance]
 active_border = false
@@ -157,12 +157,12 @@ column_width = { "1" = 1.0, "2" = 5 }
 
 [[window_rules]]
 match_class = "Outlook Host"
-column_width = { "1" = 1.0, "2" = 6 }
+column_width = { "1" = 1.0, "2" = 5 }
 
 [[window_rules]]
 match_title = ".*Outlook"
 match_executable = "OUTLOOK.EXE"
-column_width = { "1" = 1.0, "2" = 6 }
+column_width = { "1" = 1.0, "2" = 5 }
 
 [[window_rules]]
 match_executable = "EXCEL.EXE"
