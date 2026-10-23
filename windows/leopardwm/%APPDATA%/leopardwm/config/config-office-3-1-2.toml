@@ -30,6 +30,10 @@ center_single_column = true
 centering_mode = "center_columns_when_narrower"
 center_past_edges = true
 
+[[monitor_rules]]
+display = 3
+default_width_preset = 2
+
 [appearance]
 active_border = false
 active_border_color = "4285F4"
