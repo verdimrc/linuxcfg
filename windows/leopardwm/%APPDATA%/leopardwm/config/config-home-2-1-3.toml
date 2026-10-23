@@ -1,17 +1,46 @@
+# Monitor layout:
+#
+#                        +---------------+
+#                        |               |
+#                        |               |
+#                        |      3        |
+#                        |  2160 x 3840  |
+#   +--------------------+    @ 200%     |
+#   |         2          | (1080 x 1920) |
+#   | 3440 x 1440 @ 125% |               |
+#   |   (2752 x 1152)    |               |
+#   +--------------------+---------------+
+#            +--------------------+
+#            |         1          |
+#            | 2560 x 1600 @ 175% |
+#            |    (1463 x 914)    |
+#            +--------------------+
+
 [layout]
 gap = 0
 outer_gap_left = 0
 outer_gap_right = 0
 outer_gap_top = 0
 outer_gap_bottom = 0
-centering_mode = "on_overflow"
-center_past_edges = false
 width_presets = [ 0.25, 0.333, 0.5, 0.667, 0.75, 1.0 ]
 default_width_preset = 3
-default_width_preset_monitor_overrides = { "2" = 2 }
 height_presets = [ 0.333, 0.5, 0.667]
-rtl_monitor_indices = [2, 3]
 desktop_peek_min_width = 0.25
+center_single_column = true
+centering_mode = "center_columns_when_narrower"
+center_past_edges = true
+
+[[monitor_rules]]
+display = 2
+default_width_preset = 2
+direction = "ltr_right_aligned"
+center_single_column = false
+centering_mode = "just_in_view"
+center_past_edges = false
+
+[[monitor_rules]]
+display = 3
+default_width_preset = 2
 
 [appearance]
 active_border = false
@@ -43,6 +72,7 @@ fullscreen_follows_focus = true
 symmetric_modifiers = true
 notify_elevation_blocked = false
 new_window_monitor = "cursor"
+new_width_on_monitor_move = "window_rule_width_or_default_width"
 
 [hotkeys]
 scroll_modifier = "Ctrl+Alt"
@@ -120,10 +150,6 @@ disabled = []
 "Ctrl+Alt+Shift+R" = "reload"
 "Ctrl+Alt+P" = "toggle_pause"
 "Win+Ctrl+Escape" = "panic_revert"
-
-[[window_rules]]
-match_class = "^HwndWrapper\\[PowerToys\\.PowerLauncher"
-launcher = true
 
 [[window_rules]]
 match_class = "MozillaDialogClass"

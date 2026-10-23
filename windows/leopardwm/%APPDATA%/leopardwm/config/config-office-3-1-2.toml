@@ -1,17 +1,38 @@
+# Monitor layout:
+#
+#                        +--------------+
+#                        |              |
+#                        |              |
+#                        |      2       |
+#                        | 1080 x 1920  |
+#   +--------------------+   @ 125%     |
+#   |         3          | (864 x 1536) |
+#   | 1920 x 1080 @ 125% |              |
+#   |    (1536 x 864)    |              |
+#   +--------------------+--------------+
+#            +--------------------+
+#            |         1          |
+#            | 2560 x 1600 @ 175% |
+#            |    (1463 x 914)    |
+#            +--------------------+
+
 [layout]
 gap = 0
 outer_gap_left = 0
 outer_gap_right = 0
 outer_gap_top = 0
 outer_gap_bottom = 0
-centering_mode = "on_overflow"
-center_past_edges = false
 width_presets = [ 0.25, 0.333, 0.5, 0.667, 0.75, 1.0 ]
 default_width_preset = 3
-# default_width_preset_monitor_overrides = { "2" = 2 }
 height_presets = [ 0.333, 0.5, 0.667]
-rtl_monitor_indices = [3]
 desktop_peek_min_width = 0.25
+center_single_column = true
+centering_mode = "center_columns_when_narrower"
+center_past_edges = true
+
+[[monitor_rules]]
+display = 3
+default_width_preset = 2
 
 [appearance]
 active_border = false
@@ -43,6 +64,7 @@ fullscreen_follows_focus = true
 symmetric_modifiers = true
 notify_elevation_blocked = false
 new_window_monitor = "cursor"
+new_width_on_monitor_move = "window_rule_width_or_default_width"
 
 [hotkeys]
 scroll_modifier = "Ctrl+Alt"
@@ -122,27 +144,28 @@ disabled = []
 "Win+Ctrl+Escape" = "panic_revert"
 
 [[window_rules]]
-match_class = "^HwndWrapper\\[PowerToys\\.PowerLauncher"
-launcher = true
-
-[[window_rules]]
 match_class = "MozillaDialogClass"
 corner_style = "square"
 
 [[window_rules]]
 #match_class = "Chrome_WidgetWin_1"
+match_executable = "chrome.exe"
+column_width = { "3" = 3 }
+
+[[window_rules]]
+#match_class = "Chrome_WidgetWin_1"
 match_executable = "code.exe"
 #match_title = "^Visual Studio Code$"
-column_width = { "1" = 1.0 }
+column_width = { "1" = 1.0, "3" = 5 }
 
 [[window_rules]]
 match_class = "Outlook Host"
-column_width = { "1" = 1.0, "3" = 6 }
+column_width = { "1" = 1.0, "3" = 5 }
 
 [[window_rules]]
 match_title = ".*Outlook"
 match_executable = "OUTLOOK.EXE"
-column_width = { "1" = 1.0, "3" = 6 }
+column_width = { "1" = 1.0, "3" = 5 }
 
 [[window_rules]]
 match_executable = "EXCEL.EXE"
