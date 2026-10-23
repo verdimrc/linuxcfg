@@ -19,13 +19,15 @@ outer_gap_top = 0
 outer_gap_bottom = 0
 width_presets = [ 0.25, 0.333, 0.5, 0.667, 0.75, 1.0 ]
 default_width_preset = 3
-default_width_preset_monitor_overrides = { "2" = 2 }
 height_presets = [ 0.333, 0.5, 0.667]
-rtl_monitor_indices = [3]
 desktop_peek_min_width = 0.25
 center_single_column = true
-centering_mode = "just_in_view"
+centering_mode = "center_columns_when_narrower"
 center_past_edges = true
+
+[[monitor_rules]]
+display = 2
+default_width_preset = 2
 
 [appearance]
 active_border = false
