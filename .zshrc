@@ -229,6 +229,7 @@ echo HAHA pcmd '=' $pcmd >> /tmp/haha.txt
 case "$pcmd" in
     *[Cc]ode*) ;&
     *"python "*jupyter-lab*) ;&
+    *kitty*) ;&
     *tmux*)
         export BASE_SHLVL=${SHLVL}
         ;;
@@ -236,25 +237,6 @@ case "$pcmd" in
         ;;
 esac
 unset pcmd
-# TODO: verify this case.
-#elif [[ $__CFBundleIdentifier == "" ]]; then  # __CF* env var is set if on OSX.
-#    # Linux-specific heuristic when starting an external terminal (VSCode -> ctrl+shift+c).
-#    # This is how the process tree looks like:
-#    #
-#    #     lxqt-sessions
-#    #      \_ code-insider
-#    #          \_ kitty
-#    #              \_ kitty
-#    #              \_ /usr/bin/zsh  # SHLVL=2, but closing the VSCode GUI won't close this kitty.
-#    #                               # Instead, when the VSCode GUI is closed, the zsh parent kitty
-#    #                               # will have lxqt-sessions as its new owner.
-#    local -i pid_term_emu=$(ps -o ppid= -p $(ps -o ppid= -p $$))
-#
-#    #local pcmd=$(ps -c -o command= -p $pid_term_emu)    # WRONG. Shows MainThread ??. TODO: verify
-#    local pcmd=$(ps -ww -f -o args= -p $pid_term_emu)
-#    [[ "$pcmd" =~ "[Cc]ode*|lxqt-session" ]] && export BASE_SHLVL=$SHLVL
-#    unset pid_term_emu pcmd
-#fi
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
 #export PROMPT='$(prompt_prefix)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
