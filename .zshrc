@@ -192,26 +192,17 @@ ngc_profile() {
     # - NGC_CLI_PROFILE is custom, not official (https://docs.ngc.nvidia.com/cli/script.html).
     # - Contrary to the docs, I found that NGC_CLI_HOME=xxx causes ngc cli to parse xxx/.ngc/config.
     local assumed_profile=""
-    if [[ -n "$NGC_CLI_PROFILE" ]]; then
-        assumed_profile="%B%F{yellow}$NGC_CLI_PROFILE%f%b"
-    fi
-
-    if [[ -n "$assumed_profile" ]]; then
-        echo -n " %F{white}[$assumed_profile%F{white}]"
-    fi
+    [[ -n "$NGC_CLI_PROFILE" ]] && assumed_profile="%B%F{yellow}$NGC_CLI_PROFILE%f%b"
+    [[ -n "$assumed_profile" ]] && echo -n " %F{white}[$assumed_profile%F{white}]"
 }
 
 prompt_prefix() {
     local retval=""
 
     # Be aware when some CLI toolkits (e.g., assume role) spawns a new shell.
-    if [[ ${JUPYTER_SERVER_ROOT} != "" ]]; then
-        # Normalize Jlab terminal to level 1. This must precedes the vscode
-        # check, because Jlab can be started from vscode integrated terminal.
-        local let effective_shlvl=$(($SHLVL-$JLAB_BASE_SHLVL+1))
-    elif [[ ${VSCODE_BASE_SHLVL} != "" ]]; then
+    if [[ ${BASE_SHLVL} != "" ]]; then
         # Normalize to level 1
-        local let effective_shlvl=$(($SHLVL-$VSCODE_BASE_SHLVL+1))
+        local let effective_shlvl=$(($SHLVL-$BASE_SHLVL+1))
     elif [[ ${XDG_CURRENT_DESKTOP} = "scroll:wlroots" ]]; then
         # Normalize to level 1, otherwise top-level kitty errornously shows [2]
         local let effective_shlvl=$(($SHLVL-1))
@@ -232,34 +223,20 @@ prompt_prefix() {
 }
 
 # Shlvl of zsh when started from VSCode.
-if [[ ${TERM_PROGRAM} == "vscode" ]]; then
-    # Start an integrated terminal
-
-    # HAHA: to fix wrong detection when run ./code from wsl2 terminal
-    # ps -c -o command= (or -r args) shows MainThread, but I need to pattern
-    # match the executable path.
-    # TODO: verify the __CF* case too!
-    #local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))
-    local pcmd=$(ps -ww -f -o args= -p $(ps -o ppid= -p $$))
-
-    # Pattern match the executable
-    [[ "$pcmd" =~ "[Cc]ode*" ]] && export VSCODE_BASE_SHLVL=$SHLVL
-elif [[ $__CFBundleIdentifier == "" ]]; then  # __CF* env var is set if on OSX.
-    # Linux-specific heuristic when starting an external terminal (VSCode -> ctrl+shift+c).
-    # This is how the process tree looks like:
-    #
-    #     lxqt-sessions
-    #      \_ code-insider
-    #          \_ kitty
-    #              \_ kitty
-    #              \_ /usr/bin/zsh  # SHLVL=2, but closing the VSCode GUI won't close this kitty.
-    #                               # Instead, when the VSCode GUI is closed, the zsh parent kitty
-    #                               # will have lxqt-sessions as its new owner.
-    local -i pid_term_emu=$(ps -o ppid= -p $(ps -o ppid= -p $$))
-    local pcmd=$(ps -c -o command= -p $pid_term_emu)
-    [[ "$pcmd" =~ "[Cc]ode*|lxqt-session" ]] && export VSCODE_BASE_SHLVL=$SHLVL
-    unset pcmd pid_term_emu pcmd
-fi
+#local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))   # WRONG. vscode appears as MainThread, not "cli args".
+local pcmd=$(ps -ww -f -o args= -p $(ps -o ppid= -p $$))
+echo HAHA pcmd '=' $pcmd >> /tmp/haha.txt
+case "$pcmd" in
+    *[Cc]ode*) ;&
+    *"python "*jupyter-lab*) ;&
+    *kitty*) ;&
+    *tmux*)
+        export BASE_SHLVL=${SHLVL}
+        ;;
+    *)
+        ;;
+esac
+unset pcmd
 
 # Must use single quote for vsc_info_msg_0_ to work correctly
 #export PROMPT='$(prompt_prefix)%F{cyan}%n@%F{green}%m:%F{white}%~%B%F{magenta}${vcs_info_msg_0_}%b$(aws_profile)%F{gray}
