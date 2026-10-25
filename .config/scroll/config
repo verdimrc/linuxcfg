@@ -51,7 +51,7 @@ for_window [all] inhibit_idle fullscreen
 # Layout settings
 layout_default_width 1.0
 layout_default_height 0.333
-layout_widths [ 0.5 1.0 ]
+layout_widths [ 0.333 0.5 0.667 1.0 ]
 layout_heights [ 0.25 0.333 0.5 0.667 0.75 1.0 ]
 
 # These are the default values for some useful scroll options, consult
@@ -412,8 +412,8 @@ bindsym $mod+Shift+End focus_ring last
 #
 # Resizing containers:
 #
-bindsym $mod+minus lua $scripts/ignore_lone_row_in_v_layout.lua cycle_size h prev
-bindsym $mod+equal lua $scripts/ignore_lone_row_in_v_layout.lua cycle_size h next
+bindsym $mod+minus lua $scripts/ignore_lone_row_in_v_layout.lua cycle_size h prev ; align end
+bindsym $mod+equal lua $scripts/ignore_lone_row_in_v_layout.lua cycle_size h next ; align beg
 bindsym $mod+Shift+minus cycle_size v prev
 bindsym $mod+Shift+equal cycle_size v next
 
