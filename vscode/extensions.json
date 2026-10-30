@@ -6,6 +6,7 @@
         "asispts.neo-git-graph",
         "bierner.markdown-mermaid",
         "bierner.github-markdown-preview",
+        "bierner.markdown-yaml-preamble",
         //"charliermarsh.ruff",
         "christian-kohler.path-intellisense",
         "DavidAnson.vscode-markdownlint",

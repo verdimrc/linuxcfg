@@ -240,6 +240,7 @@
     "asispts.neo-git-graph",
     "bierner.github-markdown-preview",
     "bierner.markdown-mermaid",
+    "bierner.markdown-yaml-preamble",
     //"charliermarsh.ruff",
     "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
