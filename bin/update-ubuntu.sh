@@ -30,6 +30,8 @@ if command -v apt &> /dev/null; then
     show_info "Updating Ubuntu packages..."
     sudo apt update
     sudo apt dist-upgrade -V -y
+
+    [[ -e /usr/bin/python ]] && sudo apt install -y python-is-python3
 else
     show_warn "Command apt not found. Skip updating Ubuntu packages..."
 fi
