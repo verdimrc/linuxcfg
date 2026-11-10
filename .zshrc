@@ -230,6 +230,7 @@ case "$pcmd" in
     *[Cc]ode*) ;&
     *"python "*jupyter-lab*) ;&
     *kitty*) ;&
+    *herdr*) ;&
     *tmux*)
         export BASE_SHLVL=${SHLVL}
         ;;
