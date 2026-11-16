@@ -225,7 +225,7 @@ prompt_prefix() {
 # Shlvl of zsh when started from VSCode.
 #local pcmd=$(ps -c -o command= -p $(ps -o ppid= -p $$))   # WRONG. vscode appears as MainThread, not "cli args".
 local pcmd=$(ps -ww -f -o args= -p $(ps -o ppid= -p $$))
-echo HAHA pcmd '=' $pcmd >> /tmp/haha.txt
+#echo HAHA pcmd '=' $pcmd >> /tmp/haha.txt
 case "$pcmd" in
     *[Cc]ode*) ;&
     *"python "*jupyter-lab*) ;&
