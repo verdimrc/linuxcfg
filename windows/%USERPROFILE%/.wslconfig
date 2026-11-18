@@ -1,0 +1,11 @@
+[wsl2]
+guiApplications=true
+
+# Fix "Sandbox probe failed" error when running
+# pi-sbx doctor -v --create-probe "/home/vmarch/.cache/pi-sbx/doctor-ws"
+networkingMode=NAT
+
+# Enable apparmor.
+# https://github.com/microsoft/WSL/issues/8709#issuecomment-3195645088
+# - NOTE: need to modify /etc/fstab as well. See above url.
+kernelCommandLine = lsm=apparmor,landlock,lockdown,yama,loadpin,safesetid,integrity,selinux,tomoyo
