@@ -41,6 +41,7 @@ centering_mode = "just_in_view"
 display = 3
 default_width_preset = 2
 #centering_mode = "just_in_view"
+full_screen_tolerance_px = 6
 
 [appearance]
 active_border = false
