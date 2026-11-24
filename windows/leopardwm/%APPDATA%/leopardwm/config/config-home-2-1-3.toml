@@ -36,11 +36,11 @@ default_width_preset = 2
 direction = "ltr_right_aligned"
 center_single_column = false
 centering_mode = "just_in_view"
-center_past_edges = false
 
 [[monitor_rules]]
 display = 3
 default_width_preset = 2
+centering_mode = "just_in_view"
 
 [appearance]
 active_border = false
