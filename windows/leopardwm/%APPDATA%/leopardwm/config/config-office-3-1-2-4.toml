@@ -10,7 +10,6 @@
 # |              | 2560 x 1440 @ 125% | 1920 x 1080 @ 125% |
 # |              |    (2048 x 1152)   |    (1536 x 864)    |
 # +--------------+--------------------+--------------------+
-#                +--------------------+
 #                |         1          |
 #                | 2560 x 1600 @ 175% |
 #                |    (1463 x 914)    |
@@ -31,15 +30,15 @@ centering_mode = "center_columns_when_narrower"
 center_past_edges = true
 
 [[monitor_rules]]
-display = 4
-centering_mode = "on_overflow"
-center_single_column = false
-center_past_edges = false
-
-[[monitor_rules]]
 display = 3
 default_width_preset = 2
 #full_screen_tolerance_px = 6
+
+[[monitor_rules]]
+display = 4
+direction = "ltr_left_aligned"
+center_single_column = false
+centering_mode = "just_in_view"
 
 [appearance]
 active_border = false
